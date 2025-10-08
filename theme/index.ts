@@ -1,7 +1,7 @@
 // export { defaultTheme as theme } from "@packages/ui-kit/theme/defaultTheme";
 
-import { componentsTokens as originalsComponentsTokens } from "@packages/ui-kit/theme/defaultTheme";
 import { defineThemeContract } from "@pandacss/dev";
+import { componentsTokens as originalsComponentsTokens } from "./defaultTheme";
 import { componentsTokens } from "./defaultTheme";
 import { semantic } from "./semantic";
 
