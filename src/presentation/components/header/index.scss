@@ -1,0 +1,13 @@
+@use "../../../variables.scss" as *;
+
+header {
+  padding: $padding-medium;
+  background-color: var(--background);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: $padding-small;
+}
