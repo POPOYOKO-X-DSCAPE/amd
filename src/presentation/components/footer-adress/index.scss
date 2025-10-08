@@ -1,0 +1,24 @@
+@use "../../../variables.scss" as *;
+
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xtrasmall;
+  width: 218px;
+}
+
+.footer-address-title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+.footer-address-content {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 2%;
+  vertical-align: middle;
+}
