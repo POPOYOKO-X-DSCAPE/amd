@@ -19,13 +19,10 @@ jobs:
         bun-version: latest
 
     - name: Install dependencies
-      run: bun install && bun add panda
-
-    - name: Panda
-      run: bun run panda
+      run: bun install && bun add -D @pandacss/dev
 
     - name: Build application
-      run: bun run build
+      run: bun panda && bun run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
