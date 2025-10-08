@@ -123,7 +123,7 @@ const generateColorDeclination = (baseColor: string) => {
 export const colors = defineSemanticTokens.colors({
 	black: { value: "#333333" },
 	white: { value: "#FAFAFA" },
-	primary: generateColorDeclination("#1417dbff"),
+	primary: generateColorDeclination("#000000ff"),
 	info: { value: "#0B2EF1" },
 	yellow: { value: "#FCD53F" },
 	grey: generateColorDeclination("#888"),
