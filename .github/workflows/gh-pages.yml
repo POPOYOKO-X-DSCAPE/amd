@@ -19,9 +19,9 @@ jobs:
         bun-version: latest
 
     - name: Install dependencies
-      run: bun install
+      run: bun install && bun add panda
 
-    - name: Install dependencies
+    - name: Panda
       run: bun run panda
 
     - name: Build application
