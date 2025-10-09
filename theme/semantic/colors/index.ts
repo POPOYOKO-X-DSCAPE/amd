@@ -4,38 +4,38 @@ import { brand } from "../../brand";
 export const colors = defineSemanticTokens.colors({
 	bg: {
 		default: {
-			initial: brand.colors.grey.scales.s09,
-			hover: brand.colors.grey.scales.s00,
+			initial: brand.colors.white,
+			hover: brand.colors.white,
 		},
 		elevated: {
-			initial: brand.colors.grey.scales.s10,
-			hover: brand.colors.grey.scales.s09,
+			initial: brand.colors.white,
+			hover: brand.colors.white,
 		},
 		actionLow: {
-			initial: brand.colors.grey.scales.s09,
-			hover: brand.colors.grey.scales.s08,
+			initial: brand.colors.white,
+			hover: brand.colors.white,
 		},
 		actionHigh: {
-			initial: brand.colors.primary.scales.s05,
-			hover: brand.colors.primary.scales.s04,
+			initial: brand.colors.white,
+			hover: brand.colors.white,
 		},
 	},
 	fg: {
 		default: {
-			initial: brand.colors.grey.scales.s00,
-			hover: brand.colors.grey.scales.s01,
+			initial: brand.colors.black,
+			hover: brand.colors.black,
 		},
 		elevated: {
-			initial: brand.colors.grey.scales.s00,
-			hover: brand.colors.grey.scales.s01,
+			initial: brand.colors.black,
+			hover: brand.colors.black,
 		},
 		actionLow: {
-			initial: brand.colors.primary.scales.s05,
-			hover: brand.colors.primary.scales.s04,
+			initial: brand.colors.black,
+			hover: brand.colors.black,
 		},
 		actionHigh: {
-			initial: brand.colors.grey.scales.s10,
-			hover: brand.colors.grey.scales.s09,
+			initial: brand.colors.black,
+			hover: brand.colors.black,
 		},
 	},
 });
