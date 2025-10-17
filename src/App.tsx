@@ -1,11 +1,10 @@
 import { App as AbstractApp } from "@packages/ui";
-
-import { AMDHeader } from "./components/header";
+import { Button } from "@packages/ui/components/button";
 
 const App = () => {
   return (
     <AbstractApp>
-      <AMDHeader />
+      <Button>as</Button>
     </AbstractApp>
   );
 };

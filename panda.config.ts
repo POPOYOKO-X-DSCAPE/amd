@@ -14,9 +14,6 @@ export default defineConfig({
 		div: {
 			display: "flex",
 		},
-		button: {
-			cursor: "pointer",
-		},
 	},
 	// emitTokensOnly: true,
 	conditions: {
