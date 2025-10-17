@@ -1,5 +1,5 @@
 import { Heading, HeadingLevel } from "@ariakit/react";
-import { Stack } from "@packages/ui/abstract/stack";
+import { Stack } from "@packages/ui";
 
 interface FooterAdressProps {
   title: string;

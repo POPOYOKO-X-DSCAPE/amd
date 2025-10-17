@@ -7,6 +7,7 @@ import {
   useDisclosureStore,
 } from "@ariakit/react";
 import { Button, Header, Stack } from "@packages/ui";
+import MenuOption from "../menu-option";
 import { css } from "@styles";
 import { useEffect, useRef, useState } from "react";
 import ArchitectureInteriorDesigner from "../../assets/Architecture Interior Designer.svg";
@@ -23,6 +24,8 @@ const styles = {
 
 export const AMDHeader = () => {
   const disclosure = useDisclosureStore();
+  const [language, setLanguage] = useState("en");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     console.log(disclosure);
@@ -48,22 +51,24 @@ export const AMDHeader = () => {
       </Stack>
       <DisclosureContent store={disclosure}>
         <Stack grow className={styles.menu}>
-          <Stack direction="row">
-            <AriaButton>
-              En <img src={assets.English} alt="" />
-            </AriaButton>
-            <AriaButton>
-              Fr <img src={assets.French} alt="" />
-            </AriaButton>
-          </Stack>
-          <Stack direction="row">
-            <AriaButton>
-              Dark <img src={assets.Dark} alt="" />
-            </AriaButton>
-            <AriaButton>
-              Light <img src={assets.Light} alt="" />
-            </AriaButton>
-          </Stack>
+          <MenuOption
+            type="language"
+            selectedValue={language}
+            onSelect={setLanguage}
+            options={[
+              { label: "En", value: "en", icon: assets.English },
+              { label: "Fr", value: "fr", icon: assets.French },
+            ]}
+          />
+          <MenuOption
+            type="mode"
+            selectedValue={theme}
+            onSelect={setTheme}
+            options={[
+              { label: "Dark", value: "dark", icon: assets.Dark },
+              { label: "Light", value: "light", icon: assets.Light },
+            ]}
+          />
           <Stack>
             <Button>Home</Button>
             <Button>Projects</Button>
