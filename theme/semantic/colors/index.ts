@@ -19,6 +19,9 @@ export const colors = defineSemanticTokens.colors({
 			initial: brand.colors.white,
 			hover: brand.colors.white,
 		},
+		gentle: {
+			initial: brand.colors.darkGrey,
+		},
 	},
 	fg: {
 		default: {
@@ -36,6 +39,9 @@ export const colors = defineSemanticTokens.colors({
 		actionHigh: {
 			initial: brand.colors.black,
 			hover: brand.colors.black,
+		},
+		gentle: {
+			initial: brand.colors.lightGrey,
 		},
 	},
 });

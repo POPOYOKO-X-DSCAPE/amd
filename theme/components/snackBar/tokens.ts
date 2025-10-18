@@ -1,7 +1,7 @@
 import { defineTokens } from "@pandacss/dev";
+import { brand } from "../../brand";
 import { bg, fg } from "../../semantic/colors";
 import { radius } from "../../semantic/radii";
-import { margin, padding } from "../../semantic/spacings";
 
 export const colors = defineTokens.colors({
 	bg: bg.elevated.initial,
@@ -9,8 +9,8 @@ export const colors = defineTokens.colors({
 });
 
 export const spacing = defineTokens.spacing({
-	padding: padding.l,
-	margin: margin.xxl,
+	padding: brand.spacings.l,
+	margin: brand.spacings.x2l,
 });
 
 export const radii = defineTokens.radii({

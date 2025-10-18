@@ -1,6 +1,6 @@
 import { defineTokens } from "@pandacss/dev";
+import { brand } from "../../brand";
 import { bg, fg } from "../../semantic/colors";
-import { padding } from "../../semantic/spacings";
 
 export const sidebar = defineTokens({
 	colors: {
@@ -19,11 +19,11 @@ export const sidebar = defineTokens({
 	},
 	spacing: {
 		element: {
-			padding: { initial: padding.xs },
-			paddingX: { intial: padding.m },
+			padding: { initial: brand.spacings.m },
+			paddingX: { intial: brand.spacings.m },
 		},
 		groupChildren: {
-			paddingLeft: { initial: padding.xxl },
+			paddingLeft: { initial: brand.spacings.l },
 		},
 	},
 });

@@ -1,6 +1,6 @@
 import { defineTokens } from "@pandacss/dev";
+import { brand } from "../../brand";
 import { bg, fg } from "../../semantic/colors";
-import { padding } from "../../semantic/spacings";
 
 export const colors = defineTokens.colors({
 	bg: bg.elevated.initial,
@@ -8,7 +8,7 @@ export const colors = defineTokens.colors({
 });
 
 export const spacing = defineTokens.spacing({
-	padding: padding.none,
+	padding: brand.spacings.m,
 });
 
 export const documentViewer = defineTokens({
