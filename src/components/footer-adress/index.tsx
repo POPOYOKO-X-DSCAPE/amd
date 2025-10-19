@@ -1,4 +1,3 @@
-import { Heading, HeadingLevel } from "@ariakit/react";
 import { Stack } from "@packages/ui";
 
 interface FooterAdressProps {
@@ -8,10 +7,8 @@ interface FooterAdressProps {
 
 const FooterAdress: React.FC<FooterAdressProps> = ({ title, content }) => (
   <Stack>
-    <HeadingLevel>
-      <Heading>{title}</Heading>
-      <span className="footer-address-content">{content}</span>
-    </HeadingLevel>
+    <span className="footer-address-title">{title}</span>
+    <span className="footer-address-content">{content}</span>
   </Stack>
 );
 
