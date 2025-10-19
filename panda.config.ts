@@ -1,46 +1,54 @@
 import { defineConfig } from "@pandacss/dev";
 import { theme } from "./theme";
+import { animationStyles } from "./theme/animation/animation-styles";
+import { keyframes } from "./theme/animation/keyframes";
 
 export default defineConfig({
-	globalCss: {
-		"#root": {
-			height: "100vh",
-		},
-		"html, body": {
-			height: "100vh",
-			margin: 0,
-			padding: 0,
-		},
-		div: {
-			display: "flex",
-		},
-		button: {
-			cursor: "pointer",
-		},
-	},
-	// emitTokensOnly: true,
-	conditions: {
-		light: "[data-color-mode=light] &",
-		dark: "[data-color-mode=dark] &",
-		pinkTheme: "[data-theme=pink] &",
-		blueTheme: "[data-theme=blue] &",
-	},
+  globalCss: {
+    "#root": {
+      height: "100vh",
+    },
+    "html, body": {
+      height: "100vh",
+      margin: 0,
+      padding: 0,
+    },
+    div: {
+      display: "flex",
+    },
+    button: {
+      cursor: "pointer",
+    },
+  },
+  // emitTokensOnly: true,
+  conditions: {
+    light: "[data-color-mode=light] &",
+    dark: "[data-color-mode=dark] &",
+    pinkTheme: "[data-theme=pink] &",
+    blueTheme: "[data-theme=blue] &",
+  },
 
-	// Whether to use css reset
-	preflight: true,
-	outExtension: "js",
-	// watch: true,
+  // Whether to use css reset
+  preflight: true,
+  outExtension: "js",
+  // watch: true,
 
-	// Where to look for your css declarations
-	include: [
-		"./packages/**/*.{js,jsx,ts,tsx}",
-		"./projects/**/*.{js,jsx,ts,tsx}",
-	],
+  // Where to look for your css declarations
+  include: [
+    "./packages/**/*.{js,jsx,ts,tsx}",
+    "./projects/**/*.{js,jsx,ts,tsx}",
+  ],
 
-	presets: [],
+  presets: [],
 
-	// Useful for theme customization
-	theme,
-	// The output directory for your css system
-	outdir: "styled-system",
+  // Useful for theme customization
+  theme: {
+    extend: {
+      keyframes,
+      animationStyles,
+      ...theme,
+    },
+  },
+  // The output directory for your css system
+  outdir: "styled-system",
 });
