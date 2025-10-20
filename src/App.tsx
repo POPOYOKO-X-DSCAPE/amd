@@ -8,6 +8,7 @@ import SectionTitle from "./components/section-title";
 import InputText from "./components/input-text";
 
 import { assets } from "./assets/assets";
+import Footer from "./components/footer";
 
 const AMD = () => {
   const [name, setName] = useState("");
@@ -26,6 +27,7 @@ const AMD = () => {
         value={name}
         onChange={setName}
       />
+      <Footer />
     </App>
   );
 };

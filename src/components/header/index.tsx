@@ -10,7 +10,6 @@ import { Button, Header, Stack } from "@packages/ui";
 import MenuOption from "../menu-option";
 import { css } from "@styles";
 import { useEffect, useRef, useState } from "react";
-import ArchitectureInteriorDesigner from "../../assets/Architecture Interior Designer.svg";
 import { assets } from "../../assets/assets";
 
 const styles = {
@@ -36,7 +35,7 @@ export const AMDHeader = () => {
       <Stack direction="row">
         <Stack grow>
           <Stack className={styles.logo}>
-            <img src={ArchitectureInteriorDesigner} alt="" />
+            <img src={assets.ArchitectureInteriorDesigner} alt="" />
           </Stack>
         </Stack>
         <Disclosure
