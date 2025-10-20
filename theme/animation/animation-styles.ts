@@ -4,7 +4,7 @@ export const animationStyles = defineAnimationStyles({
   "ticker-scroll": {
     value: {
       animationName: "ticker-scroll",
-      animationDuration: "10s",
+      animationDuration: "300s",
       animationTimingFunction: "linear",
       animationIterationCount: "infinite",
     },

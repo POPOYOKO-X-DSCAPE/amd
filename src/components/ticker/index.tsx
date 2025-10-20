@@ -6,6 +6,7 @@ const styles = {
   tickerContent: css({
     whiteSpace: "nowrap",
     animationStyle: "ticker-scroll",
+    gap: "12px",
   }),
   architecture: css({
     fontFamily: "Helvetica LT Pro, sans-serif",
@@ -58,10 +59,13 @@ export const Ticker = () => {
     { label: "Engineering", style: styles.engineering },
   ];
 
+  const repeatCount = 100;
+  const repeatedWords = Array.from({ length: repeatCount }, () => words).flat();
+
   return (
     <Stack className={styles.container}>
       <Stack direction="row" className={styles.tickerContent}>
-        {words.map((w) => (
+        {repeatedWords.map((w) => (
           <Stack key={w.label} className={w.style}>
             {w.label}
           </Stack>
