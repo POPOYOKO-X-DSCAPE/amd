@@ -1,19 +1,17 @@
-import { App } from "@packages/ui";
-import { useState } from "react";
+import { App, Button } from "@packages/ui";
 
 import { AMDHeader } from "./components/header";
 import { Ticker } from "./components/ticker";
 import ListElement from "./components/list-element";
 import SectionTitle from "./components/section-title";
-import InputText from "./components/input-text";
 
 import { assets } from "./assets/assets";
 import Footer from "./components/footer";
 import Section from "./components/section";
+import { ContactForm } from "./components/contact-form";
+import { ContactField } from "./components/contact-field";
 
 const AMD = () => {
-  const [name, setName] = useState("");
-
   return (
     <App>
       <AMDHeader />
@@ -22,12 +20,6 @@ const AMD = () => {
         <img src={assets.SpeechBalloon} alt="Speech Balloon" />
       </ListElement>
       <SectionTitle title="Title" number="01" />
-      <InputText
-        label="Nom"
-        placeholder="Entrez votre nom"
-        value={name}
-        onChange={setName}
-      />
       <Section title="L’approche Amd" number={0}>
         <span>
           Créative et ancrée dans l’excellence, AMD interior designer est une
@@ -38,6 +30,28 @@ const AMD = () => {
           l’engagement et la passion de François Damidot.
         </span>
       </Section>
+
+      <ContactForm
+        onSubmit={(formData) => {
+          console.log("data:", formData);
+        }}
+      >
+        <ContactField
+          name="email"
+          label="Your email adress"
+          placeholder="satochi@nakamoto.com"
+        />
+
+        <ContactField
+          name="message"
+          label="Your message"
+          type="textarea"
+          placeholder="I need your help for my next project..."
+        />
+        <Button level="primary" type="submit">
+          Envoyer
+        </Button>
+      </ContactForm>
       <Footer />
     </App>
   );

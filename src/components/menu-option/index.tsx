@@ -13,7 +13,12 @@ interface MenuOptionProps {
 }
 
 const styles = {
-  container: css({}),
+  container: css({
+    display: "flex",
+    justifyContent: "flex-end",
+    backgroundColor: "s.bg.default.initial",
+    gap: "16px",
+  }),
 };
 
 export const MenuOption = ({
