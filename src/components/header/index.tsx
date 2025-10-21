@@ -6,16 +6,13 @@ import {
   useDisclosureContext,
   useDisclosureStore,
 } from "@ariakit/react";
-import { Button, Header, Stack } from "@packages/ui";
-import MenuOption from "../menu-option";
+import { Header, Stack } from "@packages/ui";
 import { css } from "@styles";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
+import HeaderMenu from "../header-menu";
 
 const styles = {
-  menu: css({
-    padding: "s.padding.m",
-  }),
   logo: css({
     maxWidth: "242px",
   }),
@@ -49,33 +46,12 @@ export const AMDHeader = () => {
         </Disclosure>
       </Stack>
       <DisclosureContent store={disclosure}>
-        <Stack grow className={styles.menu}>
-          <MenuOption
-            type="language"
-            selectedValue={language}
-            onSelect={setLanguage}
-            options={[
-              { label: "En", value: "en", icon: assets.English },
-              { label: "Fr", value: "fr", icon: assets.French },
-            ]}
-          />
-          <MenuOption
-            type="mode"
-            selectedValue={theme}
-            onSelect={setTheme}
-            options={[
-              { label: "Dark", value: "dark", icon: assets.Dark },
-              { label: "Light", value: "light", icon: assets.Light },
-            ]}
-          />
-          <Stack>
-            <Button>Home</Button>
-            <Button>Projects</Button>
-            <Button>
-              Contact <img src={assets.SpeechBalloon} alt="" />
-            </Button>
-          </Stack>
-        </Stack>
+        <HeaderMenu
+          language={language}
+          theme={theme}
+          onLanguageChange={setLanguage}
+          onThemeChange={setTheme}
+        />
       </DisclosureContent>
     </Header>
   );

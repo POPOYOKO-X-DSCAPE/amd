@@ -17,6 +17,7 @@ const styles = {
     display: "flex",
     justifyContent: "flex-end",
     backgroundColor: "s.bg.default.initial",
+    padding: "8px 4px",
     gap: "16px",
   }),
 };
