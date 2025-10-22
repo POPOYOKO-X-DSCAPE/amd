@@ -9,6 +9,8 @@ const styles = {
   menu: css({
     padding: "24px",
     height: "804px",
+    borderBottom: "solid 1px",
+    borderColor: "s.bg.default.initial",
   }),
   menuitems: css({
     flex: "1 0 0",
