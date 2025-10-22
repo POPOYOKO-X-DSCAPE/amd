@@ -12,6 +12,11 @@ import French from "./French.svg";
 import Light from "./Light.svg";
 import SpeechBalloon from "./SpeechBalloon.svg";
 
+import chaletExterieur from "./chaletExterieur.svg";
+import chaletCine from "./chaletCine.svg";
+import chaletPiscine from "./chaletPiscine.svg";
+import chaletSalon from "./chaletSalon.svg";
+
 export const assets = {
   AMD,
   ArchitectureInteriorDesigner,
@@ -26,4 +31,8 @@ export const assets = {
   Light,
   SpeechBalloon,
   Close,
+  chaletExterieur,
+  chaletCine,
+  chaletPiscine,
+  chaletSalon,
 };

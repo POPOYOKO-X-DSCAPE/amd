@@ -49,7 +49,7 @@ const styles = {
     letterSpacing: "0%",
   }),
 };
-
+("ou en gros, je peux mettre des enfants, des images quoi, et j'aimerais que le caroussel change d'image automatiquement toutes les 3 seconde avec un petit effet smooth quoi, j'aimerais que ce soit très clean");
 export const Ticker = () => {
   const words = [
     { label: "Architecture", style: styles.architecture },

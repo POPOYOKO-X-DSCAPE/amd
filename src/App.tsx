@@ -10,8 +10,15 @@ import Footer from "./components/footer";
 import Section from "./components/section";
 import { ContactForm } from "./components/contact-form";
 import { ContactField } from "./components/contact-field";
+import Caroussel from "./components/caroussel";
 
 const AMD = () => {
+  const images = [
+    assets.chaletCine,
+    assets.chaletExterieur,
+    assets.chaletPiscine,
+  ];
+
   return (
     <App>
       <AMDHeader />
@@ -30,7 +37,11 @@ const AMD = () => {
           l’engagement et la passion de François Damidot.
         </span>
       </Section>
-
+      <Caroussel>
+        {images.map((image, index) => (
+          <img key={index} src={image} alt={image} />
+        ))}
+      </Caroussel>
       <ContactForm>
         <ContactField
           name="email"
@@ -45,7 +56,7 @@ const AMD = () => {
           placeholder="I need your help for my next project..."
         />
         <Button level="primary" type="submit">
-          Envoyer
+          Send
         </Button>
       </ContactForm>
       <Footer />

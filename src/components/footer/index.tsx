@@ -21,6 +21,9 @@ const styles = {
     alignSelf: "stretch",
   }),
   logo: css({}),
+  button: css({
+    gap: "8px",
+  }),
 };
 
 export const Footer = () => {
@@ -29,13 +32,17 @@ export const Footer = () => {
       <Stack direction="column" className={styles.navigation}>
         <Separator />
         <Button level="secondary">
-          Contact
-          <img src={assets.ArrowRight} alt="ArrowRight" />
+          <Stack direction="row" alignItems="center" className={styles.button}>
+            Contact
+            <img src={assets.ArrowRight} alt="ArrowRight" />
+          </Stack>
         </Button>
         <Separator />
         <Button level="secondary">
-          Instagram
-          <img src={assets.ArrowTopRight} alt="ArrowTopRight" />
+          <Stack direction="row" alignItems="center" className={styles.button}>
+            Instagram
+            <img src={assets.ArrowTopRight} alt="ArrowTopRight" />
+          </Stack>
         </Button>
       </Stack>
 

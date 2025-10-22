@@ -13,6 +13,9 @@ import { assets } from "../../assets/assets";
 import HeaderMenu from "../header-menu";
 
 const styles = {
+  header: css({
+    maxWidth: "242px",
+  }),
   logo: css({
     maxWidth: "242px",
   }),
