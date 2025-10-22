@@ -1,5 +1,4 @@
 import { Form, FormProvider, useFormStore } from "@ariakit/react";
-import { Stack } from "@packages/ui";
 import { css } from "@styles";
 
 interface ContactFormProps {
@@ -31,10 +30,31 @@ export const ContactForm = ({
     },
   });
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const values = form.getState().values;
-    onSubmit?.(values);
+
+    try {
+      const response = await fetch(
+        "https://www.form-to-email.com/api/s/YU96Ghm9aVa8",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: values.name,
+            email: values.email,
+            message: values.message,
+          }),
+        }
+      );
+
+      if (response.ok) {
+        form.reset();
+      } else {
+      }
+    } catch (error) {}
   };
 
   return (

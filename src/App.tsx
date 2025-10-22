@@ -31,11 +31,7 @@ const AMD = () => {
         </span>
       </Section>
 
-      <ContactForm
-        onSubmit={(formData) => {
-          console.log("data:", formData);
-        }}
-      >
+      <ContactForm>
         <ContactField
           name="email"
           label="Your email adress"
