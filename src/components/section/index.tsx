@@ -18,10 +18,7 @@ const styles = {
     alignSelf: "stretch",
   }),
   title: css({
-    fontFamily: "Didot LT Pro",
-    fontWeight: 400,
-    fontSize: "60px",
-    lineHeight: "52px",
+    textStyle: "title",
   }),
   children: css({
     alignSelf: "stretch",
@@ -31,7 +28,7 @@ const styles = {
 export const Section = ({ title, number, children }: SectionProps) => {
   return (
     <Stack className={styles.container}>
-      <SectionTitle title={title} number={number}></SectionTitle>
+      <SectionTitle title={title} number={number} />
       <Stack className={styles.content}>
         <span className={styles.title}>{title}</span>
         <Stack className={styles.children}>{children}</Stack>

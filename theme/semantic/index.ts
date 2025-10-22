@@ -11,6 +11,7 @@ import { fonts } from "./fonts";
 import { radii } from "./radii";
 import { sizes } from "./sizes";
 import { spacing } from "./spacings";
+import { textStyles } from "./textStyles";
 
 export const semantic = defineSemanticTokens({
 	colors: {
@@ -40,5 +41,8 @@ export const semantic = defineSemanticTokens({
 	radii: {
 		b: { ...brand.radii },
 		s: { ...radii },
+	},
+	textStyles: {
+		s: { ...textStyles },
 	},
 });

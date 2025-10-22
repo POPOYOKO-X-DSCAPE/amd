@@ -12,15 +12,10 @@ const styles = {
     gap: "4px",
   }),
   title: css({
-    fontFamily: "Helvetica LT Pro",
-    fontWeight: 700,
-    fontSize: "22px",
+    textStyle: "footer.section.title",
   }),
   content: css({
-    fontFamily: "Helvetica LT Pro",
-    fontWeight: 300,
-    fontSize: "16px",
-    letterSpacing: "0.32px",
+    textStyle: "body.xs",
   }),
 };
 

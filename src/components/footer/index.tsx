@@ -1,6 +1,6 @@
-import { css } from "@styles";
 import { Stack } from "@packages/ui";
 import { Button } from "@packages/ui";
+import { css } from "@styles";
 import FooterAdress from "../footer-adress";
 import Separator from "../separator";
 

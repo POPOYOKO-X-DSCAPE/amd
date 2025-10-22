@@ -12,27 +12,27 @@ import French from "./French.svg";
 import Light from "./Light.svg";
 import SpeechBalloon from "./SpeechBalloon.svg";
 
-import chaletExterieur from "./chaletExterieur.svg";
 import chaletCine from "./chaletCine.svg";
+import chaletExterieur from "./chaletExterieur.svg";
 import chaletPiscine from "./chaletPiscine.svg";
 import chaletSalon from "./chaletSalon.svg";
 
 export const assets = {
-  AMD,
-  ArchitectureInteriorDesigner,
-  ArrowDown,
-  ArrowLeft,
-  ArrowRight,
-  ArrowTopRight,
-  Burger,
-  English,
-  French,
-  Dark,
-  Light,
-  SpeechBalloon,
-  Close,
-  chaletExterieur,
-  chaletCine,
-  chaletPiscine,
-  chaletSalon,
+	AMD,
+	ArchitectureInteriorDesigner,
+	ArrowDown,
+	ArrowLeft,
+	ArrowRight,
+	ArrowTopRight,
+	Burger,
+	English,
+	French,
+	Dark,
+	Light,
+	SpeechBalloon,
+	Close,
+	chaletExterieur,
+	chaletCine,
+	chaletPiscine,
+	chaletSalon,
 };

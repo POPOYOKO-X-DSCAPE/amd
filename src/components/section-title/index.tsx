@@ -13,16 +13,11 @@ const styles = {
   }),
   title: css({
     flexGrow: 1,
-    fontFamily: "Helvetica LT Pro",
-    fontWeight: 700,
-    fontSize: "12px",
+    textStyle: "sectionTitle",
   }),
   number: css({
     paddingRight: "4px",
-
-    fontFamily: "Helvetica LT Pro",
-    fontWeight: 700,
-    fontSize: "38px",
+    textStyle: "sectionNumber",
   }),
 };
 
