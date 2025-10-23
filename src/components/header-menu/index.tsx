@@ -11,7 +11,7 @@ const styles = {
     padding: "24px",
     height: "804px",
     borderBottom: "solid 1px",
-    borderColor: "s.bg.default.initial",
+    borderColor: "s.fg.default.initial",
   }),
   menuitems: css({
     flex: "1 0 0",
