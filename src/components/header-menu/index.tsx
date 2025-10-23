@@ -1,6 +1,7 @@
 import { Stack } from "@packages/ui";
 import { Button } from "@packages/ui";
 import { css } from "@styles";
+import { useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
 import MenuOption from "../menu-option";
 import Separator from "../separator";
@@ -35,6 +36,7 @@ interface HeaderMenuProps {
   theme: string;
   onLanguageChange: (language: string) => void;
   onThemeChange: (theme: string) => void;
+  onCloseMenu?: () => void;
 }
 
 export const HeaderMenu = ({
@@ -42,7 +44,16 @@ export const HeaderMenu = ({
   theme,
   onLanguageChange,
   onThemeChange,
+  onCloseMenu,
 }: HeaderMenuProps) => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    if (onCloseMenu) {
+      onCloseMenu();
+    }
+  };
   return (
     <Stack grow className={styles.menu}>
       <MenuOption
@@ -68,7 +79,7 @@ export const HeaderMenu = ({
           <Separator />
         </Stack>
 
-        <Button>
+        <Button onClick={() => handleNavigation("/")}>
           <Stack
             direction="row"
             alignItems="center"
@@ -78,7 +89,7 @@ export const HeaderMenu = ({
             Home
           </Stack>
         </Button>
-        <Button>
+        <Button onClick={() => handleNavigation("/projects")}>
           <Stack
             direction="row"
             alignItems="center"
@@ -91,7 +102,7 @@ export const HeaderMenu = ({
         <Stack className={styles.menuseparator}>
           <Separator />
         </Stack>
-        <Button>
+        <Button onClick={() => handleNavigation("/contact")}>
           <Stack
             direction="row"
             alignItems="center"

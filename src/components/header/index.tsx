@@ -29,6 +29,10 @@ export const AMDHeader = () => {
   const [language, setLanguage] = useState("en");
   const [theme, setTheme] = useState("light");
 
+  const handleCloseMenu = () => {
+    disclosure.hide();
+  };
+
   return (
     <Header>
       <Stack className={styles.header}>
@@ -54,6 +58,7 @@ export const AMDHeader = () => {
             theme={theme}
             onLanguageChange={setLanguage}
             onThemeChange={setTheme}
+            onCloseMenu={handleCloseMenu}
           />
         </DisclosureContent>
       </Stack>
