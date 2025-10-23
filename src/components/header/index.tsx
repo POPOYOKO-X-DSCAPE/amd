@@ -48,6 +48,8 @@ export const AMDHeader = () => {
   const [language, setLanguage] = useState("en");
   const [theme, setTheme] = useState("light");
 
+  const isOpen = disclosure.useState("open");
+
   const handleCloseMenu = () => {
     disclosure.hide();
   };
@@ -66,8 +68,8 @@ export const AMDHeader = () => {
           </Stack>
           <Disclosure store={disclosure}>
             <img
-              src={disclosure.getState().open ? assets.Close : assets.Burger}
-              alt="Burger"
+              src={isOpen ? assets.Close : assets.Burger}
+              alt={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
             />
           </Disclosure>
         </Stack>
