@@ -5,7 +5,7 @@ import {
 } from "@ariakit/react";
 import { Header, Stack } from "@packages/ui";
 import { css } from "@styles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import HeaderMenu from "../header-menu";
 
@@ -54,6 +54,14 @@ export const AMDHeader = () => {
   const [theme, setTheme] = useState("light");
 
   const isOpen = disclosure.useState("open");
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   const handleCloseMenu = () => {
     disclosure.hide();
