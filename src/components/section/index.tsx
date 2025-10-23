@@ -12,16 +12,23 @@ const styles = {
   container: css({
     padding: "16px 0",
     gap: "24px",
+    maxWidth: "100%",
+    overflow: "hidden",
   }),
   content: css({
     gap: "24px",
     alignSelf: "stretch",
+    maxWidth: "100%",
+    wordWrap: "break-word",
   }),
   title: css({
     textStyle: "title",
+    maxWidth: "100%",
   }),
   children: css({
     alignSelf: "stretch",
+    wordWrap: "break-word",
+    overflowWrap: "break-word",
   }),
 };
 
