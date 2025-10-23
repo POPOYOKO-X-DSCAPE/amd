@@ -13,8 +13,14 @@ const styles = {
   header: css({
     display: "flex",
     padding: "16px",
-    position: "relative",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
     zIndex: 1000,
+    backgroundColor: "s.bg.default.initial",
+    width: "100%",
+    boxSizing: "border-box",
   }),
   logo: css({
     maxWidth: "242px",
@@ -24,13 +30,12 @@ const styles = {
   }),
   disclosureContent: css({
     position: "fixed",
-    top: 0,
+    top: 64,
     left: 0,
     right: 0,
     bottom: 0,
     zIndex: 1001,
     backgroundColor: "s.bg.default.initial",
-    marginTop: "80px",
     "&:not([data-enter]):not([data-leave])": {
       display: "none",
     },
