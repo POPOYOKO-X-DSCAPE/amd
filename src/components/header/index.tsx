@@ -1,9 +1,6 @@
 import {
-  Button as AriaButton,
   Disclosure,
   DisclosureContent,
-  DisclosureProvider,
-  useDisclosureContext,
   useDisclosureStore,
 } from "@ariakit/react";
 import { Header, Stack } from "@packages/ui";
@@ -14,7 +11,10 @@ import HeaderMenu from "../header-menu";
 
 const styles = {
   header: css({
+    display: "flex",
     padding: "16px",
+    position: "relative",
+    zIndex: 1000,
   }),
   logo: css({
     maxWidth: "242px",
@@ -23,6 +23,14 @@ const styles = {
     marginTop: "8px",
   }),
   disclosureContent: css({
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1001,
+    backgroundColor: "s.bg.default.initial",
+    marginTop: "80px",
     "&:not([data-enter]):not([data-leave])": {
       display: "none",
     },
@@ -45,8 +53,8 @@ export const AMDHeader = () => {
   };
 
   return (
-    <Header>
-      <Stack className={styles.header}>
+    <Stack className={styles.header}>
+      <Stack>
         <Stack direction="row" alignItems="center" className={styles.content}>
           <Stack grow>
             <Stack className={styles.logo}>
@@ -76,6 +84,6 @@ export const AMDHeader = () => {
           />
         </DisclosureContent>
       </Stack>
-    </Header>
+    </Stack>
   );
 };
