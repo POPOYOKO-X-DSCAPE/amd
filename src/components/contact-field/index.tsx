@@ -1,4 +1,4 @@
-import { FormLabel, FormInput } from "@ariakit/react";
+import { FormInput, FormLabel } from "@ariakit/react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 
@@ -24,6 +24,11 @@ const styles = {
   input: css({
     borderRadius: "b.radius.xl",
     backgroundColor: "s.bg.gentle.initial",
+    outline: "none",
+    "&:focus": {
+      outline: "none",
+      boxShadow: "none",
+    },
   }),
 };
 
