@@ -8,7 +8,7 @@ import {
 } from "@ariakit/react";
 import { Header, Stack } from "@packages/ui";
 import { css } from "@styles";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { assets } from "../../assets/assets";
 import HeaderMenu from "../header-menu";
 
@@ -29,26 +29,22 @@ export const AMDHeader = () => {
   const [language, setLanguage] = useState("en");
   const [theme, setTheme] = useState("light");
 
-  useEffect(() => {
-    console.log(disclosure);
-  }, [disclosure]);
-
   return (
     <Header>
       <Stack className={styles.header}>
         <Stack direction="row" alignItems="center" className={styles.content}>
           <Stack grow>
             <Stack className={styles.logo}>
-              <img src={assets.ArchitectureInteriorDesigner} alt="" />
+              <img
+                src={assets.ArchitectureInteriorDesigner}
+                alt="ArchitectureInteriorDesigner"
+              />
             </Stack>
           </Stack>
-          <Disclosure
-            store={disclosure}
-            onClick={() => disclosure.setOpen(!open)}
-          >
+          <Disclosure store={disclosure}>
             <img
               src={disclosure.getState().open ? assets.Close : assets.Burger}
-              alt=""
+              alt="Burger"
             />
           </Disclosure>
         </Stack>
