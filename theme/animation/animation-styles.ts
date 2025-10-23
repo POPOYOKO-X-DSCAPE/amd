@@ -9,4 +9,20 @@ export const animationStyles = defineAnimationStyles({
       animationIterationCount: "infinite",
     },
   },
+  "slide-down": {
+    value: {
+      animationName: "slide-down",
+      animationDuration: "0.3s",
+      animationTimingFunction: "ease-out",
+      animationFillMode: "forwards",
+    },
+  },
+  "slide-up": {
+    value: {
+      animationName: "slide-up",
+      animationDuration: "0.3s",
+      animationTimingFunction: "ease-in",
+      animationFillMode: "forwards",
+    },
+  },
 });

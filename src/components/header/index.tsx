@@ -22,6 +22,17 @@ const styles = {
   content: css({
     marginTop: "8px",
   }),
+  disclosureContent: css({
+    "&:not([data-enter]):not([data-leave])": {
+      display: "none",
+    },
+    "&[data-enter]": {
+      animationStyle: "slide-down",
+    },
+    "&[data-leave]": {
+      animationStyle: "slide-up",
+    },
+  }),
 };
 
 export const AMDHeader = () => {
@@ -52,7 +63,10 @@ export const AMDHeader = () => {
             />
           </Disclosure>
         </Stack>
-        <DisclosureContent store={disclosure}>
+        <DisclosureContent
+          store={disclosure}
+          className={styles.disclosureContent}
+        >
           <HeaderMenu
             language={language}
             theme={theme}
@@ -65,5 +79,3 @@ export const AMDHeader = () => {
     </Header>
   );
 };
-
-export default Header;
