@@ -40,11 +40,13 @@ const AMD = () => {
   return (
     <App>
       <AMDHeader />
-      <Caroussel>
-        {images.map((image) => (
-          <img key={image} src={image} alt={image} />
-        ))}
-      </Caroussel>
+      <Stack>
+        <Caroussel>
+          {images.map((image) => (
+            <img key={image} src={image} alt={image} />
+          ))}
+        </Caroussel>
+      </Stack>
       <Ticker />
       <Separator />
       <Section title="L’approche Amd" number={0}>

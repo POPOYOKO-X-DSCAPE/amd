@@ -6,6 +6,7 @@ const styles = {
   container: css({
     position: "relative",
     width: "100%",
+    overflow: "hidden",
   }),
   slidesContainer: css({
     display: "flex",

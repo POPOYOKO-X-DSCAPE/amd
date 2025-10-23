@@ -4,6 +4,7 @@ import { css } from "@styles";
 const styles = {
   container: css({
     minHeight: "80px",
+    overflow: "hidden",
   }),
   tickerContent: css({
     whiteSpace: "nowrap",
