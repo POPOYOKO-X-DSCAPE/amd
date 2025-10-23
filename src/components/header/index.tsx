@@ -17,7 +17,7 @@ const styles = {
     top: 0,
     left: 0,
     right: 0,
-    zIndex: 1000,
+    zIndex: 1002,
     backgroundColor: "s.bg.default.initial",
     width: "100%",
     boxSizing: "border-box",
@@ -30,12 +30,13 @@ const styles = {
   }),
   disclosureContent: css({
     position: "fixed",
-    top: 64,
+    top: 0,
     left: 0,
     right: 0,
     bottom: 0,
     zIndex: 1001,
     backgroundColor: "s.bg.default.initial",
+    paddingTop: "64px",
     "&:not([data-enter]):not([data-leave])": {
       display: "none",
     },
@@ -68,37 +69,40 @@ export const AMDHeader = () => {
   };
 
   return (
-    <Stack className={styles.header}>
-      <Stack>
-        <Stack direction="row" alignItems="center" className={styles.content}>
-          <Stack grow>
-            <Stack className={styles.logo}>
-              <img
-                src={assets.ArchitectureInteriorDesigner}
-                alt="ArchitectureInteriorDesigner"
-              />
+    <Stack>
+      <Stack className={styles.header}>
+        <Stack>
+          <Stack direction="row" alignItems="center" className={styles.content}>
+            <Stack grow>
+              <Stack className={styles.logo}>
+                <img
+                  src={assets.ArchitectureInteriorDesigner}
+                  alt="ArchitectureInteriorDesigner"
+                />
+              </Stack>
             </Stack>
+            <Disclosure store={disclosure}>
+              <img
+                src={isOpen ? assets.Close : assets.Burger}
+                alt={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              />
+            </Disclosure>
           </Stack>
-          <Disclosure store={disclosure}>
-            <img
-              src={isOpen ? assets.Close : assets.Burger}
-              alt={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
-            />
-          </Disclosure>
         </Stack>
-        <DisclosureContent
-          store={disclosure}
-          className={styles.disclosureContent}
-        >
-          <HeaderMenu
-            language={language}
-            theme={theme}
-            onLanguageChange={setLanguage}
-            onThemeChange={setTheme}
-            onCloseMenu={handleCloseMenu}
-          />
-        </DisclosureContent>
       </Stack>
+
+      <DisclosureContent
+        store={disclosure}
+        className={styles.disclosureContent}
+      >
+        <HeaderMenu
+          language={language}
+          theme={theme}
+          onLanguageChange={setLanguage}
+          onThemeChange={setTheme}
+          onCloseMenu={handleCloseMenu}
+        />
+      </DisclosureContent>
     </Stack>
   );
 };

@@ -9,7 +9,7 @@ import Separator from "../separator";
 const styles = {
   menu: css({
     padding: "24px",
-    height: "804px",
+    height: "100%",
     borderBottom: "solid 1px",
     borderColor: "s.fg.default.initial",
   }),
