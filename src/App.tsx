@@ -1,20 +1,22 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Main } from "./layouts/main";
-import { Contact } from "./pages/Contact";
-import { Home } from "./pages/Home";
-import { Projects } from "./pages/Projects";
+import { App } from "@packages/ui";
+
+import { AMDHeader } from "./components/header";
+import { Ticker } from "./components/ticker";
+import ListElement from "./components/list-element";
+import SectionTitle from "./components/section-title";
+
+import { assets } from "./assets/assets";
 
 const AMD = () => {
   return (
-    <Router>
-      <Main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </Main>
-    </Router>
+    <App>
+      <AMDHeader />
+      <Ticker />
+      <ListElement label="Hello world">
+        <img src={assets.SpeechBalloon} alt="Speech Balloon" />
+      </ListElement>
+      <SectionTitle title="Title" number="01" />
+    </App>
   );
 };
 

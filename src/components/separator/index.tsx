@@ -5,9 +5,6 @@ const styles = {
     backgroundColor: "s.fg.default.initial",
     border: "none",
     height: "1px",
-    minHeight: "1px",
-    alignItems: "stretch",
-    width: "100%",
   }),
 };
 

@@ -13,16 +13,7 @@ interface MenuOptionProps {
 }
 
 const styles = {
-  container: css({
-    display: "flex",
-    justifyContent: "flex-end",
-    backgroundColor: "s.bg.default.initial",
-    padding: "8px 4px",
-    gap: "16px",
-  }),
-  buttonOption: css({
-    gap: "4px",
-  }),
+  container: css({}),
 };
 
 export const MenuOption = ({
@@ -39,14 +30,8 @@ export const MenuOption = ({
     return (
       <Stack direction="row" className={styles.container}>
         <Button level="secondary" onClick={() => onSelect(next.value)}>
-          <Stack
-            direction="row"
-            alignItems="center"
-            className={styles.buttonOption}
-          >
-            {current.label}
-            {current.icon && <img src={current.icon} alt={current.label} />}
-          </Stack>
+          {current.label}
+          {current.icon && <img src={current.icon} alt={current.label} />}
         </Button>
       </Stack>
     );
@@ -62,14 +47,8 @@ export const MenuOption = ({
             level={isActive ? "primary" : "secondary"}
             onClick={() => onSelect(option.value)}
           >
-            <Stack
-              direction="row"
-              alignItems="center"
-              className={styles.buttonOption}
-            >
-              {option.label}
-              {option.icon && <img src={option.icon} alt={option.label} />}
-            </Stack>
+            {option.label}
+            {option.icon && <img src={option.icon} alt={option.label} />}
           </Button>
         );
       })}
