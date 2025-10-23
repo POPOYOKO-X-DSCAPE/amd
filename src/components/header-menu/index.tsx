@@ -1,8 +1,8 @@
 import { Stack } from "@packages/ui";
-import MenuOption from "../menu-option";
-import { css } from "@styles";
 import { Button } from "@packages/ui";
+import { css } from "@styles";
 import { assets } from "../../assets/assets";
+import MenuOption from "../menu-option";
 import Separator from "../separator";
 
 const styles = {
@@ -21,6 +21,12 @@ const styles = {
   menuseparator: css({
     width: "100%",
     padding: "16px 0",
+  }),
+  button: css({
+    width: "100%",
+    paddingTop: "4px",
+    gap: "10px",
+    alignSelf: "stretch",
   }),
 };
 
@@ -62,14 +68,39 @@ export const HeaderMenu = ({
           <Separator />
         </Stack>
 
-        <Button>Home</Button>
-        <Button>Projects</Button>
+        <Button>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+            className={styles.button}
+          >
+            Home
+          </Stack>
+        </Button>
+        <Button>
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+            className={styles.button}
+          >
+            Projects
+          </Stack>
+        </Button>
         <Stack className={styles.menuseparator}>
           <Separator />
         </Stack>
         <Button>
-          <img src={assets.SpeechBalloon} alt="SpeechBalloon" />
-          Contact
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="center"
+            className={styles.button}
+          >
+            <img src={assets.SpeechBalloon} alt="SpeechBalloon" />
+            Contact
+          </Stack>
         </Button>
       </Stack>
     </Stack>

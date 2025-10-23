@@ -14,10 +14,13 @@ import HeaderMenu from "../header-menu";
 
 const styles = {
   header: css({
-    maxWidth: "242px",
+    padding: "16px",
   }),
   logo: css({
     maxWidth: "242px",
+  }),
+  content: css({
+    marginTop: "8px",
   }),
 };
 
@@ -32,30 +35,32 @@ export const AMDHeader = () => {
 
   return (
     <Header>
-      <Stack direction="row">
-        <Stack grow>
-          <Stack className={styles.logo}>
-            <img src={assets.ArchitectureInteriorDesigner} alt="" />
+      <Stack className={styles.header}>
+        <Stack direction="row" alignItems="center" className={styles.content}>
+          <Stack grow>
+            <Stack className={styles.logo}>
+              <img src={assets.ArchitectureInteriorDesigner} alt="" />
+            </Stack>
           </Stack>
+          <Disclosure
+            store={disclosure}
+            onClick={() => disclosure.setOpen(!open)}
+          >
+            <img
+              src={disclosure.getState().open ? assets.Close : assets.Burger}
+              alt=""
+            />
+          </Disclosure>
         </Stack>
-        <Disclosure
-          store={disclosure}
-          onClick={() => disclosure.setOpen(!open)}
-        >
-          <img
-            src={disclosure.getState().open ? assets.Close : assets.Burger}
-            alt=""
+        <DisclosureContent store={disclosure}>
+          <HeaderMenu
+            language={language}
+            theme={theme}
+            onLanguageChange={setLanguage}
+            onThemeChange={setTheme}
           />
-        </Disclosure>
+        </DisclosureContent>
       </Stack>
-      <DisclosureContent store={disclosure}>
-        <HeaderMenu
-          language={language}
-          theme={theme}
-          onLanguageChange={setLanguage}
-          onThemeChange={setTheme}
-        />
-      </DisclosureContent>
     </Header>
   );
 };

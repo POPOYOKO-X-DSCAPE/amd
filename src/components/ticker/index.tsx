@@ -1,8 +1,10 @@
-import { css } from "@styles";
 import { Stack } from "@packages/ui";
+import { css } from "@styles";
 
 const styles = {
-  container: css({ overflow: "hidden" }),
+  container: css({
+    minHeight: "80px",
+  }),
   tickerContent: css({
     whiteSpace: "nowrap",
     animationStyle: "ticker-scroll",
@@ -49,7 +51,7 @@ const styles = {
     letterSpacing: "0%",
   }),
 };
-("ou en gros, je peux mettre des enfants, des images quoi, et j'aimerais que le caroussel change d'image automatiquement toutes les 3 seconde avec un petit effet smooth quoi, j'aimerais que ce soit très clean");
+
 export const Ticker = () => {
   const words = [
     { label: "Architecture", style: styles.architecture },
@@ -63,7 +65,7 @@ export const Ticker = () => {
   const repeatedWords = Array.from({ length: repeatCount }, () => words).flat();
 
   return (
-    <Stack className={styles.container}>
+    <Stack justifyContent="center" className={styles.container}>
       <Stack direction="row" className={styles.tickerContent}>
         {repeatedWords.map((w) => (
           <Stack key={w.label} className={w.style}>
