@@ -13,15 +13,21 @@ const styles = {
   }),
   title: css({
     flexGrow: 1,
+    textStyle: "sectionTitle",
   }),
-  number: css({}),
+  number: css({
+    paddingRight: "4px",
+    textStyle: "sectionNumber",
+  }),
 };
 
 export const SectionTitle = ({ title, number }: SectionTitleProps) => {
+  const formattedNumber = String(number).padStart(2, "0");
+
   return (
     <Stack direction="row" className={styles.container}>
       <span className={styles.title}>{title}</span>
-      <span className={styles.number}>_{number}</span>
+      <span className={styles.number}>_{formattedNumber}</span>
     </Stack>
   );
 };
