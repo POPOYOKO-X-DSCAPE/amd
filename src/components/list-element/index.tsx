@@ -7,14 +7,17 @@ interface ListElementProps {
 }
 
 const styles = {
-  container: css({}),
+  container: css({
+    justifyContent: "end",
+    paddingTop: "4px",
+  }),
 };
 
 export const ListElement = ({ label, children }: ListElementProps) => {
   return (
     <Stack direction="row" className={styles.container}>
       {children && <span>{children}</span>}
-      <span>{label}</span>
+      <Stack>{label}</Stack>
     </Stack>
   );
 };

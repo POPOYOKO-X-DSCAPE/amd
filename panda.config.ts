@@ -1,5 +1,9 @@
 import { defineConfig } from "@pandacss/dev";
+
 import { theme } from "./theme";
+import { animationStyles } from "./theme/animation/animation-styles";
+import { keyframes } from "./theme/animation/keyframes";
+import { textStyles } from "./theme/semantic/textStyles";
 
 export default defineConfig({
 	globalCss: {
@@ -16,6 +20,26 @@ export default defineConfig({
 		},
 		button: {
 			cursor: "pointer",
+		},
+	},
+	globalFontface: {
+		HelveticaProBold: {
+			src: "url(../projects/amd/src/assets/fonts/HelveticaProBold/font.woff2)",
+		},
+		HelveticaProBoldOblique: {
+			src: "url(../projects/amd/src/assets/fonts/HelveticaProBoldOblique/font.woff2)",
+		},
+		HelveticaProLight: {
+			src: "url(../projects/amd/src/assets/fonts/HelveticaProLight/font.woff2)",
+		},
+		HelveticaProLightOblique: {
+			src: "url(../projects/amd/src/assets/fonts/HelveticaProLightOblique/font.woff2)",
+		},
+		LinotypeDidotProItalic: {
+			src: "url(../projects/amd/src/assets/fonts/LinotypeDidotProItalic/font.woff2)",
+		},
+		LinotypeDidotProRoman: {
+			src: "url(../projects/amd/src/assets/fonts/LinotypeDidotProRoman/font.woff2)",
 		},
 	},
 	// emitTokensOnly: true,
@@ -40,7 +64,14 @@ export default defineConfig({
 	presets: [],
 
 	// Useful for theme customization
-	theme,
+	theme: {
+		extend: {
+			textStyles,
+			keyframes,
+			animationStyles,
+			...theme,
+		},
+	},
 	// The output directory for your css system
 	outdir: "styled-system",
 });

@@ -1,9 +1,16 @@
-import { css } from "@styles";
 import { Stack } from "@packages/ui";
-import "./index.css";
+import { css } from "@styles";
 
 const styles = {
-  container: css({}),
+  container: css({
+    minHeight: "80px",
+    overflow: "hidden",
+  }),
+  tickerContent: css({
+    whiteSpace: "nowrap",
+    animationStyle: "ticker-scroll",
+    gap: "12px",
+  }),
   architecture: css({
     fontFamily: "Helvetica LT Pro, sans-serif",
     fontWeight: 700,
@@ -55,17 +62,18 @@ export const Ticker = () => {
     { label: "Engineering", style: styles.engineering },
   ];
 
+  const repeatCount = 100;
+  const repeatedWords = Array.from({ length: repeatCount }, () => words).flat();
+
   return (
-    <Stack className={styles.container}>
-      <div className="ticker_content">
-        <Stack direction="row">
-          {words.map((w) => (
-            <Stack key={w.label} className={w.style}>
-              {w.label}
-            </Stack>
-          ))}
-        </Stack>
-      </div>
+    <Stack justifyContent="center" className={styles.container}>
+      <Stack direction="row" className={styles.tickerContent}>
+        {repeatedWords.map((w) => (
+          <Stack key={w.label} className={w.style}>
+            {w.label}
+          </Stack>
+        ))}
+      </Stack>
     </Stack>
   );
 };

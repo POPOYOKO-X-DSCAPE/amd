@@ -1,24 +1,51 @@
 import {
-  Button as AriaButton,
   Disclosure,
   DisclosureContent,
-  DisclosureProvider,
-  useDisclosureContext,
   useDisclosureStore,
 } from "@ariakit/react";
-import { Button, Header, Stack } from "@packages/ui";
-import MenuOption from "../menu-option";
+import { Header, Stack } from "@packages/ui";
 import { css } from "@styles";
-import { useEffect, useRef, useState } from "react";
-import ArchitectureInteriorDesigner from "../../assets/Architecture Interior Designer.svg";
+import { useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
+import HeaderMenu from "../header-menu";
 
 const styles = {
-  menu: css({
-    padding: "s.padding.m",
+  header: css({
+    display: "flex",
+    padding: "16px",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1002,
+    backgroundColor: "s.bg.default.initial",
+    width: "100%",
+    boxSizing: "border-box",
   }),
   logo: css({
     maxWidth: "242px",
+  }),
+  content: css({
+    marginTop: "8px",
+  }),
+  disclosureContent: css({
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1001,
+    backgroundColor: "s.bg.default.initial",
+    paddingTop: "64px",
+    "&:not([data-enter]):not([data-leave])": {
+      display: "none",
+    },
+    "&[data-enter]": {
+      animationStyle: "slide-down",
+    },
+    "&[data-leave]": {
+      animationStyle: "slide-up",
+    },
   }),
 };
 
@@ -27,59 +54,55 @@ export const AMDHeader = () => {
   const [language, setLanguage] = useState("en");
   const [theme, setTheme] = useState("light");
 
+  const isOpen = disclosure.useState("open");
+
   useEffect(() => {
-    console.log(disclosure);
-  }, [disclosure]);
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
+
+  const handleCloseMenu = () => {
+    disclosure.hide();
+  };
 
   return (
-    <Header>
-      <Stack direction="row">
-        <Stack grow>
-          <Stack className={styles.logo}>
-            <img src={ArchitectureInteriorDesigner} alt="" />
+    <Stack>
+      <Stack className={styles.header}>
+        <Stack>
+          <Stack direction="row" alignItems="center" className={styles.content}>
+            <Stack grow>
+              <Stack className={styles.logo}>
+                <img
+                  src={assets.ArchitectureInteriorDesigner}
+                  alt="ArchitectureInteriorDesigner"
+                />
+              </Stack>
+            </Stack>
+            <Disclosure store={disclosure}>
+              <img
+                src={isOpen ? assets.Close : assets.Burger}
+                alt={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              />
+            </Disclosure>
           </Stack>
         </Stack>
-        <Disclosure
-          store={disclosure}
-          onClick={() => disclosure.setOpen(!open)}
-        >
-          <img
-            src={disclosure.getState().open ? assets.Close : assets.Burger}
-            alt=""
-          />
-        </Disclosure>
       </Stack>
-      <DisclosureContent store={disclosure}>
-        <Stack grow className={styles.menu}>
-          <MenuOption
-            type="language"
-            selectedValue={language}
-            onSelect={setLanguage}
-            options={[
-              { label: "En", value: "en", icon: assets.English },
-              { label: "Fr", value: "fr", icon: assets.French },
-            ]}
-          />
-          <MenuOption
-            type="mode"
-            selectedValue={theme}
-            onSelect={setTheme}
-            options={[
-              { label: "Dark", value: "dark", icon: assets.Dark },
-              { label: "Light", value: "light", icon: assets.Light },
-            ]}
-          />
-          <Stack>
-            <Button>Home</Button>
-            <Button>Projects</Button>
-            <Button>
-              Contact <img src={assets.SpeechBalloon} alt="" />
-            </Button>
-          </Stack>
-        </Stack>
+
+      <DisclosureContent
+        store={disclosure}
+        className={styles.disclosureContent}
+      >
+        <HeaderMenu
+          language={language}
+          theme={theme}
+          onLanguageChange={setLanguage}
+          onThemeChange={setTheme}
+          onCloseMenu={handleCloseMenu}
+        />
       </DisclosureContent>
-    </Header>
+    </Stack>
   );
 };
-
-export default Header;
