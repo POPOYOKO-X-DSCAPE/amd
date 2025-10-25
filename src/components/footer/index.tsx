@@ -1,6 +1,7 @@
 import { Stack } from "@packages/ui";
-import { Button } from "@packages/ui";
 import { css } from "@styles";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../button";
 import FooterAdress from "../footer-adress";
 import Separator from "../separator";
 
@@ -30,24 +31,25 @@ const styles = {
 };
 
 export const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <Stack className={styles.footer}>
       <Stack direction="column" className={styles.navigation}>
         <Separator />
-        <Button level="secondary">
-          <Stack direction="row" alignItems="center" className={styles.button}>
-            <span className={styles.buttonText}>Contact</span>
-
-            <img src={assets.ArrowRight} alt="ArrowRight" />
-          </Stack>
-        </Button>
+        <Button
+          level="secondary"
+          label="Contact"
+          icon={assets.ArrowRight}
+          onClick={() => navigate("/contacts")}
+        />
         <Separator />
-        <Button level="secondary">
-          <Stack direction="row" alignItems="center" className={styles.button}>
-            <span className={styles.buttonText}> Instagram</span>
-            <img src={assets.ArrowTopRight} alt="ArrowTopRight" />
-          </Stack>
-        </Button>
+        <Button
+          level="secondary"
+          label="Instagram"
+          icon={assets.ArrowTopRight}
+          onClick={() => navigate("/")}
+        />
       </Stack>
 
       <Stack direction="column" className={styles.addresses}>

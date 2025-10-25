@@ -1,8 +1,8 @@
 import { Stack } from "@packages/ui";
-import { Button } from "@packages/ui";
 import { css } from "@styles";
 import { useNavigate } from "react-router-dom";
 import { assets } from "../../assets/assets";
+import { Button } from "../button";
 import MenuOption from "../menu-option";
 import Separator from "../separator";
 
@@ -24,9 +24,7 @@ const styles = {
     padding: "16px 0",
   }),
   button: css({
-    width: "100%",
     paddingTop: "4px",
-    gap: "10px",
     alignSelf: "stretch",
   }),
 };
@@ -79,40 +77,34 @@ export const HeaderMenu = ({
           <Separator />
         </Stack>
 
-        <Button onClick={() => handleNavigation("/")}>
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-            className={styles.button}
-          >
-            Home
-          </Stack>
-        </Button>
-        <Button onClick={() => handleNavigation("/projects")}>
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-            className={styles.button}
-          >
-            Projects
-          </Stack>
-        </Button>
+        <Stack alignItems="center" className={styles.button}>
+          <Button
+            level="secondary"
+            label="Home"
+            onClick={() => navigate("/")}
+          />
+        </Stack>
+        <Stack alignItems="center" className={styles.button}>
+          <Button
+            level="secondary"
+            label="Projects"
+            onClick={() => navigate("/projects")}
+          />
+        </Stack>
+
         <Stack className={styles.menuseparator}>
           <Separator />
         </Stack>
-        <Button onClick={() => handleNavigation("/contact")}>
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-            className={styles.button}
-          >
-            <img src={assets.SpeechBalloon} alt="SpeechBalloon" />
-            Contact
-          </Stack>
-        </Button>
+
+        <Stack alignItems="center" className={styles.button}>
+          <Button
+            level="secondary"
+            label="Contact"
+            icon={assets.SpeechBalloon}
+            iconPosition="left"
+            onClick={() => navigate("/contact")}
+          />
+        </Stack>
       </Stack>
     </Stack>
   );

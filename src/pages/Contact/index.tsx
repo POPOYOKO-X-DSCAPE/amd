@@ -1,25 +1,9 @@
-import { Button, Stack } from "@packages/ui";
+import { Stack } from "@packages/ui";
 import { css } from "@styles";
-
 import { assets } from "../../assets/assets";
+import { Button } from "../../components/button";
 import { ContactField } from "../../components/contact-field";
 import { ContactForm } from "../../components/contact-form";
-
-const styles = {
-  button: css({
-    width: "100%",
-    padding: "16px",
-    gap: "16px",
-    alignSelf: "stretch",
-    border: "1px solid",
-    borderColor: "s.fg.default.initial",
-  }),
-  buttonText: css({
-    fontFamily: "Helvetica LT Pro",
-    fontWeight: 700,
-    fontSize: "24px",
-  }),
-};
 
 export const Contact = () => {
   return (
@@ -37,17 +21,8 @@ export const Contact = () => {
           type="textarea"
           placeholder="I need your help for my next project..."
         />
-        <Button level="primary" type="submit">
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="center"
-            className={styles.button}
-          >
-            <span className={styles.buttonText}>Send</span>
-            <img src={assets.SpeechBalloon} alt="SpeechBalloon" />
-          </Stack>
-        </Button>
+
+        <Button label="Send" icon={assets.SpeechBalloon} />
       </ContactForm>
     </Stack>
   );

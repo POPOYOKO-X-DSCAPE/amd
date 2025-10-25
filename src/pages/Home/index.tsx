@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
-import { Button, Stack } from "@packages/ui";
+import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import { assets } from "../../assets/assets";
 
+import { Button } from "../../components/button";
 import ListElement from "../../components/list-element";
 import Section from "../../components/section";
 import Separator from "../../components/separator";
@@ -40,20 +41,6 @@ const styles = {
     textStyle: "body.s",
     letterSpacing: "0.8px",
   }),
-  button: css({
-    width: "100%",
-    padding: "16px",
-    gap: "16px",
-    alignSelf: "stretch",
-    border: "1px solid",
-    borderColor: "s.fg.default.initial",
-  }),
-  buttonText: css({
-    textStyle: "emphasis",
-  }),
-  navigationButton: css({
-    gap: "8px",
-  }),
 };
 
 export const Home = () => {
@@ -83,17 +70,7 @@ export const Home = () => {
             <Stack alignItems="center" className={styles.textProject}>
               Un projet en tête?
             </Stack>
-            <Button level="primary" type="submit">
-              <Stack
-                direction="row"
-                alignItems="center"
-                justifyContent="center"
-                className={styles.button}
-              >
-                <span className={styles.buttonText}>Parlons-en</span>
-                <img src={assets.SpeechBalloon} alt="SpeechBalloon" />
-              </Stack>
-            </Button>
+            <Button label="Parlons-en" icon={assets.SpeechBalloon} />
           </Stack>
         </Stack>
       </Section>
@@ -113,17 +90,13 @@ export const Home = () => {
             <ListElement label="La Côte d’Or, Bernard Loiseau" />
             <ListElement label="Dagaz, Ibiza" />
           </Stack>
-          <Button level="secondary" onClick={() => navigate("/projects")}>
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="center"
-              className={styles.navigationButton}
-            >
-              <img src={assets.ArrowRight} alt="ArrowRight" />
-              <span className={styles.buttonText}>Tous les projets</span>
-            </Stack>
-          </Button>
+          <Button
+            level="secondary"
+            label="Tous les projets"
+            icon={assets.ArrowRight}
+            iconPosition="left"
+            onClick={() => navigate("/projects")}
+          />
         </Stack>
       </Section>
 
@@ -138,21 +111,13 @@ export const Home = () => {
             par l'exigence de son fondateur, qui a su s'entourer de partenaires
             choisis pour leur savoir-faire, leur rigueur et leur sens du détail.
           </Stack>
-
           <img src={assets.chaletExterieur} alt="AMD" />
-
-          <Button level="secondary">
-            <Stack
-              direction="row"
-              alignItems="center"
-              justifyContent="center"
-              className={styles.navigationButton}
-            >
-              <img src={assets.ArrowRight} alt="ArrowRight" />
-
-              <span className={styles.buttonText}>L’Agence</span>
-            </Stack>
-          </Button>
+          <Button
+            level="secondary"
+            label="L’Agence"
+            icon={assets.ArrowRight}
+            iconPosition="left"
+          />
         </Stack>
       </Section>
     </>
