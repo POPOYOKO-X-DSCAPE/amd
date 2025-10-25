@@ -81,14 +81,14 @@ export const HeaderMenu = ({
           <Button
             level="secondary"
             label="Home"
-            onClick={() => navigate("/")}
+            onClick={() => handleNavigation("/")}
           />
         </Stack>
         <Stack alignItems="center" className={styles.button}>
           <Button
             level="secondary"
             label="Projects"
-            onClick={() => navigate("/projects")}
+            onClick={() => handleNavigation("/projects")}
           />
         </Stack>
 
@@ -102,7 +102,7 @@ export const HeaderMenu = ({
             label="Contact"
             icon={assets.SpeechBalloon}
             iconPosition="left"
-            onClick={() => navigate("/contact")}
+            onClick={() => handleNavigation("/contact")}
           />
         </Stack>
       </Stack>
