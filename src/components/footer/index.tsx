@@ -41,7 +41,7 @@ export const Footer = () => {
           level="secondary"
           label="Contact"
           icon={assets.ArrowRight}
-          onClick={() => navigate("/contacts")}
+          onClick={() => navigate("/contact")}
         />
         <Separator />
         <Button
