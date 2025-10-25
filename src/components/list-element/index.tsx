@@ -11,13 +11,17 @@ const styles = {
     justifyContent: "end",
     paddingTop: "4px",
   }),
+  label: css({
+    color: "s.fg.default.initial",
+    textStyle: "emphasis",
+  }),
 };
 
 export const ListElement = ({ label, children }: ListElementProps) => {
   return (
     <Stack direction="row" className={styles.container}>
       {children && <span>{children}</span>}
-      <Stack>{label}</Stack>
+      <Stack className={styles.label}>{label}</Stack>
     </Stack>
   );
 };

@@ -24,6 +24,9 @@ const styles = {
   button: css({
     gap: "8px",
   }),
+  buttonText: css({
+    textStyle: "emphasis",
+  }),
 };
 
 export const Footer = () => {
@@ -33,14 +36,15 @@ export const Footer = () => {
         <Separator />
         <Button level="secondary">
           <Stack direction="row" alignItems="center" className={styles.button}>
-            Contact
+            <span className={styles.buttonText}>Contact</span>
+
             <img src={assets.ArrowRight} alt="ArrowRight" />
           </Stack>
         </Button>
         <Separator />
         <Button level="secondary">
           <Stack direction="row" alignItems="center" className={styles.button}>
-            Instagram
+            <span className={styles.buttonText}> Instagram</span>
             <img src={assets.ArrowTopRight} alt="ArrowTopRight" />
           </Stack>
         </Button>
