@@ -68,8 +68,8 @@ export const Ticker = () => {
   return (
     <Stack justifyContent="center" className={styles.container}>
       <Stack direction="row" className={styles.tickerContent}>
-        {repeatedWords.map((w) => (
-          <Stack key={w.label} className={w.style}>
+        {repeatedWords.map((w, i) => (
+          <Stack key={`${w.label}-${i}`} className={w.style}>
             {w.label}
           </Stack>
         ))}
