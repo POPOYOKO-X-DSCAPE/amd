@@ -10,6 +10,9 @@ import { Ticker } from "../../components/ticker";
 import { assets } from "../../assets/assets";
 
 const styles = {
+  app: css({
+    height: "100vh",
+  }),
   content: css({
     display: "flex",
     flexDirection: "column",
@@ -29,23 +32,25 @@ export const Main = ({ children }: MainProps) => {
   ];
   return (
     <App>
-      <AMDHeader />
-      <div className={styles.content}>
-        <Stack>
-          <Caroussel>
-            {images.map((image) => (
-              <img key={image} src={image} alt={image} />
-            ))}
-          </Caroussel>
-        </Stack>
+      <Stack scrollable direction="column" className={styles.app}>
+        <AMDHeader />
+        <div className={styles.content}>
+          <Stack>
+            <Caroussel>
+              {images.map((image) => (
+                <img key={image} src={image} alt={image} />
+              ))}
+            </Caroussel>
+          </Stack>
 
-        <Ticker />
+          <Ticker />
 
-        <Separator />
-        <main>{children}</main>
-      </div>
+          <Separator />
+          <main>{children}</main>
+        </div>
 
-      <Footer />
+        <Footer />
+      </Stack>
     </App>
   );
 };
