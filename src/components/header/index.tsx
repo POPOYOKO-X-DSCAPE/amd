@@ -24,6 +24,7 @@ const styles = {
   }),
   logo: css({
     maxWidth: "242px",
+    color: "#fff",
   }),
   content: css({
     marginTop: "8px",

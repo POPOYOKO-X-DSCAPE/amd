@@ -1,11 +1,11 @@
-import { defineTokens } from "@pandacss/dev";
+import { defineSemanticTokens, defineTokens } from "@pandacss/dev";
 import { bg, fg } from "../../semantic/colors";
 import { fontSizes } from "../../semantic/fontSizes";
 import { fontWeights } from "../../semantic/fontWeights";
 
-export const app = defineTokens({
+export const app = defineSemanticTokens({
 	colors: {
-		bg: bg.default.initial,
+		bg: { value: "#eaf" },
 		fg: fg.default.initial,
 	},
 	fontSizes: {

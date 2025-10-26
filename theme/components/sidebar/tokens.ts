@@ -4,16 +4,16 @@ import { bg, fg } from "../../semantic/colors";
 
 export const sidebar = defineTokens({
 	colors: {
-		bg: { initial: bg.elevated.initial, hover: bg.elevated.hover },
-		fg: { initial: fg.elevated.initial },
+		bg: { initial: { value: "#000" }, hover: { value: "#000" } },
+		fg: { initial: { value: "#fff" } },
 		element: {
 			bg: {
-				initial: bg.elevated.initial,
-				hover: bg.elevated.hover,
+				initial: { value: "#000" },
+				hover: { value: "#000" },
 			},
 			fg: {
-				initial: fg.elevated.initial,
-				hover: fg.elevated.hover,
+				initial: { value: "#fff" },
+				hover: { value: "#fff" },
 			},
 		},
 	},

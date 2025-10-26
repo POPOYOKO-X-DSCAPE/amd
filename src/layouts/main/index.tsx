@@ -12,6 +12,8 @@ import { assets } from "../../assets/assets";
 const styles = {
   app: css({
     height: "100vh",
+    backgroundColor: "s.bg.default.initial",
+    color: "s.fg.default.initial",
   }),
   content: css({
     display: "flex",
@@ -48,7 +50,7 @@ export const Main = ({ children }: MainProps) => {
           <Separator />
           <main>{children}</main>
         </div>
-
+        a
         <Footer />
       </Stack>
     </App>

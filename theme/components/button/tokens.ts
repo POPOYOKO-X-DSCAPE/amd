@@ -12,13 +12,13 @@ export const radii = defineTokens.radii({
 });
 
 const primaryColors = defineTokens.colors({
-	bg: { initial: bg.actionHigh.initial, hover: bg.actionHigh.hover },
-	fg: { initial: fg.actionHigh.initial, hover: fg.actionHigh.hover },
+	bg: { initial: { value: "#000" }, hover: { value: "#000" } },
+	fg: { initial: { value: "#fff" }, hover: { value: "#fff" } },
 });
 
 const secondaryColors = defineTokens.colors({
-	bg: { initial: bg.actionLow.initial, hover: bg.actionLow.hover },
-	fg: { initial: fg.actionLow.initial, hover: fg.actionLow.hover },
+	bg: { initial: { value: "#000" }, hover: { value: "#000" } },
+	fg: { initial: { value: "#fff" }, hover: { value: "#fff" } },
 });
 
 export const buttonPrimary = defineTokens({

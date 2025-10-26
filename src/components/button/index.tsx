@@ -9,6 +9,7 @@ const styles = {
     alignSelf: "stretch",
     border: "1px solid",
     borderColor: "s.fg.default.initial",
+    color: "s.fg.default.initial",
   }),
   secondary: css({
     gap: "8px",
@@ -20,6 +21,7 @@ const styles = {
     alignItems: "center",
   }),
   icon: css({
+    color: "s.fg.default.initial",
     width: "32px",
     height: "32px",
   }),

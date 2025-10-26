@@ -3,9 +3,11 @@ import { defineConfig } from "@pandacss/dev";
 import { theme } from "./theme";
 import { animationStyles } from "./theme/animation/animation-styles";
 import { keyframes } from "./theme/animation/keyframes";
+import { semantic } from "./theme/semantic";
 import { textStyles } from "./theme/semantic/textStyles";
 
 export default defineConfig({
+	jsxFramework: "react",
 	globalCss: {
 		"#root": {
 			height: "100vh",
@@ -46,8 +48,8 @@ export default defineConfig({
 	conditions: {
 		light: "[data-color-mode=light] &",
 		dark: "[data-color-mode=dark] &",
-		pinkTheme: "[data-theme=pink] &",
-		blueTheme: "[data-theme=blue] &",
+		mobile: "@media (max-width: 500px)",
+		desktop: "@media (min-width: 500px)",
 	},
 
 	// Whether to use css reset
@@ -69,7 +71,8 @@ export default defineConfig({
 			textStyles,
 			keyframes,
 			animationStyles,
-			...theme,
+			semanticTokens: semantic,
+			// ...theme,
 		},
 	},
 	// The output directory for your css system

@@ -21,7 +21,11 @@ const styles = {
     gap: "16px",
     alignSelf: "stretch",
   }),
-  logo: css({}),
+  logo: css({
+    "&svg": {
+      color: "white",
+    },
+  }),
   button: css({
     gap: "8px",
   }),

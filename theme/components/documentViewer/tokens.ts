@@ -3,8 +3,8 @@ import { brand } from "../../brand";
 import { bg, fg } from "../../semantic/colors";
 
 export const colors = defineTokens.colors({
-	bg: bg.elevated.initial,
-	fg: fg.elevated.initial,
+	bg: { value: "#000" },
+	fg: { value: "#fff" },
 });
 
 export const spacing = defineTokens.spacing({
