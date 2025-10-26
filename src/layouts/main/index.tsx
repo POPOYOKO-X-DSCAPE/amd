@@ -10,15 +10,12 @@ import { Ticker } from "../../components/ticker";
 import { assets } from "../../assets/assets";
 
 const styles = {
-  app: css({
-    height: "100vh",
+  content: css({
+    padding: "0 16px 10px 16px",
+  }),
+  scrollable: css({
     backgroundColor: "s.bg.default.initial",
     color: "s.fg.default.initial",
-  }),
-  content: css({
-    display: "flex",
-    flexDirection: "column",
-    padding: "64px 16px 10px 16px",
   }),
 };
 
@@ -34,24 +31,21 @@ export const Main = ({ children }: MainProps) => {
   ];
   return (
     <App>
-      <Stack scrollable direction="column" className={styles.app}>
+      <Stack grow>
         <AMDHeader />
-        <div className={styles.content}>
-          <Stack>
+        <Stack scrollable grow className={styles.scrollable}>
+          <Stack className={styles.content}>
             <Caroussel>
               {images.map((image) => (
                 <img key={image} src={image} alt={image} />
               ))}
             </Caroussel>
+            <Ticker />
+            <Separator />
+            <main>{children}</main>
+            <Footer />
           </Stack>
-
-          <Ticker />
-
-          <Separator />
-          <main>{children}</main>
-        </div>
-        a
-        <Footer />
+        </Stack>
       </Stack>
     </App>
   );

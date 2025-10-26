@@ -13,7 +13,6 @@ const styles = {
   header: css({
     display: "flex",
     padding: "16px",
-    position: "fixed",
     top: 0,
     left: 0,
     right: 0,
