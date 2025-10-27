@@ -20,29 +20,24 @@ const styles = {
     display: "flex",
     alignItems: "center",
   }),
-  icon: css({
-    color: "s.fg.default.initial",
-    width: "32px",
-    height: "32px",
-  }),
 };
 
 interface ButtonProps {
   level?: "primary" | "secondary";
   type?: "button" | "submit" | "reset";
   label: string;
-  icon?: string;
-  iconPosition?: "left" | "right";
+  position?: "left" | "right";
   onClick?: () => void;
+  children?: React.ReactNode;
 }
 
 export const Button = ({
   level = "primary",
   type = "button",
   label,
-  icon,
-  iconPosition = "right",
+  position = "right",
   onClick,
+  children,
 }: ButtonProps) => {
   return (
     <UiButton level={level} type={type} onClick={onClick}>
@@ -52,12 +47,16 @@ export const Button = ({
         justifyContent="center"
         className={level === "primary" ? styles.primary : styles.secondary}
       >
-        {icon && iconPosition === "left" && (
-          <img src={icon} alt={icon} className={styles.icon} />
-        )}
-        <span className={styles.text}>{label}</span>
-        {icon && iconPosition === "right" && (
-          <img src={icon} alt={icon} className={styles.icon} />
+        {position === "left" ? (
+          <>
+            {children}
+            <span className={styles.text}>{label}</span>
+          </>
+        ) : (
+          <>
+            <span className={styles.text}>{label}</span>
+            {children}
+          </>
         )}
       </Stack>
     </UiButton>

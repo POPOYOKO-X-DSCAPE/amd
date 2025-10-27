@@ -70,7 +70,9 @@ export const Home = () => {
             <Stack alignItems="center" className={styles.textProject}>
               Un projet en tête?
             </Stack>
-            <Button label="Parlons-en" icon={assets.SpeechBalloon} />
+            <Button label="Parlons-en">
+              <img src={assets.SpeechBalloon} alt="Parlons-en" />
+            </Button>
           </Stack>
         </Stack>
       </Section>
@@ -93,10 +95,11 @@ export const Home = () => {
           <Button
             level="secondary"
             label="Tous les projets"
-            icon={assets.ArrowRight}
-            iconPosition="left"
+            position="left"
             onClick={() => navigate("/projects")}
-          />
+          >
+            <img src={assets.ArrowRight} alt="Tous les projets" />
+          </Button>
         </Stack>
       </Section>
 
@@ -112,12 +115,10 @@ export const Home = () => {
             choisis pour leur savoir-faire, leur rigueur et leur sens du détail.
           </Stack>
           <img src={assets.chaletExterieur} alt="AMD" />
-          <Button
-            level="secondary"
-            label="L’Agence"
-            icon={assets.ArrowRight}
-            iconPosition="left"
-          />
+          <Button level="secondary" label="L’Agence" position="left">
+            {" "}
+            <img src={assets.ArrowRight} alt="L’Agence" />
+          </Button>
         </Stack>
       </Section>
     </>

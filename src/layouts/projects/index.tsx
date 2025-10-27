@@ -27,10 +27,11 @@ export const CategoryLayout = ({ title, children }: CategoryLayoutProps) => {
       <Button
         level="secondary"
         label="Tous les projets"
-        icon={assets.ArrowLeft}
-        iconPosition="left"
+        position="left"
         onClick={() => navigate("/projects")}
-      />
+      >
+        <img src={assets.ArrowLeft} alt="Tous les projets" />
+      </Button>
     </Stack>
   );
 };

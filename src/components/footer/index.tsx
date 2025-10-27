@@ -41,19 +41,22 @@ export const Footer = () => {
     <Stack className={styles.footer}>
       <Stack direction="column" className={styles.navigation}>
         <Separator />
+
         <Button
           level="secondary"
           label="Contact"
-          icon={assets.ArrowRight}
           onClick={() => navigate("/contact")}
-        />
+        >
+          <img src={assets.ArrowRight} alt="Contact" />
+        </Button>
         <Separator />
         <Button
           level="secondary"
           label="Instagram"
-          icon={assets.ArrowTopRight}
           onClick={() => navigate("/")}
-        />
+        >
+          <img src={assets.ArrowTopRight} alt="Instagram" />
+        </Button>
       </Stack>
 
       <Stack direction="column" className={styles.addresses}>

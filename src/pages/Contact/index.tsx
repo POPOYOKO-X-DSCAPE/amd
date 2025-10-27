@@ -22,7 +22,9 @@ export const Contact = () => {
           placeholder="I need your help for my next project..."
         />
 
-        <Button label="Send" icon={assets.SpeechBalloon} />
+        <Button label="Send">
+          <img src={assets.SpeechBalloon} alt="Send" />
+        </Button>
       </ContactForm>
     </Stack>
   );

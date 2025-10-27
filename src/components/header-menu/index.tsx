@@ -100,10 +100,11 @@ export const HeaderMenu = ({
           <Button
             level="secondary"
             label="Contact"
-            icon={assets.SpeechBalloon}
-            iconPosition="left"
+            position="left"
             onClick={() => handleNavigation("/contact")}
-          />
+          >
+            <img src={assets.SpeechBalloon} alt="Contact" />
+          </Button>
         </Stack>
       </Stack>
     </Stack>
