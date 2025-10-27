@@ -1,12 +1,12 @@
 import { defineTokens } from "@pandacss/dev";
 
 export const spacings = defineTokens.spacing({
-	xs: { value: "4" },
-	s: { value: "8" },
-	m: { value: "16" },
-	l: { value: "24" },
-	xl: { value: "32" },
-	x2l: { value: "64" },
-	x3l: { value: "92" },
-	x4l: { value: "128" },
+	xs: { value: "4px" },
+	s: { value: "8px" },
+	m: { value: "16px" },
+	l: { value: "24px" },
+	xl: { value: "32px" },
+	x2l: { value: "64px" },
+	x3l: { value: "92px" },
+	x4l: { value: "128px" },
 });

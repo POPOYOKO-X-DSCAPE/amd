@@ -16,15 +16,13 @@ const styles = {
     gap: "13px",
   }),
   label: css({
-    fontFamily: "Helvetica LT Pro",
-    fontWeight: 700,
-    fontSize: "16px",
-    letterSpacing: "0.8px",
+    textStyle: "body.s",
   }),
   input: css({
-    borderRadius: "b.radius.xl",
     backgroundColor: "s.bg.gentle.initial",
     outline: "none",
+    paddingX: "s.s",
+    paddingY: "s.m",
     "&:focus": {
       outline: "none",
       boxShadow: "none",

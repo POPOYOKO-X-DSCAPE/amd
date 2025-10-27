@@ -10,13 +10,13 @@ interface SectionProps {
 
 const styles = {
   container: css({
-    padding: "16px 0",
-    gap: "24px",
+    paddingX: "s.m",
+    gap: "s.l",
     maxWidth: "100%",
     overflow: "hidden",
   }),
   content: css({
-    gap: "24px",
+    gap: "s.l",
     alignSelf: "stretch",
     maxWidth: "100%",
     wordWrap: "break-word",

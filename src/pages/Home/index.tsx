@@ -27,7 +27,7 @@ const styles = {
   }),
   cta: css({
     justifyContent: "space-between",
-    gap: "8px",
+    gap: "s.s",
   }),
   textDescription: css({
     color: "s.fg.default.initial",

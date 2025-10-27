@@ -17,11 +17,12 @@ const styles = {
     display: "flex",
     justifyContent: "flex-end",
     backgroundColor: "s.bg.default.initial",
-    padding: "8px 4px",
-    gap: "16px",
+    paddingX: "s.s",
+    paddingY: "s.xs",
+    gap: "s.m",
   }),
   buttonOption: css({
-    gap: "4px",
+    gap: "s.xs",
   }),
 };
 

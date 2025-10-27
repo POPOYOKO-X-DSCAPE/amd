@@ -14,7 +14,7 @@ import SpeechBalloon from "../../assets/SpeechBalloon.svg?react";
 
 const styles = {
   menu: css({
-    padding: "24px",
+    padding: "s.l",
     height: "100%",
     borderBottom: "solid 1px",
     borderColor: "s.fg.default.initial",
@@ -27,10 +27,10 @@ const styles = {
   }),
   menuseparator: css({
     width: "100%",
-    padding: "16px 0",
+    paddingX: "s.m",
   }),
   button: css({
-    paddingTop: "4px",
+    paddingTop: "s.xs",
     alignSelf: "stretch",
   }),
 };

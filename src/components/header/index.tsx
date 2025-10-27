@@ -15,7 +15,7 @@ import HeaderMenu from "../header-menu";
 const styles = {
   header: css({
     display: "flex",
-    padding: "16px",
+    padding: "s.m",
     top: 0,
     left: 0,
     right: 0,
@@ -29,7 +29,7 @@ const styles = {
     maxWidth: "242px",
   }),
   content: css({
-    marginTop: "8px",
+    marginTop: "s.s",
   }),
   disclosureContent: css({
     position: "fixed",

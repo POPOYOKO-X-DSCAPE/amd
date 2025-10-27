@@ -4,8 +4,8 @@ import { css } from "@styles";
 const styles = {
   primary: css({
     width: "100%",
-    padding: "16px",
-    gap: "16px",
+    padding: "s.m",
+    gap: "s.m",
     alignSelf: "stretch",
     border: "1px solid",
     backgroundColor: "s.bg.actionHigh.initial",
@@ -16,7 +16,7 @@ const styles = {
     },
   }),
   secondary: css({
-    gap: "8px",
+    gap: "s.s",
     _hover: {
       backgroundColor: "s.bg.actionHigh.hover",
     },

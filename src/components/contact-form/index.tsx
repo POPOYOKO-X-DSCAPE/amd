@@ -12,8 +12,8 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    padding: "64px 0",
-    gap: "24px",
+    paddingY: "s.x2l",
+    gap: "s.l",
   }),
 };
 

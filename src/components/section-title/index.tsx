@@ -9,14 +9,14 @@ interface SectionTitleProps {
 const styles = {
   container: css({
     width: "100%",
-    gap: "24px",
+    gap: "s.l",
   }),
   title: css({
     flexGrow: 1,
     textStyle: "section.title",
   }),
   number: css({
-    paddingRight: { _desktop: "7px", _mobile: "4px" },
+    paddingRight: { _desktop: "7px", _mobile: "s.xs" },
     textStyle: "section.number",
   }),
 };

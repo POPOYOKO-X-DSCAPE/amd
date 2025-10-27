@@ -12,7 +12,7 @@ interface ListElementProps {
 
 const styles = {
   container: css({
-    paddingTop: "4px",
+    paddingTop: "s.xs",
     cursor: "pointer",
     textAlign: "right",
     "& .arrow": {

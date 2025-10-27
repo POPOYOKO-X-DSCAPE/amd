@@ -9,7 +9,7 @@ interface FooterAdressProps {
 const styles = {
   container: css({
     width: "218px",
-    gap: "4px",
+    gap: "s.xs",
   }),
   title: css({
     textStyle: "footer.section.title",

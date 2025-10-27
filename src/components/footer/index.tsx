@@ -11,16 +11,17 @@ import ArrowTopRight from "../../assets/ArrowTopRight.svg?react";
 
 const styles = {
   footer: css({
-    padding: "0px 16px 16px 16px",
-    gap: "24px",
+    padding: "s.m",
+    paddingTop: 0,
+    gap: "s.l",
   }),
   navigation: css({
     alignItems: "flex-end",
-    gap: "8px",
+    gap: "s.s",
     alignSelf: "stretch",
   }),
   addresses: css({
-    gap: "16px",
+    gap: "s.m",
     alignSelf: "stretch",
   }),
   logo: css({
@@ -29,7 +30,7 @@ const styles = {
     },
   }),
   button: css({
-    gap: "8px",
+    gap: "s.s",
   }),
   buttonText: css({
     textStyle: "emphasis",
