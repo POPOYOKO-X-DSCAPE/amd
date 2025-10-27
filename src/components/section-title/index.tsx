@@ -13,11 +13,11 @@ const styles = {
   }),
   title: css({
     flexGrow: 1,
-    textStyle: "sectionTitle",
+    textStyle: "section.title",
   }),
   number: css({
-    paddingRight: "4px",
-    textStyle: "sectionNumber",
+    paddingRight: { _desktop: "7px", _mobile: "4px" },
+    textStyle: "section.number",
   }),
 };
 

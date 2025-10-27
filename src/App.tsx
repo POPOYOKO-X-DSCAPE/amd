@@ -1,37 +1,34 @@
-import React, { Suspense, lazy, type ReactNode } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { componentMap } from "./componentMap.tsx";
 import { Main } from "./layouts/main";
-
-import websiteTree from "../website-tree.json";
-
-type PageNode = {
-  name: string;
-  path: string;
-  children?: PageNode[];
-};
-
-const renderRoutes = (pages: PageNode[]): ReactNode | undefined =>
-  pages.flatMap((page) => {
-    const Component = componentMap[page.path] || componentMap["/notfound"];
-    const routes = [
-      <Route key={page.path} path={page.path} element={<Component />} />,
-    ];
-
-    if (page.children) {
-      routes.push(...renderRoutes(page.children));
-    }
-
-    return routes;
-  });
+import { Contact } from "./pages/Contact";
+import { Home } from "./pages/Home";
+import { Projects } from "./pages/Projects";
+import { DProjects } from "./pages/Projects/Categories/d-projects";
+import { Designfurniture } from "./pages/Projects/Categories/design-furniture";
+import { ExceptionalLuxury } from "./pages/Projects/Categories/exceptional-luxury";
+import { HospitalityStore } from "./pages/Projects/Categories/hospitality-store";
 
 const AMD = () => {
   return (
     <Router>
       <Main>
         <Routes>
-          {renderRoutes(websiteTree.pages)}
-          <Route path="*" element={<div>Page Not Found</div>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route
+            path="/projects/exceptional-luxury"
+            element={<ExceptionalLuxury />}
+          />
+          <Route
+            path="/projects/hospitality-store"
+            element={<HospitalityStore />}
+          />
+          <Route path="/projects/3d-projects" element={<DProjects />} />
+          <Route
+            path="/projects/design-furniture"
+            element={<Designfurniture />}
+          />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Main>
     </Router>

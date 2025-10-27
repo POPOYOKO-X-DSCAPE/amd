@@ -13,26 +13,28 @@
       "path": "/projects",
       "children": [
         {
-          "name": "design-furniture",
-          "path": "/projects/design-furniture"
-        },
-        {
-          "name": "exceptional-luxury",
-          "path": "/projects/exceptional-luxury"
-        },
-        {
-          "name": "hospitality-store",
-          "path": "/projects/hospitality-store"
-        },
-        {
-          "name": "d-projects",
-          "path": "/projects/d-projects"
+          "name": "categories",
+          "path": "/projects",
+          "children": [
+            {
+              "name": "hospitality-store",
+              "path": "/projects/categories/hospitality-store"
+            },
+            {
+              "name": "exceptional-luxury",
+              "path": "/projects/categories/exceptional-luxury"
+            },
+            {
+              "name": "d-projects",
+              "path": "/projects/categories/d-projects"
+            },
+            {
+              "name": "design-furniture",
+              "path": "/projects/categories/design-furniture"
+            }
+          ]
         }
       ]
-    },
-    {
-      "name": "notfound",
-      "path": "/notfound"
     }
   ]
 }
