@@ -1,5 +1,8 @@
+import { Button } from "@ariakit/react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
+import classNames from "classnames";
+import Arrow from "../../assets/ArrowRight.svg?react";
 
 interface ListElementProps {
   label: string;
@@ -11,33 +14,47 @@ const styles = {
   container: css({
     paddingTop: "4px",
     cursor: "pointer",
+    textAlign: "right",
+    "& .arrow": {
+      paddingRight: "10px",
+      left: 0,
+      top: "42px",
+      opacity: 0,
+      transition: "all .2s ease-in-out",
+      _mobile: {
+        display: "none",
+      },
+    },
+    _hover: {
+      "& .arrow": {
+        opacity: 1,
+        top: "-4px",
+      },
+    },
   }),
   label: css({
     color: "s.fg.default.initial",
     textStyle: "emphasis",
   }),
+  arrow: css(),
 };
 
 export const ListElement = ({ label, children, onClick }: ListElementProps) => {
-  const handleKey = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (!onClick) return;
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      onClick();
-    }
-  };
   return (
-    <button
+    <Button
       style={{ justifyContent: "flex-end" }}
       className={styles.container}
       onClick={onClick}
       type="button"
     >
-      <Stack direction="row">
+      <Stack direction="row" alignItems="center">
+        <Stack className={classNames(styles.arrow, "arrow")}>
+          <Arrow />
+        </Stack>
         {children && <span>{children}</span>}
         <Stack className={styles.label}>{label}</Stack>
       </Stack>
-    </button>
+    </Button>
   );
 };
 

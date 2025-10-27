@@ -8,11 +8,18 @@ const styles = {
     gap: "16px",
     alignSelf: "stretch",
     border: "1px solid",
-    borderColor: "s.fg.default.initial",
-    color: "s.fg.default.initial",
+    backgroundColor: "s.bg.actionHigh.initial",
+    borderColor: "s.fg.actionHigh.initial",
+    color: "s.fg.actionHigh.initial",
+    _hover: {
+      backgroundColor: "s.bg.actionHigh.hover",
+    },
   }),
   secondary: css({
     gap: "8px",
+    _hover: {
+      backgroundColor: "s.bg.actionHigh.hover",
+    },
   }),
   text: css({
     textStyle: "emphasis",
