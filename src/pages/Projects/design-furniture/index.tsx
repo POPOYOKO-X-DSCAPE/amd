@@ -1,7 +1,7 @@
 import ListElement from "../../../components/list-element";
 import { CategoryLayout } from "../../../layouts/projects";
 
-export const Designfurniture = () => {
+export const DesignFurniture = () => {
   return (
     <CategoryLayout title="Design furniture">
       <ListElement label="ProjVilla Médie" />

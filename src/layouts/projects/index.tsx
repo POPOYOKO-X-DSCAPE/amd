@@ -1,6 +1,7 @@
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import { useNavigate } from "react-router-dom";
+import ArrowLeft from "../../assets/ArrowLeft.svg?react";
 import { assets } from "../../assets/assets";
 import ArrowLeft from "../../assets/svgs/ArrowLeft.svg?react";
 import { Button } from "../../components/button";

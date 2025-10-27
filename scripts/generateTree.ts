@@ -19,11 +19,10 @@ const generateTree = (dir: string, basePath = ""): PageNode[] =>
     const routePath = `${basePath}/${segment}`.replace(/\\/g, "/") || "/";
 
     if (entry.isDirectory()) {
-      const hasIndex = fs.existsSync(path.join(fullPath, "index.tsx"));
       const children = generateTree(fullPath, routePath);
       return {
         name: segment,
-        path: hasIndex ? routePath : basePath,
+        path: routePath,
         ...(children.length && { children }),
       };
     }
