@@ -10,12 +10,17 @@ import { Ticker } from "../../components/ticker";
 import { assets } from "../../assets/assets";
 
 const styles = {
+  container: css({
+    width: "100%",
+    maxWidth: "s.FluxMaxWidth",
+  }),
   content: css({
-    padding: "0 16px 10px 16px",
+    padding: "s.m",
   }),
   scrollable: css({
     backgroundColor: "s.bg.default.initial",
     color: "s.fg.default.initial",
+    scrollbar: "hidden",
   }),
 };
 
@@ -34,16 +39,20 @@ export const Main = ({ children }: MainProps) => {
       <Stack grow>
         <AMDHeader />
         <Stack scrollable grow className={styles.scrollable}>
-          <Stack className={styles.content}>
-            <Caroussel>
-              {images.map((image) => (
-                <img key={image} src={image} alt={image} />
-              ))}
-            </Caroussel>
-            <Ticker />
-            <Separator />
-            <main>{children}</main>
-            <Footer />
+          <Stack alignItems="center">
+            <Stack className={styles.container}>
+              <Caroussel>
+                {images.map((image) => (
+                  <img key={image} src={image} alt={image} />
+                ))}
+              </Caroussel>
+              <Ticker />
+              <Separator />
+              <Stack className={styles.content}>
+                <main>{children}</main>
+                <Footer />
+              </Stack>
+            </Stack>
           </Stack>
         </Stack>
       </Stack>

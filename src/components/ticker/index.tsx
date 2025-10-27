@@ -5,6 +5,9 @@ const styles = {
   container: css({
     minHeight: "80px",
     overflow: "hidden",
+    _desktop: {
+      overflow: "visible",
+    },
   }),
   tickerContent: css({
     whiteSpace: "nowrap",
