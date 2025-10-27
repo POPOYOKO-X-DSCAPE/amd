@@ -6,6 +6,9 @@ import {
 import { Header, Stack } from "@packages/ui";
 import { css } from "@styles";
 import { useEffect, useState } from "react";
+import Logo from "../../assets/Architecture Interior Designer.svg?react";
+import Burger from "../../assets/Burger.svg?react";
+import Close from "../../assets/Close.svg?react";
 import { assets } from "../../assets/assets";
 import HeaderMenu from "../header-menu";
 
@@ -20,10 +23,10 @@ const styles = {
     backgroundColor: "s.bg.default.initial",
     width: "100%",
     boxSizing: "border-box",
+    color: "s.fg.default.initial",
   }),
   logo: css({
     maxWidth: "242px",
-    color: "#fff",
   }),
   content: css({
     marginTop: "8px",
@@ -75,17 +78,11 @@ export const AMDHeader = () => {
           <Stack direction="row" alignItems="center" className={styles.content}>
             <Stack grow>
               <Stack className={styles.logo}>
-                <img
-                  src={assets.ArchitectureInteriorDesigner}
-                  alt="ArchitectureInteriorDesigner"
-                />
+                <Logo />
               </Stack>
             </Stack>
             <Disclosure store={disclosure}>
-              <img
-                src={isOpen ? assets.Close : assets.Burger}
-                alt={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
-              />
+              {isOpen ? <Close /> : <Burger />}
             </Disclosure>
           </Stack>
         </Stack>

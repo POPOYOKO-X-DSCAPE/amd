@@ -5,7 +5,7 @@ import { Button } from "../button";
 import FooterAdress from "../footer-adress";
 import Separator from "../separator";
 
-import { assets } from "../../assets/assets";
+import AMD from "../../assets/AMD.svg?react";
 
 const styles = {
   footer: css({
@@ -22,8 +22,8 @@ const styles = {
     alignSelf: "stretch",
   }),
   logo: css({
-    "&svg": {
-      color: "white",
+    "&img": {
+      color: "s.fg.default.initial",
     },
   }),
   button: css({
@@ -45,6 +45,7 @@ export const Footer = () => {
         <Button
           level="secondary"
           label="Contact"
+          // icon={assets.ArrowRight}
           onClick={() => navigate("/contact")}
         >
           <img src={assets.ArrowRight} alt="Contact" />
@@ -53,6 +54,7 @@ export const Footer = () => {
         <Button
           level="secondary"
           label="Instagram"
+          // icon={assets.ArrowTopRight}
           onClick={() => navigate("/")}
         >
           <img src={assets.ArrowTopRight} alt="Instagram" />
@@ -75,7 +77,7 @@ export const Footer = () => {
       </Stack>
 
       <Stack className={styles.logo}>
-        <img src={assets.AMD} alt="AMD" />
+        <AMD />
       </Stack>
     </Stack>
   );
