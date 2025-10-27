@@ -1,16 +1,16 @@
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import { useNavigate } from "react-router-dom";
-import { assets } from "../../assets/assets";
 import { Button } from "../button";
 import MenuOption from "../menu-option";
 import Separator from "../separator";
 
-import Dark from "../../assets/Dark.svg?react";
-import English from "../../assets/English.svg?react";
-import French from "../../assets/French.svg?react";
-import Light from "../../assets/Light.svg?react";
-import SpeechBalloon from "../../assets/SpeechBalloon.svg?react";
+import { useEffect, useState } from "react";
+import Dark from "../../assets/svgs/Dark.svg?react";
+import English from "../../assets/svgs/English.svg?react";
+import French from "../../assets/svgs/French.svg?react";
+import Light from "../../assets/svgs/Light.svg?react";
+import SpeechBalloon from "../../assets/svgs/SpeechBalloon.svg?react";
 
 const styles = {
   menu: css({
@@ -18,6 +18,7 @@ const styles = {
     height: "100%",
     borderBottom: "solid 1px",
     borderColor: "s.fg.default.initial",
+    color: "s.fg.default.initial",
   }),
   menuitems: css({
     flex: "1 0 0",
@@ -57,6 +58,16 @@ export const HeaderMenu = ({
     if (onCloseMenu) {
       onCloseMenu();
     }
+  };
+
+  const [colorMode, setColorMode] = useState("light");
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-color-mode", colorMode);
+  }, [colorMode]);
+
+  const toggleColorMode = () => {
+    setColorMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };
 
   const languageOptions = [
@@ -108,7 +119,7 @@ export const HeaderMenu = ({
       <MenuOption
         type="mode"
         selectedValue={theme}
-        onSelect={onThemeChange}
+        onSelect={toggleColorMode}
         options={modeOptions}
       />
 

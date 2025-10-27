@@ -5,14 +5,14 @@ import { Button } from "../button";
 import FooterAdress from "../footer-adress";
 import Separator from "../separator";
 
-import AMD from "../../assets/AMD.svg?react";
-import ArrowRight from "../../assets/ArrowRight.svg?react";
-import ArrowTopRight from "../../assets/ArrowTopRight.svg?react";
+import AMD from "../../assets/svgs/AMD.svg?react";
+import ArrowRight from "../../assets/svgs/ArrowRight.svg?react";
+import ArrowTopRight from "../../assets/svgs/ArrowTopRight.svg?react";
 
 const styles = {
   footer: css({
-    padding: "s.m",
-    paddingTop: 0,
+    padding: 0,
+    paddingTop: "s.m",
     gap: "s.l",
   }),
   navigation: css({
@@ -23,11 +23,6 @@ const styles = {
   addresses: css({
     gap: "s.m",
     alignSelf: "stretch",
-  }),
-  logo: css({
-    "&img": {
-      color: "s.fg.default.initial",
-    },
   }),
   button: css({
     gap: "s.s",
@@ -77,9 +72,7 @@ export const Footer = () => {
         />
       </Stack>
 
-      <Stack className={styles.logo}>
-        <AMD />
-      </Stack>
+      <AMD style={{ maxWidth: "100%", bottom: 0 }} />
     </Stack>
   );
 };

@@ -3,13 +3,12 @@ import {
   DisclosureContent,
   useDisclosureStore,
 } from "@ariakit/react";
-import { Header, Stack } from "@packages/ui";
+import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import { useEffect, useState } from "react";
-import Logo from "../../assets/Architecture Interior Designer.svg?react";
-import Burger from "../../assets/Burger.svg?react";
-import Close from "../../assets/Close.svg?react";
-import { assets } from "../../assets/assets";
+import Logo from "../../assets/svgs/Architecture Interior Designer.svg?react";
+import Burger from "../../assets/svgs/Burger.svg?react";
+import Close from "../../assets/svgs/Close.svg?react";
 import HeaderMenu from "../header-menu";
 
 const styles = {

@@ -10,7 +10,7 @@ interface SectionProps {
 
 const styles = {
   container: css({
-    paddingX: "s.m",
+    paddingY: "s.m",
     gap: "s.l",
     maxWidth: "100%",
     overflow: "hidden",

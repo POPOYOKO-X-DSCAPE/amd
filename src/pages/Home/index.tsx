@@ -2,9 +2,10 @@ import { useNavigate } from "react-router-dom";
 
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
-import AMD from "../../assets/AMD.svg?react";
-import ArrowRight from "../../assets/ArrowRight.svg?react";
-import SpeechBalloon from "../../assets/SpeechBalloon.svg?react";
+import ArrowRight from "../../assets/svgs/ArrowRight.svg?react";
+import SpeechBalloon from "../../assets/svgs/SpeechBalloon.svg?react";
+
+import officeImage from "../../assets/images/francois-damidot-reunion-chantier-equipes.jpg";
 
 import { Button } from "../../components/button";
 import ListElement from "../../components/list-element";
@@ -104,9 +105,7 @@ export const Home = () => {
           </Button>
         </Stack>
       </Section>
-
       <Separator />
-
       <Section title="Office" number={2}>
         <Stack className={styles.contentSection}>
           <Stack className={styles.contentSectionDescription}>
@@ -116,7 +115,10 @@ export const Home = () => {
             par l'exigence de son fondateur, qui a su s'entourer de partenaires
             choisis pour leur savoir-faire, leur rigueur et leur sens du détail.
           </Stack>
-          <AMD />
+          <img
+            src={officeImage}
+            alt="Francois Damidot réunion de chantier équipes"
+          />
           <Button level="secondary" label="L’Agence" position="left">
             <ArrowRight />
           </Button>

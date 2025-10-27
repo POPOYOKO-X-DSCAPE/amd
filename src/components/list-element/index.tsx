@@ -2,7 +2,7 @@ import { Button } from "@ariakit/react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import classNames from "classnames";
-import Arrow from "../../assets/ArrowRight.svg?react";
+import Arrow from "../../assets/svgs/ArrowRight.svg?react";
 
 interface ListElementProps {
   label: string;

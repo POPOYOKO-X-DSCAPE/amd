@@ -1,6 +1,6 @@
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
-import SpeechBalloon from "../../assets/SpeechBalloon.svg?react";
+import SpeechBalloon from "../../assets/svgs/SpeechBalloon.svg?react";
 import { Button } from "../../components/button";
 import { ContactField } from "../../components/contact-field";
 import { ContactForm } from "../../components/contact-form";

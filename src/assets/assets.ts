@@ -1,21 +1,21 @@
-import AMD from "./AMD.svg";
-import ArchitectureInteriorDesigner from "./Architecture Interior Designer.svg";
-import ArrowDown from "./ArrowDown.svg";
-import ArrowLeft from "./ArrowLeft.svg";
-import ArrowRight from "./ArrowRight.svg";
-import ArrowTopRight from "./ArrowTopRight.svg";
-import Burger from "./Burger.svg";
-import Close from "./Close.svg";
-import Dark from "./Dark.svg";
-import English from "./English.svg";
-import French from "./French.svg";
-import Light from "./Light.svg";
-import SpeechBalloon from "./SpeechBalloon.svg";
+import AMD from "./svgs/AMD.svg";
+import ArchitectureInteriorDesigner from "./svgs/Architecture Interior Designer.svg";
+import ArrowDown from "./svgs/ArrowDown.svg";
+import ArrowLeft from "./svgs/ArrowLeft.svg";
+import ArrowRight from "./svgs/ArrowRight.svg";
+import ArrowTopRight from "./svgs/ArrowTopRight.svg";
+import Burger from "./svgs/Burger.svg";
+import Close from "./svgs/Close.svg";
+import Dark from "./svgs/Dark.svg";
+import English from "./svgs/English.svg";
+import French from "./svgs/French.svg";
+import Light from "./svgs/Light.svg";
+import SpeechBalloon from "./svgs/SpeechBalloon.svg";
 
-import chaletCine from "./chaletCine.svg";
-import chaletExterieur from "./chaletExterieur.svg";
-import chaletPiscine from "./chaletPiscine.svg";
-import chaletSalon from "./chaletSalon.svg";
+import chaletCine from "./svgs/chaletCine.svg";
+import chaletExterieur from "./svgs/chaletExterieur.svg";
+import chaletPiscine from "./svgs/chaletPiscine.svg";
+import chaletSalon from "./svgs/chaletSalon.svg";
 
 export const assets = {
 	AMD,
