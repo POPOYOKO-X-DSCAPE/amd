@@ -1,37 +1,28 @@
-import { Stack } from "@packages/ui";
-import { css } from "@styles";
 import { useNavigate } from "react-router-dom";
 import ListElement from "../../components/list-element";
-import Section from "../../components/section";
-
-const styles = {
-  content: css({
-    gap: "24px",
-  }),
-};
+import { CategoryLayout } from "../../layouts/projects";
 
 export const Projects = () => {
   const navigate = useNavigate();
 
-  const categories = [
-    { label: "Exceptional & Luxury", path: "/projects/exceptional-luxury" },
-    { label: "Hospitality & Store", path: "/projects/hospitality-store" },
-    { label: "3D Projects", path: "/projects/3d-projects" },
-    { label: "Design furniture", path: "/projects/design-furniture" },
-  ];
   return (
-    <Stack>
-      <Section title="Projets" number={1}>
-        <Stack className={styles.content}>
-          {categories.map((category) => (
-            <ListElement
-              key={category.path}
-              label={category.label}
-              onClick={() => navigate(category.path)}
-            />
-          ))}
-        </Stack>
-      </Section>
-    </Stack>
+    <CategoryLayout title="Projets">
+      <ListElement
+        label="Exceptional & Luxury"
+        onClick={() => navigate("/projects/exceptional-luxury")}
+      />
+      <ListElement
+        label="Hospitality & Store"
+        onClick={() => navigate("/projects/hospitality-store")}
+      />
+      <ListElement
+        label="3D Projects"
+        onClick={() => navigate("/projects/d-projects")}
+      />
+      <ListElement
+        label="Design furniture"
+        onClick={() => navigate("/projects/design-furniture")}
+      />
+    </CategoryLayout>
   );
 };
