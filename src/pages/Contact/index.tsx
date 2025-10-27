@@ -1,6 +1,6 @@
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
-import { assets } from "../../assets/assets";
+import SpeechBalloon from "../../assets/SpeechBalloon.svg?react";
 import { Button } from "../../components/button";
 import { ContactField } from "../../components/contact-field";
 import { ContactForm } from "../../components/contact-form";
@@ -23,7 +23,7 @@ export const Contact = () => {
         />
 
         <Button label="Send">
-          <img src={assets.SpeechBalloon} alt="Send" />
+          <SpeechBalloon />
         </Button>
       </ContactForm>
     </Stack>

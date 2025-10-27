@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, type ReactNode } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { componentMap } from "./componentMap.tsx";
 import { Main } from "./layouts/main";
@@ -11,7 +11,7 @@ type PageNode = {
   children?: PageNode[];
 };
 
-const renderRoutes = (pages: PageNode[]): JSX.Element[] =>
+const renderRoutes = (pages: PageNode[]): ReactNode | undefined =>
   pages.flatMap((page) => {
     const Component = componentMap[page.path] || componentMap["/notfound"];
     const routes = [

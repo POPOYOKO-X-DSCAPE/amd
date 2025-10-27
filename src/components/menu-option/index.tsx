@@ -1,14 +1,14 @@
 import { Button, Stack } from "@packages/ui";
 import { css } from "@styles";
+import type { ReactNode } from "react";
 
 interface MenuOptionProps {
   type?: "mode" | "language";
   selectedValue: string;
   onSelect: (value: string) => void;
   options: {
-    label: string;
     value: string;
-    icon?: string;
+    children: ReactNode;
   }[];
 }
 
@@ -44,8 +44,7 @@ export const MenuOption = ({
             alignItems="center"
             className={styles.buttonOption}
           >
-            {current.label}
-            {current.icon && <img src={current.icon} alt={current.label} />}
+            {current.children}
           </Stack>
         </Button>
       </Stack>
@@ -67,8 +66,7 @@ export const MenuOption = ({
               alignItems="center"
               className={styles.buttonOption}
             >
-              {option.label}
-              {option.icon && <img src={option.icon} alt={option.label} />}
+              {option.children}
             </Stack>
           </Button>
         );

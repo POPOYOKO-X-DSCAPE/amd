@@ -1,6 +1,7 @@
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import { useNavigate } from "react-router-dom";
+import ArrowLeft from "../../assets/ArrowLeft.svg?react";
 import { assets } from "../../assets/assets";
 import { Button } from "../../components/button";
 import Section from "../../components/section";
@@ -30,7 +31,7 @@ export const CategoryLayout = ({ title, children }: CategoryLayoutProps) => {
         position="left"
         onClick={() => navigate("/projects")}
       >
-        <img src={assets.ArrowLeft} alt="Tous les projets" />
+        <ArrowLeft />
       </Button>
     </Stack>
   );

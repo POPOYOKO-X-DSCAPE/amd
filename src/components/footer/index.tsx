@@ -6,6 +6,8 @@ import FooterAdress from "../footer-adress";
 import Separator from "../separator";
 
 import AMD from "../../assets/AMD.svg?react";
+import ArrowRight from "../../assets/ArrowRight.svg?react";
+import ArrowTopRight from "../../assets/ArrowTopRight.svg?react";
 
 const styles = {
   footer: css({
@@ -45,19 +47,17 @@ export const Footer = () => {
         <Button
           level="secondary"
           label="Contact"
-          // icon={assets.ArrowRight}
           onClick={() => navigate("/contact")}
         >
-          <img src={assets.ArrowRight} alt="Contact" />
+          <ArrowRight />
         </Button>
         <Separator />
         <Button
           level="secondary"
           label="Instagram"
-          // icon={assets.ArrowTopRight}
           onClick={() => navigate("/")}
         >
-          <img src={assets.ArrowTopRight} alt="Instagram" />
+          <ArrowTopRight />
         </Button>
       </Stack>
 

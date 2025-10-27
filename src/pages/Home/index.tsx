@@ -2,7 +2,9 @@ import { useNavigate } from "react-router-dom";
 
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
-import { assets } from "../../assets/assets";
+import AMD from "../../assets/AMD.svg?react";
+import ArrowRight from "../../assets/ArrowRight.svg?react";
+import SpeechBalloon from "../../assets/SpeechBalloon.svg?react";
 
 import { Button } from "../../components/button";
 import ListElement from "../../components/list-element";
@@ -71,7 +73,7 @@ export const Home = () => {
               Un projet en tête?
             </Stack>
             <Button label="Parlons-en">
-              <img src={assets.SpeechBalloon} alt="Parlons-en" />
+              <SpeechBalloon />
             </Button>
           </Stack>
         </Stack>
@@ -98,7 +100,7 @@ export const Home = () => {
             position="left"
             onClick={() => navigate("/projects")}
           >
-            <img src={assets.ArrowRight} alt="Tous les projets" />
+            <ArrowRight />
           </Button>
         </Stack>
       </Section>
@@ -114,10 +116,9 @@ export const Home = () => {
             par l'exigence de son fondateur, qui a su s'entourer de partenaires
             choisis pour leur savoir-faire, leur rigueur et leur sens du détail.
           </Stack>
-          <img src={assets.chaletExterieur} alt="AMD" />
+          <AMD />
           <Button level="secondary" label="L’Agence" position="left">
-            {" "}
-            <img src={assets.ArrowRight} alt="L’Agence" />
+            <ArrowRight />
           </Button>
         </Stack>
       </Section>

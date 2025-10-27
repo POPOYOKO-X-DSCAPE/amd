@@ -6,6 +6,12 @@ import { Button } from "../button";
 import MenuOption from "../menu-option";
 import Separator from "../separator";
 
+import Dark from "../../assets/Dark.svg?react";
+import English from "../../assets/English.svg?react";
+import French from "../../assets/French.svg?react";
+import Light from "../../assets/Light.svg?react";
+import SpeechBalloon from "../../assets/SpeechBalloon.svg?react";
+
 const styles = {
   menu: css({
     padding: "24px",
@@ -52,26 +58,60 @@ export const HeaderMenu = ({
       onCloseMenu();
     }
   };
+
+  const languageOptions = [
+    {
+      value: "en",
+      children: (
+        <>
+          <English /> En
+        </>
+      ),
+    },
+    {
+      value: "fr",
+      children: (
+        <>
+          <French /> Fr
+        </>
+      ),
+    },
+  ];
+
+  const modeOptions = [
+    {
+      value: "dark",
+      children: (
+        <>
+          <Dark /> Dark
+        </>
+      ),
+    },
+    {
+      value: "light",
+      children: (
+        <>
+          <Light /> Light
+        </>
+      ),
+    },
+  ];
   return (
     <Stack grow className={styles.menu}>
       <MenuOption
         type="language"
         selectedValue={language}
         onSelect={onLanguageChange}
-        options={[
-          { label: "En", value: "en", icon: assets.English },
-          { label: "Fr", value: "fr", icon: assets.French },
-        ]}
+        options={languageOptions}
       />
+
       <MenuOption
         type="mode"
         selectedValue={theme}
         onSelect={onThemeChange}
-        options={[
-          { label: "Dark", value: "dark", icon: assets.Dark },
-          { label: "Light", value: "light", icon: assets.Light },
-        ]}
+        options={modeOptions}
       />
+
       <Stack className={styles.menuitems}>
         <Stack className={styles.menuseparator}>
           <Separator />
@@ -103,7 +143,7 @@ export const HeaderMenu = ({
             position="left"
             onClick={() => handleNavigation("/contact")}
           >
-            <img src={assets.SpeechBalloon} alt="Contact" />
+            <SpeechBalloon />
           </Button>
         </Stack>
       </Stack>
