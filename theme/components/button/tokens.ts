@@ -1,33 +1,33 @@
-import { defineTokens } from "@pandacss/dev";
+import { defineSemanticTokens } from "@pandacss/dev";
 import { brand } from "../../brand";
 import { bg, fg } from "../../semantic/colors";
 import { radius } from "../../semantic/radii";
 
-const spacing = defineTokens.spacing({
+const spacing = defineSemanticTokens.spacing({
 	padding: brand.spacings.xs,
 });
 
-export const radii = defineTokens.radii({
+export const radii = defineSemanticTokens.radii({
 	radius: radius.m,
 });
 
-const primaryColors = defineTokens.colors({
+const primaryColors = defineSemanticTokens.colors({
 	bg: { initial: { value: "#000" }, hover: { value: "#000" } },
 	fg: { initial: { value: "#fff" }, hover: { value: "#fff" } },
 });
 
-const secondaryColors = defineTokens.colors({
+const secondaryColors = defineSemanticTokens.colors({
 	bg: { initial: { value: "#000" }, hover: { value: "#000" } },
 	fg: { initial: { value: "#fff" }, hover: { value: "#fff" } },
 });
 
-export const buttonPrimary = defineTokens({
+export const buttonPrimary = defineSemanticTokens({
 	radii,
 	spacing,
 	colors: primaryColors,
 });
 
-export const buttonSecondary = defineTokens({
+export const buttonSecondary = defineSemanticTokens({
 	radii,
 	spacing,
 	colors: secondaryColors,

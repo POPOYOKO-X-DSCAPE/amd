@@ -4,10 +4,9 @@ import { componentsTokens } from "./defaultTheme";
 import { semantic } from "./semantic";
 
 const themeContract = defineThemeContract({
-	// semanticTokens: originalsComponentsTokens,
+	// semanticTokens: {originalsComponentsTokens},
 });
 
 export const theme = themeContract({
-	// tokens: semantic,
-	// semanticTokens: { ...componentsTokens },
+	semanticTokens: { ...componentsTokens, ...semantic },
 });

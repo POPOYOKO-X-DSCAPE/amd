@@ -1,17 +1,17 @@
-import { defineTokens } from "@pandacss/dev";
+import { defineSemanticTokens } from "@pandacss/dev";
 import { brand } from "../../brand";
 import { bg, fg } from "../../semantic/colors";
 
-export const colors = defineTokens.colors({
+export const colors = defineSemanticTokens.colors({
 	bg: { value: "#000" },
 	fg: { value: "#fff" },
 });
 
-export const spacing = defineTokens.spacing({
+export const spacing = defineSemanticTokens.spacing({
 	padding: brand.spacings.m,
 });
 
-export const documentViewer = defineTokens({
+export const documentViewer = defineSemanticTokens({
 	colors,
 	spacing,
 });
