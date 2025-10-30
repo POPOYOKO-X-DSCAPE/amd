@@ -152,7 +152,6 @@ const buildPageProp = (
 			};
 
 		case "slideshow": {
-			// sous-dossiers numérotés (1-image, 2-image...)
 			const subImages = getOrderedSubdirs(dirPath)
 				.filter((s) => s.type === "image")
 				.map((s) => buildImageProp(s.dirPath));
@@ -177,12 +176,10 @@ const buildPageProp = (
 		}
 
 		case "project-list": {
-			// On récupère les sous-dossiers triés par préfixe numérique (1-name, 2-name, ...)
 			const orderedDirs = getOrderedDirsByIndex(dirPath);
 
 			const routes: EditorialRoute[] = orderedDirs.map(
 				({ name, dirPath: childPath }) =>
-					// `name` est déjà sans le préfixe numérique, on le passe comme slug propre
 					buildEditorialRoute(name, childPath),
 			);
 
@@ -201,7 +198,6 @@ const buildEditorialRoute = (
 	slug: string,
 	routePath: string,
 ): EditorialRoute => {
-	// Supprime le numéro éventuel dans le slug (ex: "1-project" -> "project")
 	const [, cleanSlug = slug] = slug.split(/^\d+-/).filter(Boolean);
 
 	const ordered = getOrderedSubdirs(routePath);
@@ -209,7 +205,6 @@ const buildEditorialRoute = (
 		buildPageProp(type, dirPath),
 	);
 
-	// project-list non numéroté
 	const projectListFullPath = path.join(routePath, "project-list");
 	if (
 		fs.existsSync(projectListFullPath) &&
@@ -247,7 +242,12 @@ export const buildEditorialsJSON = (): JSONEditorials => {
 // ----------------------
 if (require.main === module) {
 	const json = buildEditorialsJSON();
-	const outPath = path.resolve("editorials.json");
-	fs.writeFileSync(outPath, JSON.stringify(json, null, 2), "utf8");
-	console.log(`✅ JSONEditorials généré dans ${outPath}`);
+
+	// 💡 On génère maintenant un fichier TypeScript au lieu d’un JSON
+	const outPath = path.resolve("editorials.ts");
+
+	const fileContent = `// ⚙️ Fichier généré automatiquement – ne pas modifier\nimport type { JSONEditorials } from "./create-editorial-object";\n\nexport const editorials = ${JSON.stringify(json, null, 2)} as const satisfies JSONEditorials;\n`;
+
+	fs.writeFileSync(outPath, fileContent, "utf8");
+	console.log(`✅ editorials.ts généré dans ${outPath}`);
 }
