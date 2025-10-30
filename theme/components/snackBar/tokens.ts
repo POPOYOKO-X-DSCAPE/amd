@@ -1,23 +1,23 @@
-import { defineSemanticTokens } from "@pandacss/dev";
+import { defineTokens } from "@pandacss/dev";
 import { brand } from "../../brand";
 import { bg, fg } from "../../semantic/colors";
 import { radius } from "../../semantic/radii";
 
-export const colors = defineSemanticTokens.colors({
+export const colors = defineTokens.colors({
 	bg: { value: "#000" },
 	fg: { value: "#fff" },
 });
 
-export const spacing = defineSemanticTokens.spacing({
+export const spacing = defineTokens.spacing({
 	padding: brand.spacings.l,
 	margin: brand.spacings.x2l,
 });
 
-export const radii = defineSemanticTokens.radii({
+export const radii = defineTokens.radii({
 	radius: radius.l,
 });
 
-export const snackbar = defineSemanticTokens({
+export const snackbar = defineTokens({
 	radii,
 	colors,
 	spacing,
