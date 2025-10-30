@@ -5,8 +5,8 @@ import { fontWeights } from "../../semantic/fontWeights";
 
 export const app = defineSemanticTokens({
 	colors: {
-		bg: { value: "#eaf" },
-		fg: fg.default.initial,
+		bg: fg.default.initial,
+		fg: fg.elevated.initial,
 	},
 	fontSizes: {
 		h1: fontSizes.h1,

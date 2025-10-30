@@ -1,8 +1,8 @@
-import { defineTokens } from "@pandacss/dev";
+import { defineSemanticTokens } from "@pandacss/dev";
 import { brand } from "../../brand";
 import { bg, fg } from "../../semantic/colors";
 
-export const sidebar = defineTokens({
+export const sidebar = defineSemanticTokens({
 	colors: {
 		bg: { initial: { value: "#000" }, hover: { value: "#000" } },
 		fg: { initial: { value: "#fff" } },

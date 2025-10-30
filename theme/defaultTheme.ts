@@ -1,5 +1,10 @@
 import { defineTokens } from "@pandacss/dev";
-import type { Recursive, Token, TokenDataTypes } from "@pandacss/types";
+import type {
+	Recursive,
+	SemanticToken,
+	Token,
+	TokenDataTypes,
+} from "@pandacss/types";
 import { app } from "./components/app/tokens";
 import {
 	buttonPrimary,
@@ -12,7 +17,7 @@ import { snackbar } from "./components/snackBar/tokens";
 
 const getTokensFromTokenDataTypes = <T extends keyof TokenDataTypes>(
 	tokenType: T,
-	tokens: Recursive<Token<string>>,
+	tokens: Recursive<SemanticToken<string>>,
 	prefix: string,
 ) => {
 	return Object.values(
@@ -33,7 +38,7 @@ const getTokensFromTokenDataTypes = <T extends keyof TokenDataTypes>(
 				return acc;
 			},
 			{} as Record<string, TokenDataTypes[T]>,
-		) as Recursive<Token<string>>;
+		) as Recursive<SemanticToken<string>>;
 };
 
 const components = {
@@ -47,8 +52,6 @@ const components = {
 };
 
 const getAllComponentTokens = () => {
-	console.log(components.header.colors.bg);
-
 	const tokenTypes = [
 		"colors",
 		"sizes",
@@ -61,6 +64,8 @@ const getAllComponentTokens = () => {
 
 	return tokenTypes.reduce(
 		(acc, tokenType) => {
+			console.log(acc);
+
 			const tokens = getTokensFromTokenDataTypes(
 				tokenType,
 				components,
@@ -71,8 +76,10 @@ const getAllComponentTokens = () => {
 			}
 			return acc;
 		},
-		{} as Record<string, Recursive<Token<string>>>,
+		{} as Record<string, Recursive<SemanticToken<string>>>,
 	);
 };
 
 export const componentsTokens = defineTokens(getAllComponentTokens());
+
+console.log(componentsTokens);
