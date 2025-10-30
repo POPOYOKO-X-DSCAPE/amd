@@ -9,6 +9,7 @@ import type {
 import { Main } from "./layouts/main";
 import { Home } from "./pages/Home";
 
+import { Button } from "./components/button";
 import Section from "./components/section";
 import editorials from "./editorials.json";
 const editorialContents: JSONEditorials = editorials as JSONEditorials;
@@ -18,19 +19,36 @@ interface IRenderedRoutes {
 }
 
 const RouteContent = ({ pageProps }: IRenderedRoutes) => {
+  let headingVideoPath = null;
   let sectionTitle = "";
   let sectionNumber = "";
+  let insideSectionTitle = "";
+  const sectionContent = [];
 
   for (let i = 0; i < pageProps.length; i++) {
     const pageProp = pageProps[i];
-    if (pageProp.type === "section") {
-      sectionTitle = pageProp.pageProp.title;
-      sectionNumber = pageProp.pageProp.number;
+    switch (pageProp.type) {
+      case "section":
+        sectionTitle = pageProp.pageProp.title as string;
+        sectionNumber = pageProp.pageProp.number as string;
+        break;
+      case "title":
+        insideSectionTitle = pageProp.pageProp as string;
+        break;
+      case "video":
+        headingVideoPath = pageProp.pageProp as string;
+        break;
+      case "button":
+        sectionContent.push(<Button label={pageProp.pageProp} />);
     }
   }
   return (
-    <Section title={sectionTitle} number={sectionNumber}>
-      {pageProps[0].type}
+    <Section
+      title={sectionTitle}
+      number={sectionNumber}
+      insideTitle={insideSectionTitle}
+    >
+      {sectionContent}
     </Section>
   );
 };
@@ -58,21 +76,6 @@ const RenderedRoutes = () => {
     return null;
   }
   return routes;
-
-  //   let sectionElements = [];
-  //   let sectionTitle = "";
-  //   let sectionNumber = "";
-
-  //   switch (propType) {
-  //     case "text":
-  //       sectionElements.push(
-  //         <p className={css({ textStyle: "body.s" })}>{pageProp}</p>
-  //       );
-  //     case "title":
-  //       sectionTitle = pageProp;
-  //     default:
-  //       sectionElements.push("error component not found"); // Handle other cases or errors
-  //   }
 };
 
 const AMD = () => {
