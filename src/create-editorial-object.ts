@@ -4,7 +4,7 @@ import path from "node:path";
 // ----------------------
 // Types
 // ----------------------
-type PagePropType =
+export type PagePropType =
 	| "section"
 	| "title"
 	| "text"
@@ -14,7 +14,7 @@ type PagePropType =
 	| "button"
 	| "project-list";
 
-type PagePropMap = {
+export type PagePropMap = {
 	section: { title: string; number: string };
 	title: string;
 	text: string;
@@ -25,17 +25,17 @@ type PagePropMap = {
 	"project-list": EditorialRoute[];
 };
 
-type PageProp<T extends PagePropType = PagePropType> = {
+export type PageProp<T extends PagePropType = PagePropType> = {
 	type: T;
 	pageProp: PagePropMap[T];
 };
 
-type EditorialRoute = {
+export type EditorialRoute = {
 	slug: string;
 	pageProps: PageProp[];
 };
 
-type JSONEditorials = {
+export type JSONEditorials = {
 	[lang: string]: {
 		routes: EditorialRoute[];
 	};
