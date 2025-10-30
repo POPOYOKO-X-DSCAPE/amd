@@ -44,7 +44,7 @@ type JSONEditorials = {
 // ----------------------
 // Utils
 // ----------------------
-const BASE_DIR = path.resolve("editorial-content");
+const BASE_DIR = path.resolve("editorial-contents");
 
 const readTextFile = (filePath: string): string =>
 	fs.existsSync(filePath)
