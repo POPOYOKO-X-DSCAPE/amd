@@ -1,11 +1,11 @@
-import { App, DocumentViewer, Stack } from "@packages/ui";
+import { App, Stack } from "@packages/ui";
 import { css } from "@styles";
 
+import { useCallback, useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import Footer from "../../components/footer";
 import { AMDHeader } from "../../components/header";
 import Separator from "../../components/separator";
-
-import { assets } from "../../assets/assets";
 
 const styles = {
   container: css({
@@ -32,11 +32,25 @@ interface MainProps {
 }
 
 export const Main = ({ children }: MainProps) => {
+  const location = useLocation();
+  const scrollableRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (location.pathname && scrollableRef.current) {
+      scrollableRef.current.scrollTop = 0;
+    }
+  }, [location.pathname]);
+
   return (
     <App>
       <Stack grow>
         <AMDHeader />
-        <Stack scrollable grow className={styles.scrollable}>
+        <Stack
+          ref={scrollableRef}
+          scrollable
+          grow
+          className={styles.scrollable}
+        >
           <Stack alignItems="center">
             <Stack className={styles.container}>
               <Separator />

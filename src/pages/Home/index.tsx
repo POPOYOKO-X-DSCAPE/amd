@@ -113,20 +113,35 @@ export const Home = () => {
             <ListElement
               label="Chalet, Verbier"
               onClick={() =>
+                goToRoute("/all-projects/prestige-et-exception/chalet,-verbier")
+              }
+            />
+            <ListElement
+              label="Cologny, Genève"
+              onClick={() =>
+                goToRoute("/all-projects/prestige-et-exception/cologny,-geneve")
+              }
+            />
+            <ListElement
+              label="La Côte d’Or, Bernard Loiseau"
+              onClick={() =>
                 goToRoute(
-                  "/all-projects/prestige-et-exception/chalet,-verbier/"
+                  "/all-projects/hospitalite-&-art-de-vivre/loiseau-des-vignes,-beaune"
                 )
               }
             />
-            <ListElement label="Cologny, Genève" />
-            <ListElement label="La Côte d’Or, Bernard Loiseau" />
-            <ListElement label="Dagaz, Ibiza" />
+            <ListElement
+              label="Dagaz, Ibiza"
+              onClick={() =>
+                goToRoute("all-projects/prestige-et-exception/dagaz,-ibiza")
+              }
+            />
           </Stack>
           <Button
             level="secondary"
             label="Tous les projets"
             position="left"
-            onClick={() => navigate("/projects")}
+            onClick={() => navigate("/all-projects")}
           >
             <ArrowRight />
           </Button>
@@ -146,7 +161,12 @@ export const Home = () => {
             src={officeImage}
             alt="Francois Damidot réunion de chantier équipes"
           />
-          <Button level="secondary" label="L’Agence" position="left">
+          <Button
+            level="secondary"
+            label="L’Agence"
+            position="left"
+            onClick={() => navigate("/office")}
+          >
             <ArrowRight />
           </Button>
         </Stack>
