@@ -31,6 +31,11 @@ const kebabToCustomCase = (kebabStr: string): string => {
     .join(" ");
 };
 
+const extractNumber = (input: string): string => {
+  const match = input.match(/(\d+)/);
+  return match ? match[0] : "99";
+};
+
 const RouteContent = ({ pageProps }: IRenderedRoutes) => {
   let headingVideoPath: string | null = null;
   let sectionTitle = "";
@@ -44,7 +49,7 @@ const RouteContent = ({ pageProps }: IRenderedRoutes) => {
     switch (pageProp.type) {
       case "section":
         sectionTitle = pageProp.pageProp.title;
-        sectionNumber = pageProp.pageProp.number;
+        sectionNumber = extractNumber(pageProp.pageProp.number);
         break;
       case "title":
         insideSectionTitle = pageProp.pageProp;
