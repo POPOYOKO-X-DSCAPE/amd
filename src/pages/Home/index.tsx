@@ -7,10 +7,13 @@ import SpeechBalloon from "../../assets/svgs/SpeechBalloon.svg?react";
 
 import officeImage from "../../assets/images/francois-damidot-reunion-chantier-equipes.jpg";
 
+import { assets } from "../../assets/assets";
 import { Button } from "../../components/button";
+import Caroussel from "../../components/caroussel";
 import ListElement from "../../components/list-element";
 import Section from "../../components/section";
 import Separator from "../../components/separator";
+import Ticker from "../../components/ticker";
 
 const styles = {
   contentApproche: css({
@@ -49,8 +52,25 @@ const styles = {
 export const Home = () => {
   const navigate = useNavigate();
 
+  const goToRoute = (path: string) => {
+    navigate(path); // Change le chemin
+    window.scrollTo(0, 0); // Réinitialise le défilement
+  };
+
+  const images = [
+    assets.chaletCine,
+    assets.chaletExterieur,
+    assets.chaletPiscine,
+  ];
+
   return (
     <>
+      <Caroussel>
+        {images.map((image) => (
+          <img key={image} src={image} alt={image} />
+        ))}
+      </Caroussel>
+      <Ticker />
       <Section title="L'approche Amd" number={0}>
         <Stack className={styles.contentApproche}>
           <Stack direction="column" className={styles.texts}>
@@ -90,7 +110,14 @@ export const Home = () => {
             transforme chaque projet en une signature unique.
           </Stack>
           <Stack>
-            <ListElement label="Chalet, Verbier" />
+            <ListElement
+              label="Chalet, Verbier"
+              onClick={() =>
+                goToRoute(
+                  "/all-projects/prestige-et-exception/chalet,-verbier/"
+                )
+              }
+            />
             <ListElement label="Cologny, Genève" />
             <ListElement label="La Côte d’Or, Bernard Loiseau" />
             <ListElement label="Dagaz, Ibiza" />

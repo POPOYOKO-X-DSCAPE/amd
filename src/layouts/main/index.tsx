@@ -1,11 +1,9 @@
 import { App, DocumentViewer, Stack } from "@packages/ui";
 import { css } from "@styles";
 
-import Caroussel from "../../components/caroussel";
 import Footer from "../../components/footer";
 import { AMDHeader } from "../../components/header";
 import Separator from "../../components/separator";
-import { Ticker } from "../../components/ticker";
 
 import { assets } from "../../assets/assets";
 
@@ -15,7 +13,12 @@ const styles = {
     maxWidth: "s.FluxMaxWidth",
   }),
   content: css({
-    padding: "s.m",
+    _mobile: {
+      padding: "s.m",
+    },
+    _desktop: {
+      padding: "none",
+    },
   }),
   scrollable: css({
     backgroundColor: "s.bg.default.initial",
@@ -29,11 +32,6 @@ interface MainProps {
 }
 
 export const Main = ({ children }: MainProps) => {
-  const images = [
-    assets.chaletCine,
-    assets.chaletExterieur,
-    assets.chaletPiscine,
-  ];
   return (
     <App>
       <Stack grow>
@@ -41,12 +39,6 @@ export const Main = ({ children }: MainProps) => {
         <Stack scrollable grow className={styles.scrollable}>
           <Stack alignItems="center">
             <Stack className={styles.container}>
-              <Caroussel>
-                {images.map((image) => (
-                  <img key={image} src={image} alt={image} />
-                ))}
-              </Caroussel>
-              <Ticker />
               <Separator />
               <Stack className={styles.content}>
                 <main>{children}</main>

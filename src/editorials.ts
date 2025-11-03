@@ -5,11 +5,45 @@ export const editorials = {
   "FR": {
     "routes": [
       {
+        "slug": "office",
+        "pageProps": [
+          {
+            "type": "section",
+            "pageProp": {
+              "title": "Office",
+              "number": "_02"
+            }
+          },
+          {
+            "type": "title",
+            "pageProp": "Office"
+          },
+          {
+            "type": "text",
+            "pageProp": "L’histoire de AMD Interior Designer s’est construite autour d’une rencontre fondatrice : celle d’un premier client visionnaire, à l’origine de projets de luxe et d’exception.\nDepuis, l’identité de l’agence s’exprime dans chaque réalisation, portée par l’exigence de son fondateur, François Damidot, qui s’entoure de partenaires choisis pour leur savoir-faire, leur rigueur et leur sens du détail.\nAMD Interior Designer rassemble des architectes, femmes et hommes, des artisans et des collaborateurs internationaux. Leurs fidélités depuis plus de quinze ans font la force et la singularité de l’entreprise."
+          },
+          {
+            "type": "image",
+            "pageProp": {
+              "path": "FR/office/4-image/francois-damidot-reunion-de-chantier-equipes.webp",
+              "alt": "Francois Damidot réunion de chantier équipes"
+            }
+          },
+          {
+            "type": "button",
+            "pageProp": "Home"
+          }
+        ]
+      },
+      {
         "slug": "all-projects",
         "pageProps": [
           {
             "type": "video",
-            "pageProp": "all-projects.webm"
+            "pageProp": {
+              "path": "FR/all-projects/1-video/all-projects.webm",
+              "alt": "Lustre design doré création sur mesure AMD Interior Designer\nPorsche carport villa contemporaine architecture moderne AMD Interior Designer\nChalet de luxe salon bois montagne design intérieur AMD Interior Designer\nigner\nVilla provençale de luxe architecture méditerranéenne maison prestige AMD Interior Designer\nVilla de luxe piscine éclairée architecture contemporaine AMD Interior Designer\nSpa intérieur villa de luxe espace bien être design AMD Interior Designer"
+            }
           },
           {
             "type": "section",
@@ -34,7 +68,10 @@ export const editorials = {
                 "pageProps": [
                   {
                     "type": "video",
-                    "pageProp": "exceptional-and-luxury.webm"
+                    "pageProp": {
+                      "path": "FR/all-projects/5-project-list/1-prestige-et-exception/1-video/exceptional-and-luxury.webm",
+                      "alt": "AMD Interior Designer cinéma privé design lumière immersive home cinéma chalet alpin architecture bois pierre éclairage extérieur salon contemporain écran cheminée villa moderne piscine vue panoramique façade verre intérieur élégant sculpture art contemporain salle à manger minimaliste architecture sur mesure"
+                    }
                   },
                   {
                     "type": "section",
@@ -97,7 +134,7 @@ export const editorials = {
                             "type": "slideshow",
                             "pageProp": [
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/7-slideshow/1-image/villa-ibiza-construction-exceptionnelle.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/7-slideshow/1-image/.DS_Store",
                                 "alt": "Villa Ibiza construction exceptionnelle"
                               },
                               {
@@ -121,7 +158,7 @@ export const editorials = {
                                 "alt": "Chantier Villa Ibiza"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/7-slideshow/7-image/chantier-baies-vitrees-villa-ibiza.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/7-slideshow/7-image/.DS_Store",
                                 "alt": "Chantier baies vitrées Villa Ibiza"
                               },
                               {
@@ -133,7 +170,7 @@ export const editorials = {
                                 "alt": "niveau zéro architecture villa Ibiza construction"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/7-slideshow/10-image/chantier-espace-sejour-patio-villa-ibiza.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/7-slideshow/10-image/.DS_Store",
                                 "alt": "chantier espace séjour patio villa ibiza"
                               },
                               {
@@ -141,7 +178,7 @@ export const editorials = {
                                 "alt": "façade sud chantier Villa Dagaz Ibiza"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/7-slideshow/12-image/chantier-ferraillage-niveau-3-villa-ibiza.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/7-slideshow/12-image/.DS_Store",
                                 "alt": "Chantier ferraillage niveau 3 villa ibiza"
                               },
                               {
@@ -192,7 +229,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/13-image/vue-villa-ibiza-la-crique-sauvage-la-vegetation-mediterraneenne.webp",
+                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/1-dagaz,-ibiza/13-image/.DS_Store",
                               "alt": "Vue villa  Ibiza la crique sauvage la végétation méditerranéenne"
                             }
                           },
@@ -269,7 +306,7 @@ export const editorials = {
                                 "alt": "salle à manger design avec mobilier sur mesure AMD interior designer"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/2-chalet,-verbier/7-slideshow/7-image/detail-architecture-interieure-haut-de-gamme-verbier.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/2-chalet,-verbier/7-slideshow/7-image/.DS_Store",
                                 "alt": "détail architecture intérieure haut de gamme Verbier"
                               },
                               {
@@ -277,7 +314,7 @@ export const editorials = {
                                 "alt": "escalier sculptural avec garde-corps ajouré"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/2-chalet,-verbier/7-slideshow/9-image/salle-simulation-course-automobile-chalet-verbier.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/2-chalet,-verbier/7-slideshow/9-image/.DS_Store",
                                 "alt": "salle simulation course automobile chalet verbier"
                               },
                               {
@@ -366,7 +403,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/3-cologny,-geneve/4-image/maison-piscine-architecte-contemporaine-cologny-lac-leman.webp",
+                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/3-cologny,-geneve/4-image/.DS_Store",
                               "alt": "maison piscine architecte contemporaine Cologny lac léman"
                             }
                           },
@@ -408,7 +445,7 @@ export const editorials = {
                                 "alt": "Salle sport privée design éclairage led Genève"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/3-cologny,-geneve/7-slideshow/6-image/villa-contemporaine-piscine-circulaire-led-geneve.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/3-cologny,-geneve/7-slideshow/6-image/.DS_Store",
                                 "alt": "Villa contemporaine piscine circulaire led Genève"
                               },
                               {
@@ -440,7 +477,7 @@ export const editorials = {
                                 "alt": "Salon chambre contemporain vue nocturne lac léman genève"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/3-cologny,-geneve/7-slideshow/14-image/espace-reception-billard-lustre-contemporain-cologny.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/3-cologny,-geneve/7-slideshow/14-image/.DS_Store",
                                 "alt": "Espace réception billard lustre contemporain cologny"
                               },
                               {
@@ -463,7 +500,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/3-cologny,-geneve/9-image/mur-aquarium-luxe-cologny-geneve.webp",
+                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/3-cologny,-geneve/9-image/.DS_Store",
                               "alt": "Mur aquarium luxe cologny Genève"
                             }
                           },
@@ -558,7 +595,7 @@ export const editorials = {
                                 "alt": "Vignoble bastide lumière sud"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/4-ranch,-st-tropez/7-slideshow/8-image/parc-arbore-piscine-debordement-st-tropez.webp",
+                                "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/4-ranch,-st-tropez/7-slideshow/8-image/.DS_Store",
                                 "alt": "Parc arboré piscine débordement st Tropez"
                               }
                             ]
@@ -611,7 +648,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/5-central-park,-kiev/5-image/vestiaire-panneaux-matelasse-luminaire-sculptural-kiev-luxe.webp",
+                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/5-central-park,-kiev/5-image/.DS_Store",
                               "alt": "Vestiaire panneaux matelassé luminaire sculptural Kiev luxe"
                             }
                           },
@@ -625,14 +662,14 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/5-central-park,-kiev/7-image/suite-salon-parentale-avec-mur-texture-suspension-en-verre-.webp",
+                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/5-central-park,-kiev/7-image/.DS_Store",
                               "alt": "Suite salon parentale avec mur texturé suspension en verre"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/5-central-park,-kiev/8-image/sculptures-architecturale-salle-a-manger-bureau-salon-luxe.webp",
+                              "path": "FR/all-projects/5-project-list/1-prestige-et-exception/5-project-list/5-central-park,-kiev/8-image/.DS_Store",
                               "alt": "sculptures architecturale salle à manger bureau salon luxe"
                             }
                           },
@@ -662,7 +699,10 @@ export const editorials = {
                 "pageProps": [
                   {
                     "type": "video",
-                    "pageProp": "exceptional-&-luxury.mp4"
+                    "pageProp": {
+                      "path": "FR/all-projects/5-project-list/2-architecture-et-architecture-interieure/1-video/exceptional-&-luxury.mp4",
+                      "alt": "AMD Interior Designer cinéma privé design lumière immersive home cinéma chalet alpin architecture bois pierre éclairage extérieur salon contemporain écran cheminée villa moderne piscine vue panoramique façade verre intérieur élégant sculpture art contemporain salle à manger minimaliste architecture sur mesure"
+                    }
                   },
                   {
                     "type": "section",
@@ -768,7 +808,10 @@ export const editorials = {
                 "pageProps": [
                   {
                     "type": "video",
-                    "pageProp": "interior-&-art-de-vivre.webm"
+                    "pageProp": {
+                      "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/1-video/interior-&-art-de-vivre.webm",
+                      "alt": "Vidéo de l'œnothèque de Loiseau des vignes et paysage de vignes, détail de la Table d'Hôte Rôtisserie du Chambertin"
+                    }
                   },
                   {
                     "type": "section",
@@ -809,7 +852,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/1-hugo-&-valentine,-dijon/4-image/facade-entree-valentine-et-hugo-dijon.webp",
+                              "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/1-hugo-&-valentine,-dijon/4-image/.DS_Store",
                               "alt": "Façade entrée Valentine et Hugo Dijon"
                             }
                           },
@@ -889,7 +932,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/2-loiseau-des-vignes,-beaune/5-image/interieur-du-restaurant-loiseau-des-vignes-concept-d'oenotheque.webp",
+                              "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/2-loiseau-des-vignes,-beaune/5-image/.DS_Store",
                               "alt": "Intérieur du restaurant Loiseau des Vignes – concept d’œnothèque signé Madame Loiseau"
                             }
                           },
@@ -904,7 +947,7 @@ export const editorials = {
                             "type": "slideshow",
                             "pageProp": [
                               {
-                                "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/2-loiseau-des-vignes,-beaune/7-slideshow/1-image/salle-principale-restaurant-loiseau-des-vignes.webp",
+                                "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/2-loiseau-des-vignes,-beaune/7-slideshow/1-image/.DS_Store",
                                 "alt": "Salle principale Restaurant Loiseau des Vignes"
                               },
                               {
@@ -916,11 +959,11 @@ export const editorials = {
                                 "alt": "Salle de restaurant vue jardin Loiseau des Vignes"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/2-loiseau-des-vignes,-beaune/7-slideshow/4-image/oenotheque-beaune-loiseau-des-vignes.webp",
+                                "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/2-loiseau-des-vignes,-beaune/7-slideshow/4-image/.DS_Store",
                                 "alt": "oenothèque Beaune Loiseau des Vignes"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/2-loiseau-des-vignes,-beaune/7-slideshow/5-image/salle-principale-loiseau-des-vignes-beaune.webp",
+                                "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/2-loiseau-des-vignes,-beaune/7-slideshow/5-image/.DS_Store",
                                 "alt": "Salle principale Loiseau des Vignes Beaune"
                               },
                               {
@@ -981,7 +1024,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/3-table-d'hote,-rotisserie-du-chambertin/6-image/composition-rustique-la-table-d'hote-rotisserie-chambertin.webp",
+                              "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/3-table-d'hote,-rotisserie-du-chambertin/6-image/.DS_Store",
                               "alt": "composition rustique la Table d’Hôte Rôtisserie Chambertin"
                             }
                           },
@@ -1013,7 +1056,7 @@ export const editorials = {
                                 "alt": "étagère de grands crus de Bourgogne Table d’hôte Rôtisserie Chambertin"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/3-table-d'hote,-rotisserie-du-chambertin/7-slideshow/7-image/bourgogne-table-d'hote-rotisserie-chambertin.webp",
+                                "path": "FR/all-projects/5-project-list/3-hospitalite-&-art-de-vivre/5-project-list/3-table-d'hote,-rotisserie-du-chambertin/7-slideshow/7-image/.DS_Store",
                                 "alt": "Bourgogne Table d’hôte Rôtisserie Chambertin"
                               }
                             ]
@@ -1044,11 +1087,17 @@ export const editorials = {
                 "pageProps": [
                   {
                     "type": "video",
-                    "pageProp": "projet-3d.mp4"
+                    "pageProp": {
+                      "path": "FR/all-projects/5-project-list/4-conception-3d/1-video/projet-3d.mp4",
+                      "alt": "Conception 3D résidence haut de gamme visualisation architecture intérieure projet résidentiel sur-mesure garage vitré voitures de luxe salle de bain marbre design bureau avec vue panoramique salle de projection immersive AMD Interior Designer 3D"
+                    }
                   },
                   {
                     "type": "video",
-                    "pageProp": "projet-3d.mp4"
+                    "pageProp": {
+                      "path": "FR/all-projects/5-project-list/4-conception-3d/2-video/projet-3d.mp4",
+                      "alt": "onception 3D résidence haut de gamme visualisation architecture intérieure projet résidentiel sur-mesure garage vitré voitures de luxe salle de bain marbre design bureau avec vue panoramique salle de projection immersive AMD Interior Designer 3D"
+                    }
                   },
                   {
                     "type": "section",
@@ -1103,7 +1152,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/6-image/chambre-master-tete-de-lit-retroeclairee-lignes-lumineuses-dynamiques-scenario-eclairage-personnalisable-luxe-ibiza.webp",
+                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/6-image/.DS_Store",
                               "alt": "Chambre Master tête de lit rétroéclairée lignes lumineuses dynamiques scénario éclairage personnalisable luxe ibiza"
                             }
                           },
@@ -1135,7 +1184,7 @@ export const editorials = {
                                 "alt": "cave vin coursive patio futuriste architecture ibiza"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/7-image/espace-detente-immacule-bois-cuir-blanc-ibiza-architecture-designer.webp",
+                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/7-image/.DS_Store",
                                 "alt": "espace détente immaculé bois cuir blanc ibiza architecture designer"
                               },
                               {
@@ -1199,7 +1248,10 @@ export const editorials = {
                           },
                           {
                             "type": "video",
-                            "pageProp": "monte-charges-voiture-prestige.webm"
+                            "pageProp": {
+                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/4-video/monte-charges-voiture-prestige.webm",
+                              "alt": "Monte charges voiture prestige"
+                            }
                           },
                           {
                             "type": "image",
@@ -1211,7 +1263,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/6-image/voiture-luxe-garage-vitre-amd-interior-designer.webp",
+                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/6-image/.DS_Store",
                               "alt": "Voiture luxe garage vitré AMD Interior Designer"
                             }
                           },
@@ -1225,7 +1277,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/9-image/facade-garage-en-verre-design-suisse.webp",
+                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/9-image/.DS_Store",
                               "alt": "Façade garage en verre design Suisse"
                             }
                           },
@@ -1344,7 +1396,7 @@ export const editorials = {
                             "type": "slideshow",
                             "pageProp": [
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/1-image/circulation-lumineuse-arches-vitrees-vue-espace-bien-etre.webp",
+                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/1-image/.DS_Store",
                                 "alt": "Circulation lumineuse arches vitrées vue espace bien-être"
                               },
                               {
@@ -1352,7 +1404,7 @@ export const editorials = {
                                 "alt": "Salle à manger suspensions sculpturales lignes organiques"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/3-image/suite-minimaliste-lignes-courbes-integrees.webp",
+                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/3-image/.DS_Store",
                                 "alt": "Suite minimaliste lignes courbes intégrées"
                               },
                               {
@@ -1360,7 +1412,7 @@ export const editorials = {
                                 "alt": "Suite élégante bleu canard suspensions sculpturales parquet chevrons"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/5-image/bibliotheque-immersive-bar-boiseries-sur-mesure-ambiance-feutree.webp",
+                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/5-image/.DS_Store",
                                 "alt": "Bibliothèque immersive bar boiseries sur mesure ambiance feutrée"
                               },
                               {
@@ -1410,7 +1462,7 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/6-palais-valetta,-malte/4-image/salon-cheminee-pierre-et-fauteuils-vintage.webp",
+                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/6-palais-valetta,-malte/4-image/.DS_Store",
                               "alt": "Salon chaleureux avec cheminée en pierre et fauteuils vintage"
                             }
                           },
@@ -1517,37 +1569,6 @@ export const editorials = {
         ]
       },
       {
-        "slug": "office",
-        "pageProps": [
-          {
-            "type": "section",
-            "pageProp": {
-              "title": "Office",
-              "number": "_02"
-            }
-          },
-          {
-            "type": "title",
-            "pageProp": "Office"
-          },
-          {
-            "type": "text",
-            "pageProp": "L’histoire de AMD Interior Designer s’est construite autour d’une rencontre fondatrice : celle d’un premier client visionnaire, à l’origine de projets de luxe et d’exception.\nDepuis, l’identité de l’agence s’exprime dans chaque réalisation, portée par l’exigence de son fondateur, François Damidot, qui s’entoure de partenaires choisis pour leur savoir-faire, leur rigueur et leur sens du détail.\nAMD Interior Designer rassemble des architectes, femmes et hommes, des artisans et des collaborateurs internationaux. Leurs fidélités depuis plus de quinze ans font la force et la singularité de l’entreprise."
-          },
-          {
-            "type": "image",
-            "pageProp": {
-              "path": "FR/office/4-image/francois-damidot-reunion-de-chantier-equipes.webp",
-              "alt": "Francois Damidot réunion de chantier équipes"
-            }
-          },
-          {
-            "type": "button",
-            "pageProp": "Home"
-          }
-        ]
-      },
-      {
         "slug": "prototypes",
         "pageProps": [
           {
@@ -1596,7 +1617,7 @@ export const editorials = {
                   {
                     "type": "image",
                     "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/5-image/fabrication-echelle-12-prototype-metaceylate-massif-enjeux-techniques-financiers.webp",
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/5-image/fabrication-echelle-1:2-prototype-metaceylate-massif-enjeux-techniques-financiers.webp",
                       "alt": "fabrication échelle 1/2 prototype metaceylate massif enjeux techniques financiers"
                     }
                   },
@@ -1610,21 +1631,21 @@ export const editorials = {
                   {
                     "type": "image",
                     "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/7-image/fabrication-echelle-11-prototype-mousse-haute-densite.webp",
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/7-image/fabrication-echelle-1:1-prototype-mousse-haute-densite.webp",
                       "alt": "Fabrication échelle 1/1 prototype mousse haute densité"
                     }
                   },
                   {
                     "type": "image",
                     "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/8-image/fabrication-echelle-1:2-prototype-aluminium-massif.webp",
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/8-image/fabrication-echelle-12-prototype-aluminium-massif.webp",
                       "alt": "Fabrication échelle 1/2 prototype aluminium massif"
                     }
                   },
                   {
                     "type": "image",
                     "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/9-image/fabrication-echelle-11-prototype-mousse-haute-densite.webp",
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/9-image/fabrication-echelle-1:1-prototype-mousse-haute-densite.webp",
                       "alt": "fabrication échelle 1/1 prototype mousse haute densité"
                     }
                   },

@@ -20,7 +20,7 @@ export type PagePropMap = {
 	text: string;
 	image: { path: string; alt: string };
 	slideshow: PagePropMap["image"][];
-	video: string;
+	video: { path: string; alt: string };
 	button: string;
 	"project-list": EditorialRoute[];
 };
@@ -111,6 +111,25 @@ const buildImageProp = (dirPath: string): PagePropMap["image"] => {
 	return { path: relativePath.replace(/\\/g, "/"), alt };
 };
 
+const buildVideoProp = (dirPath: string): PagePropMap["video"] => {
+	const alt = readTextFile(path.join(dirPath, "alt.txt"));
+	const files = fs
+		.readdirSync(dirPath)
+		.filter(
+			(f) =>
+				!f.endsWith(".txt") &&
+				!fs.statSync(path.join(dirPath, f)).isDirectory(),
+		);
+
+	const videoFile = files[0] ?? "";
+	const relativePath = path.relative(
+		BASE_DIR,
+		path.join(dirPath, videoFile),
+	);
+
+	return { path: relativePath.replace(/\\/g, "/"), alt };
+};
+
 const buildPageProp = (
 	type: PagePropType,
 	dirPath: string,
@@ -162,16 +181,9 @@ const buildPageProp = (
 		}
 
 		case "video": {
-			const files = fs
-				.readdirSync(dirPath)
-				.filter(
-					(f) =>
-						!f.endsWith(".txt") &&
-						!fs.statSync(path.join(dirPath, f)).isDirectory(),
-				);
 			return {
 				type,
-				pageProp: files[0] ?? "",
+				pageProp: buildVideoProp(dirPath),
 			};
 		}
 

@@ -14,6 +14,7 @@ import { Button } from "./components/button";
 import ListElement from "./components/list-element";
 import Section from "./components/section";
 import { editorials } from "./editorials";
+import { Contact } from "./pages/Contact";
 
 type LangKey = keyof typeof editorials;
 type EditorialLang = (typeof editorials)[LangKey];
@@ -38,6 +39,7 @@ const extractNumber = (input: string): string => {
 
 const RouteContent = ({ pageProps }: IRenderedRoutes) => {
   let headingVideoPath: string | null = null;
+  let headingVideoAlt: string | null = null;
   let sectionTitle = "";
   let sectionNumber = "";
   let insideSectionTitle = "";
@@ -55,7 +57,8 @@ const RouteContent = ({ pageProps }: IRenderedRoutes) => {
         insideSectionTitle = pageProp.pageProp;
         break;
       case "video":
-        headingVideoPath = pageProp.pageProp;
+        headingVideoPath = pageProp.pageProp.path;
+        headingVideoAlt = pageProp.pageProp.alt;
         break;
       case "text":
         sectionContent.push(
@@ -91,13 +94,26 @@ const RouteContent = ({ pageProps }: IRenderedRoutes) => {
   }
 
   return (
-    <Section
-      title={sectionTitle}
-      number={sectionNumber}
-      insideTitle={insideSectionTitle}
-    >
-      {sectionContent}
-    </Section>
+    <Stack>
+      {headingVideoPath && (
+        <video
+          src={`/src/editorial-contents/${headingVideoPath}`}
+          // controls
+          aria-label={headingVideoAlt || "null"}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      )}
+      <Section
+        title={sectionTitle}
+        number={sectionNumber}
+        insideTitle={insideSectionTitle}
+      >
+        {sectionContent}
+      </Section>
+    </Stack>
   );
 };
 
@@ -145,7 +161,6 @@ const RenderedRoutes = () => {
 
   if (routes.length === 0) return null;
 
-  console.log("Routes", routes);
   return routes;
 };
 
@@ -155,6 +170,7 @@ const AMD = () => {
       <Main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
           {RenderedRoutes()}
         </Routes>
       </Main>
