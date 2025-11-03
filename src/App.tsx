@@ -1,14 +1,17 @@
 import { css } from "@styles";
 import {
-	Route,
-	BrowserRouter as Router,
-	Routes,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useNavigate,
 } from "react-router-dom";
 import { Main } from "./layouts/main";
 import { Home } from "./pages/Home";
 
+import { Stack } from "@packages/ui";
 import type React from "react";
 import { Button } from "./components/button";
+import ListElement from "./components/list-element";
 import Section from "./components/section";
 import { editorials } from "./editorials";
 
@@ -18,100 +21,137 @@ type EditorialRoute = EditorialLang["routes"][number];
 type RealPageProp = EditorialRoute["pageProps"][number];
 
 interface IRenderedRoutes {
-	pageProps: RealPageProp[];
+  pageProps: RealPageProp[];
 }
 
+const kebabToCustomCase = (kebabStr: string): string => {
+  return kebabStr
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+};
+
 const RouteContent = ({ pageProps }: IRenderedRoutes) => {
-	let headingVideoPath: string | null = null;
-	let sectionTitle = "";
-	let sectionNumber = "";
-	let insideSectionTitle = "";
-	const sectionContent: React.ReactElement[] = [];
+  let headingVideoPath: string | null = null;
+  let sectionTitle = "";
+  let sectionNumber = "";
+  let insideSectionTitle = "";
+  const sectionContent: React.ReactElement[] = [];
 
-	for (const pageProp of pageProps) {
-		switch (pageProp.type) {
-			case "section":
-				sectionTitle = pageProp.pageProp.title;
-				sectionNumber = pageProp.pageProp.number;
-				break;
-			case "title":
-				insideSectionTitle = pageProp.pageProp;
-				break;
-			case "video":
-				headingVideoPath = pageProp.pageProp;
-				break;
-			case "text":
-				sectionContent.push(
-					<p className={css({ textStyle: "body.s" })}>
-						{pageProp.pageProp}
-					</p>,
-				);
-				break;
-			case "button":
-				sectionContent.push(<Button label={pageProp.pageProp} />);
-				break;
-			case "image":
-				sectionContent.push(pageProp.pageProp);
-				break;
-			case "project-list":
-				console.log(pageProp.pageProp);
-				sectionContent.push(
-					<Stack>
-						{pageProp.pageProp.map((a, i) => (
-							<ListElement label={a.slug} key={i}></ListElement>
-						))}
-					</Stack>,
-				);
-				break;
-			default:
-		}
-	}
+  const navigate = useNavigate();
 
-	return (
-		<Section
-			title={sectionTitle}
-			number={sectionNumber}
-			insideTitle={insideSectionTitle}
-		>
-			{sectionContent}
-		</Section>
-	);
+  for (const pageProp of pageProps) {
+    switch (pageProp.type) {
+      case "section":
+        sectionTitle = pageProp.pageProp.title;
+        sectionNumber = pageProp.pageProp.number;
+        break;
+      case "title":
+        insideSectionTitle = pageProp.pageProp;
+        break;
+      case "video":
+        headingVideoPath = pageProp.pageProp;
+        break;
+      case "text":
+        sectionContent.push(
+          <p className={css({ textStyle: "body.s" })}>{pageProp.pageProp}</p>
+        );
+        break;
+      case "button":
+        sectionContent.push(<Button label={pageProp.pageProp} />);
+        break;
+      case "image":
+        sectionContent.push(
+          <img alt={pageProp.pageProp.alt} src={pageProp.pageProp.path} />
+        );
+        break;
+      case "project-list":
+        sectionContent.push(
+          <Stack>
+            {pageProp.pageProp.map((a, i) => (
+              <ListElement
+                label={kebabToCustomCase(a.slug)}
+                onClick={() => navigate(a.slug)}
+                key={`${a.slug}-${i}`}
+              />
+            ))}
+          </Stack>
+        );
+        break;
+      default:
+    }
+  }
+
+  return (
+    <Section
+      title={sectionTitle}
+      number={sectionNumber}
+      insideTitle={insideSectionTitle}
+    >
+      {sectionContent}
+    </Section>
+  );
 };
 
 const RenderedRoutes = () => {
-	const routes = [];
+  const routes: React.ReactElement[] = [];
 
-	for (const [lang, data] of Object.entries(editorials)) {
-		if (lang === "FR") {
-			for (const route of data.routes) {
-				routes.push(
-					<Route
-						key={route.slug}
-						path={route.slug}
-						element={<RouteContent pageProps={route.pageProps} />}
-					/>,
-				);
-			}
-		}
-	}
+  const buildRoutes = (
+    lang: string,
+    // biome-ignore lint/suspicious/noExplicitAny: <Cannot know exact values>
+    routeData: Record<string, any>,
+    parentPath = ""
+  ) => {
+    const fullPath = `${parentPath}/${routeData.slug}`.replace(/\/+/g, "/");
+    console.log(routeData);
 
-	if (routes.length === 0) {
-		return null;
-	}
-	return routes;
+    routes.push(
+      <Route
+        key={`${lang}-${fullPath}`}
+        path={fullPath}
+        element={<RouteContent pageProps={routeData.pageProps} />}
+      />
+    );
+
+    if (Array.isArray(routeData.pageProps)) {
+      for (const element of routeData.pageProps) {
+        if (
+          element.type === "project-list" &&
+          Array.isArray(element.pageProp)
+        ) {
+          for (const project of element.pageProp) {
+            buildRoutes(lang, project, fullPath);
+          }
+        }
+      }
+    }
+  };
+
+  for (const [lang, data] of Object.entries(editorials)) {
+    if (Array.isArray(data.routes)) {
+      for (const route of data.routes) {
+        buildRoutes(lang, route);
+      }
+    }
+  }
+
+  if (routes.length === 0) return null;
+
+  console.log("Routes", routes);
+  return routes;
 };
 
 const AMD = () => {
-	return (
-		<Router>
-			<Main>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					{RenderedRoutes()}
-				</Routes>
-			</Main>
-		</Router>
-	);
+  return (
+    <Router>
+      <Main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {RenderedRoutes()}
+        </Routes>
+      </Main>
+    </Router>
+  );
 };
 
 export default AMD;

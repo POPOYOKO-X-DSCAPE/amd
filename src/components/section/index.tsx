@@ -4,7 +4,7 @@ import SectionTitle from "../section-title";
 
 interface SectionProps {
   title: string;
-  insideTitle: string;
+  insideTitle?: string;
   number: string | number;
   children: React.ReactNode;
 }
@@ -43,7 +43,7 @@ export const Section = ({
     <Stack className={styles.container}>
       <SectionTitle title={title} number={number} />
       <Stack className={styles.content}>
-        <span className={styles.title}>{insideTitle}</span>
+        <span className={styles.title}>{insideTitle || title}</span>
         <Stack className={styles.children}>{children}</Stack>
       </Stack>
     </Stack>
