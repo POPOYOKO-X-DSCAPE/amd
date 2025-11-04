@@ -1,4 +1,5 @@
 import { Form, FormProvider, useFormStore } from "@ariakit/react";
+import { Stack } from "@packages/ui";
 import { css } from "@styles";
 
 interface ContactFormProps {
@@ -14,14 +15,15 @@ const styles = {
     justifyContent: "center",
     paddingY: "s.x2l",
     gap: "s.l",
+    width: "100%",
+    maxWidth: "70ch",
+    _desktop: {
+      paddingY: "s.x4l",
+    },
   }),
 };
 
-export const ContactForm = ({
-  children,
-  onSubmit,
-  className,
-}: ContactFormProps) => {
+export const ContactForm = ({ children, className }: ContactFormProps) => {
   const form = useFormStore({
     defaultValues: {
       name: "",
@@ -59,9 +61,11 @@ export const ContactForm = ({
 
   return (
     <FormProvider store={form}>
-      <Form className={`${styles.form} ${className}`} onSubmit={handleSubmit}>
-        {children}
-      </Form>
+      <Stack alignItems="center">
+        <Form className={`${styles.form} ${className}`} onSubmit={handleSubmit}>
+          {children}
+        </Form>
+      </Stack>
     </FormProvider>
   );
 };

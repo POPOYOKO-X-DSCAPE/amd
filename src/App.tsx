@@ -3,6 +3,7 @@ import {
   Route,
   BrowserRouter as Router,
   Routes,
+  useLocation,
   useNavigate,
 } from "react-router-dom";
 import { Main } from "./layouts/main";
@@ -26,6 +27,23 @@ interface IRenderedRoutes {
   pageProps: RealPageProp[];
 }
 
+const styles = {
+  fluxImg: css({
+    _desktop: {
+      maxWidth: "60%",
+    },
+  }),
+  fluxText: css({
+    maxWidth: "70ch",
+    textStyle: "body.s",
+  }),
+  fluxButton: css({
+    _desktop: {
+      maxWidth: "30%",
+    },
+  }),
+};
+
 const kebabToCustomCase = (kebabStr: string): string => {
   return kebabStr
     .split("-")
@@ -47,6 +65,19 @@ const RouteContent = ({ pageProps }: IRenderedRoutes) => {
   const sectionContent: React.ReactElement[] = [];
 
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleGoBack = () => {
+    const currentPath = location.pathname;
+
+    const newPath = currentPath.substring(0, currentPath.lastIndexOf("/"));
+    if (newPath === "") {
+      console.log(newPath);
+      navigate("/");
+    } else {
+      navigate(newPath);
+    }
+  };
 
   for (const pageProp of pageProps) {
     switch (pageProp.type) {
@@ -63,18 +94,25 @@ const RouteContent = ({ pageProps }: IRenderedRoutes) => {
         break;
       case "text":
         sectionContent.push(
-          <p className={css({ textStyle: "body.s" })}>{pageProp.pageProp}</p>
+          <p className={styles.fluxText}>{pageProp.pageProp}</p>
         );
         break;
       case "button":
-        sectionContent.push(<Button label={pageProp.pageProp} />);
+        sectionContent.push(
+          <Stack className={styles.fluxButton}>
+            <Button label={pageProp.pageProp} onClick={() => handleGoBack()} />
+          </Stack>
+        );
         break;
       case "image":
         sectionContent.push(
-          <img
-            alt={pageProp.pageProp.alt}
-            src={`/src/editorial-contents/${pageProp.pageProp.path}`}
-          />
+          <Stack>
+            <img
+              alt={pageProp.pageProp.alt}
+              src={`/src/editorial-contents/${pageProp.pageProp.path}`}
+              className={styles.fluxImg}
+            />
+          </Stack>
         );
         break;
       case "project-list":
@@ -128,7 +166,6 @@ const RenderedRoutes = () => {
     parentPath = ""
   ) => {
     const fullPath = `${parentPath}/${routeData.slug}`.replace(/\/+/g, "/");
-    console.log(routeData);
 
     routes.push(
       <Route
