@@ -13,9 +13,12 @@ import { Stack } from "@packages/ui";
 import type React from "react";
 import { Button } from "./components/button";
 import ListElement from "./components/list-element";
+import { PageChangeAnimation } from "./components/pageChangeAnimation/page-change-animation";
 import Section from "./components/section";
+import { AnimationProvider } from "./contexts/animation-context";
 import { ColorModeProvider } from "./contexts/color-mode-context";
 import { editorials } from "./editorials";
+import usePageTransition from "./hooks/usePageTransition";
 import { Contact } from "./pages/Contact";
 
 type LangKey = keyof typeof editorials;
@@ -65,18 +68,18 @@ const RouteContent = ({ pageProps }: IRenderedRoutes) => {
   const sectionContent: React.ReactElement[] = [];
 
   const navigate = useNavigate();
+  const { transitionTo } = usePageTransition();
   const location = useLocation();
 
-  const handleGoBack = () => {
+  const goBackLink = () => {
     const currentPath = location.pathname;
 
     const newPath = currentPath.substring(0, currentPath.lastIndexOf("/"));
     if (newPath === "") {
       console.log(newPath);
-      navigate("/");
-    } else {
-      navigate(newPath);
+      return "/";
     }
+    return newPath;
   };
 
   for (const pageProp of pageProps) {
@@ -100,7 +103,10 @@ const RouteContent = ({ pageProps }: IRenderedRoutes) => {
       case "button":
         sectionContent.push(
           <Stack className={styles.fluxButton}>
-            <Button label={pageProp.pageProp} onClick={() => handleGoBack()} />
+            <Button
+              label={pageProp.pageProp}
+              onClick={() => transitionTo(goBackLink())}
+            />
           </Stack>
         );
         break;
@@ -205,15 +211,18 @@ const RenderedRoutes = () => {
 const AMD = () => {
   return (
     <ColorModeProvider>
-      <Router>
-        <Main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            {RenderedRoutes()}
-          </Routes>
-        </Main>
-      </Router>
+      <AnimationProvider>
+        <PageChangeAnimation />
+        <Router>
+          <Main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              {RenderedRoutes()}
+            </Routes>
+          </Main>
+        </Router>
+      </AnimationProvider>
     </ColorModeProvider>
   );
 };
