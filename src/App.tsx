@@ -13,6 +13,7 @@ import type React from "react";
 import { Button } from "./components/button";
 import ListElement from "./components/list-element";
 import Section from "./components/section";
+import { ColorModeProvider } from "./contexts/color-mode-context";
 import { editorials } from "./editorials";
 import { Contact } from "./pages/Contact";
 
@@ -166,15 +167,17 @@ const RenderedRoutes = () => {
 
 const AMD = () => {
   return (
-    <Router>
-      <Main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-          {RenderedRoutes()}
-        </Routes>
-      </Main>
-    </Router>
+    <ColorModeProvider>
+      <Router>
+        <Main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            {RenderedRoutes()}
+          </Routes>
+        </Main>
+      </Router>
+    </ColorModeProvider>
   );
 };
 
