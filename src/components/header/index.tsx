@@ -172,7 +172,9 @@ export const AMDHeader = () => {
                   onClick={toggleColorMode}
                   className={styles.headerButton}
                 >
-                  {colorMode === "light" ? <Light /> : <Dark />}
+                  <Stack direction="row" alignItems="center">
+                    {colorMode === "light" ? <Light /> : <Dark />}
+                  </Stack>
                 </AriaButton>
               </Stack>
             </Stack>
