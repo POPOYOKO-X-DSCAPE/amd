@@ -14,6 +14,9 @@ const styles = {
     padding: 0,
     paddingTop: "s.m",
     gap: "s.l",
+    _desktop: {
+      paddingBottom: "s.m",
+    },
   }),
   navigation: css({
     alignItems: "flex-end",

@@ -1,29 +1,27 @@
 import { App, Stack } from "@packages/ui";
 import { css } from "@styles";
 
-import { useCallback, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "../../components/footer";
 import { AMDHeader } from "../../components/header";
-import Separator from "../../components/separator";
 
 const styles = {
   container: css({
     width: "100%",
     maxWidth: "s.FluxMaxWidth",
+    overflowX: "hidden",
   }),
   content: css({
-    _mobile: {
-      padding: "s.m",
-    },
-    _desktop: {
-      padding: "none",
+    padding: "s.m",
+    _desktop: { padding: "0" },
+    "@media screen and (max-width: 2560px)": {
+      paddingX: "s.l",
     },
   }),
   scrollable: css({
     backgroundColor: "s.bg.default.initial",
     color: "s.fg.default.initial",
-    scrollbar: "hidden",
   }),
 };
 
@@ -53,7 +51,6 @@ export const Main = ({ children }: MainProps) => {
         >
           <Stack alignItems="center">
             <Stack className={styles.container}>
-              <Separator />
               <Stack className={styles.content}>
                 <main>{children}</main>
                 <Footer />

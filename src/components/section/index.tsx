@@ -30,6 +30,7 @@ const styles = {
     alignSelf: "stretch",
     wordWrap: "break-word",
     overflowWrap: "break-word",
+    gap: "s.l",
   }),
 };
 
