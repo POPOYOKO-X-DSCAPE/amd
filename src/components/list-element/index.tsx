@@ -2,7 +2,6 @@ import { Button } from "@ariakit/react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import classNames from "classnames";
-import { Route, Routes, href } from "react-router-dom";
 import Arrow from "../../assets/svgs/ArrowRight.svg?react";
 
 interface ListElementProps {
@@ -40,7 +39,7 @@ const styles = {
   arrow: css(),
 };
 
-export const ListElement = ({ label, onClick }: ListElementProps) => {
+export const ListElement = ({ label, children, onClick }: ListElementProps) => {
   return (
     <Button
       style={{ justifyContent: "flex-end" }}
@@ -52,6 +51,7 @@ export const ListElement = ({ label, onClick }: ListElementProps) => {
         <Stack className={classNames(styles.arrow, "arrow")}>
           <Arrow />
         </Stack>
+        {children && <span>{children}</span>}
         <Stack className={styles.label}>{label}</Stack>
       </Stack>
     </Button>

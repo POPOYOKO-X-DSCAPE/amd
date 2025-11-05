@@ -1,4 +1,3 @@
-import { Heading, HeadingLevel } from "@ariakit/react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 
@@ -27,10 +26,8 @@ export const SectionTitle = ({ title, number }: SectionTitleProps) => {
 
   return (
     <Stack direction="row" className={styles.container}>
-      <HeadingLevel>
-        <Heading className={styles.title}>{title}</Heading>
-        <span className={styles.number}>_{formattedNumber}</span>
-      </HeadingLevel>
+      <span className={styles.title}>{title}</span>
+      <span className={styles.number}>_{formattedNumber}</span>
     </Stack>
   );
 };
