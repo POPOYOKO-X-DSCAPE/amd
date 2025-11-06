@@ -47,8 +47,6 @@ const components = {
 };
 
 const getAllComponentTokens = () => {
-	console.log(components.header.colors.bg);
-
 	const tokenTypes = [
 		"colors",
 		"sizes",
