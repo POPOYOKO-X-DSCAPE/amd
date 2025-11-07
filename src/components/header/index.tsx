@@ -1,14 +1,17 @@
 import {
+  Button as AriaButton,
   Disclosure,
   DisclosureContent,
+  Select,
+  SelectItem,
+  SelectPopover,
+  SelectProvider,
   useDisclosureStore,
 } from "@ariakit/react";
 import { Stack } from "@packages/ui";
 import useMobile from "@packages/ui/hooks/use-mobile";
 import { css } from "@styles";
 import { useEffect, useState } from "react";
-import { semantic } from "../../../theme/semantic";
-import { sizes } from "../../../theme/semantic/sizes";
 import Logo from "../../assets/svgs/Architecture Interior Designer.svg?react";
 import Burger from "../../assets/svgs/Burger.svg?react";
 import Close from "../../assets/svgs/Close.svg?react";
@@ -17,10 +20,10 @@ import English from "../../assets/svgs/English.svg?react";
 import French from "../../assets/svgs/French.svg?react";
 import Light from "../../assets/svgs/Light.svg?react";
 
-import { Button } from "../button";
+import { Route, useNavigate } from "react-router-dom";
+import { useColorMode } from "../../contexts/color-mode-context";
+import { editorials } from "../../editorials";
 import HeaderMenu from "../header-menu";
-import ListElement from "../list-element";
-import MenuOption from "../menu-option";
 
 const styles = {
   header: css({
@@ -47,6 +50,13 @@ const styles = {
   }),
   links: css({
     textStyle: "section.title",
+    gap: "s.xl",
+  }),
+  languageAndMode: css({
+    gap: "s.s",
+  }),
+  headerButton: css({
+    padding: "s.s",
   }),
   disclosureContent: css({
     position: "fixed",
@@ -71,13 +81,11 @@ const styles = {
 
 export const AMDHeader = () => {
   const disclosure = useDisclosureStore();
-  const [language, setLanguage] = useState("en");
-  const [theme, setTheme] = useState("light");
 
   const isOpen = disclosure.useState("open");
-  console.log(semantic.sizes.s.FluxMaxWidth.value);
 
   const isMobile = useMobile(740);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isOpen) {
@@ -91,53 +99,30 @@ export const AMDHeader = () => {
     disclosure.hide();
   };
 
-  const [colorMode, setColorMode] = useState("light");
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-color-mode", colorMode);
-  }, [colorMode]);
+  const { colorMode, setColorMode } = useColorMode();
 
   const toggleColorMode = () => {
     setColorMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
   };
 
-  const languageOptions = [
-    {
-      value: "en",
-      children: (
-        <>
-          <English /> En
-        </>
-      ),
-    },
-    {
-      value: "fr",
-      children: (
-        <>
-          <French /> Fr
-        </>
-      ),
-    },
-  ];
+  const headerRoutes = editorials.FR.routes.map((route) => {
+    let routeName = "";
 
-  const modeOptions = [
-    {
-      value: "dark",
-      children: (
-        <>
-          <Dark /> Dark
-        </>
-      ),
-    },
-    {
-      value: "light",
-      children: (
-        <>
-          <Light /> Light
-        </>
-      ),
-    },
-  ];
+    switch (route.slug) {
+      case "all-projects":
+        routeName = "Projets";
+        break;
+
+      default:
+        routeName = route.slug.charAt(0).toUpperCase() + route.slug.slice(1);
+        break;
+    }
+
+    return {
+      name: routeName,
+      slug: route.slug,
+    };
+  });
 
   return (
     <Stack>
@@ -154,9 +139,9 @@ export const AMDHeader = () => {
           className={styles.content}
         >
           <Stack grow>
-            <Stack className={styles.logo}>
+            <AriaButton className={styles.logo} onClick={() => navigate("./")}>
               <Logo />
-            </Stack>
+            </AriaButton>
           </Stack>
           {isMobile && (
             <Disclosure store={disclosure}>
@@ -165,22 +150,33 @@ export const AMDHeader = () => {
           )}
           {!isMobile && (
             <Stack className={styles.links} direction="row" alignItems="center">
-              <a href="./projects">Projects</a>
-              <MenuOption
-                type="language"
-                selectedValue={language}
-                onSelect={() =>
-                  language === "fr" ? setLanguage("en") : setLanguage("fr")
-                }
-                options={languageOptions}
-              />
-
-              <MenuOption
-                type="mode"
-                selectedValue={theme}
-                onSelect={toggleColorMode}
-                options={modeOptions}
-              />
+              {headerRoutes.map((route) => (
+                <AriaButton
+                  onClick={() => navigate(route.slug)}
+                  key={route.slug}
+                >
+                  {route.name}
+                </AriaButton>
+              ))}
+              <Stack className={styles.languageAndMode} direction="row">
+                <Stack className={styles.headerButton}>
+                  <SelectProvider>
+                    <Select />
+                    <SelectPopover>
+                      <SelectItem value={"FR"}>Fr</SelectItem>
+                      <SelectItem value="EN">En</SelectItem>
+                    </SelectPopover>
+                  </SelectProvider>
+                </Stack>
+                <AriaButton
+                  onClick={toggleColorMode}
+                  className={styles.headerButton}
+                >
+                  <Stack direction="row" alignItems="center">
+                    {colorMode === "light" ? <Light /> : <Dark />}
+                  </Stack>
+                </AriaButton>
+              </Stack>
             </Stack>
           )}
         </Stack>
@@ -190,13 +186,7 @@ export const AMDHeader = () => {
           store={disclosure}
           className={styles.disclosureContent}
         >
-          <HeaderMenu
-            language={language}
-            theme={theme}
-            onLanguageChange={setLanguage}
-            onThemeChange={setTheme}
-            onCloseMenu={handleCloseMenu}
-          />
+          <HeaderMenu onCloseMenu={handleCloseMenu} routes={headerRoutes} />
         </DisclosureContent>
       )}
     </Stack>

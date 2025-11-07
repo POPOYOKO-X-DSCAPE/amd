@@ -4,6 +4,7 @@ import SectionTitle from "../section-title";
 
 interface SectionProps {
   title: string;
+  insideTitle?: string;
   number: string | number;
   children: React.ReactNode;
 }
@@ -16,7 +17,7 @@ const styles = {
     overflow: "hidden",
   }),
   content: css({
-    gap: "s.l",
+    gap: "s.xl",
     alignSelf: "stretch",
     maxWidth: "100%",
     wordWrap: "break-word",
@@ -29,15 +30,21 @@ const styles = {
     alignSelf: "stretch",
     wordWrap: "break-word",
     overflowWrap: "break-word",
+    gap: "s.l",
   }),
 };
 
-export const Section = ({ title, number, children }: SectionProps) => {
+export const Section = ({
+  title,
+  number,
+  children,
+  insideTitle,
+}: SectionProps) => {
   return (
     <Stack className={styles.container}>
       <SectionTitle title={title} number={number} />
       <Stack className={styles.content}>
-        <span className={styles.title}>{title}</span>
+        <span className={styles.title}>{insideTitle || title}</span>
         <Stack className={styles.children}>{children}</Stack>
       </Stack>
     </Stack>
