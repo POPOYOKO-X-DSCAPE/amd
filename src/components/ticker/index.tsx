@@ -4,19 +4,15 @@ import { css } from "@styles";
 const styles = {
   container: css({
     minHeight: "80px",
-    overflowX: "visible",
-    maxWidth: "100%",
+    overflow: "hidden",
     _desktop: {
-      height: "166px",
+      overflow: "visible",
     },
   }),
   tickerContent: css({
     whiteSpace: "nowrap",
     animationStyle: "ticker-scroll",
     gap: "12px",
-    _desktop: {
-      gap: "37px",
-    },
   }),
   architecture: css({
     fontFamily: "Helvetica LT Pro, sans-serif",
@@ -25,9 +21,6 @@ const styles = {
     fontSize: "53px",
     lineHeight: "100%",
     letterSpacing: "0%",
-    _desktop: {
-      fontSize: "124px",
-    },
   }),
   interior: css({
     fontFamily: "Didot LT Pro, serif",
@@ -36,9 +29,6 @@ const styles = {
     fontSize: "53px",
     lineHeight: "100%",
     letterSpacing: "0%",
-    _desktop: {
-      fontSize: "124px",
-    },
   }),
   designer: css({
     fontFamily: "Helvetica LT Pro, sans-serif",
@@ -47,9 +37,6 @@ const styles = {
     fontSize: "53px",
     lineHeight: "100%",
     letterSpacing: "0%",
-    _desktop: {
-      fontSize: "118px",
-    },
   }),
   prototypes: css({
     fontFamily: "Helvetica LT Pro, sans-serif",
@@ -58,9 +45,6 @@ const styles = {
     fontSize: "53px",
     lineHeight: "100%",
     letterSpacing: "0%",
-    _desktop: {
-      fontSize: "118px",
-    },
   }),
   engineering: css({
     fontFamily: "Helvetica LT Pro, sans-serif",
@@ -69,9 +53,6 @@ const styles = {
     fontSize: "53px",
     lineHeight: "100%",
     letterSpacing: "0%",
-    _desktop: {
-      fontSize: "118px",
-    },
   }),
 };
 
