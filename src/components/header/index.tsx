@@ -128,9 +128,6 @@ export const AMDHeader = () => {
 	});
 
 	const { setLanguage } = useLang();
-	const { path } = useParams();
-
-	console.log(path);
 
 	const switchLanguage = (lang: "fr" | "en") => {
 		setLanguage(lang);
