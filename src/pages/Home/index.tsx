@@ -113,7 +113,7 @@ export const Home = () => {
 							nous vous accompagnons du premier coup de pelle au dernier
 							détail.
 						</Stack>
-						<Stack className={styles.cta}>
+						<Stack className={styles.cta} alignItems="center">
 							<Stack alignItems="center" className={styles.textProject}>
 								Un projet en tête?
 							</Stack>
