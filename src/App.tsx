@@ -154,7 +154,10 @@ const RenderedRoutes = () => {
     routeData: Record<string, any>,
     parentPath = ""
   ) => {
-    const fullPath = `${parentPath}/${routeData.slug}`.replace(/\/+/g, "/");
+    const fullPath = `${lang}/${parentPath}/${routeData.slug}`.replace(
+      /\/+/g,
+      "/"
+    );
 
     routes.push(
       <Route
