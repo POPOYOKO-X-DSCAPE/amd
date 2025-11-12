@@ -8,6 +8,7 @@ import Separator from "../separator";
 import AMD from "../../assets/svgs/AMD.svg?react";
 import ArrowRight from "../../assets/svgs/ArrowRight.svg?react";
 import ArrowTopRight from "../../assets/svgs/ArrowTopRight.svg?react";
+import { useLang } from "../../contexts/language-context";
 
 const styles = {
 	footer: css({
@@ -37,6 +38,7 @@ const styles = {
 
 export const Footer = () => {
 	const navigate = useNavigate();
+	const { language } = useLang();
 
 	return (
 		<Stack className={styles.footer}>
@@ -46,7 +48,7 @@ export const Footer = () => {
 				<Button
 					level="secondary"
 					label="Contact"
-					onClick={() => navigate("/contact")}
+					onClick={() => navigate(`${language}/contact`)}
 				>
 					<ArrowRight />
 				</Button>
