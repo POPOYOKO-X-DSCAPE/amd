@@ -18,9 +18,8 @@ import Close from "../../assets/svgs/Close.svg?react";
 import Dark from "../../assets/svgs/Dark.svg?react";
 import Light from "../../assets/svgs/Light.svg?react";
 
-import { useLocation, useNavigate } from "react-router-dom";
 import { useColorMode } from "../../contexts/color-mode-context";
-import { LanguageProvider, useLang } from "../../contexts/language-context";
+import { useLang } from "../../contexts/language-context";
 import { editorials } from "../../editorials";
 import usePageTransition from "../../hooks/usePageTransition";
 import HeaderMenu from "../header-menu";
@@ -97,12 +96,8 @@ const styles = {
 
 export const AMDHeader = () => {
   const disclosure = useDisclosureStore();
-
   const isOpen = disclosure.useState("open");
-
   const isMobile = useMobile(740);
-
-  const navigate = useNavigate();
   const { language } = useLang();
 
   useEffect(() => {
