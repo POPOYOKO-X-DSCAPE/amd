@@ -111,7 +111,7 @@ const RouteContent = ({ pageProps }: IRenderedRoutes) => {
             {pageProp.pageProp.map((a, i) => (
               <ListElement
                 label={kebabToCustomCase(a.slug)}
-                onClick={() => navigate(a.slug)}
+                onClick={() => transitionTo(a.slug)}
                 key={`${a.slug}-${i}`}
               />
             ))}
