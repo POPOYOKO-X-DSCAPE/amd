@@ -123,7 +123,19 @@ export const AMDHeader = () => {
 
     switch (route.slug) {
       case "all-projects":
-        routeName = "Projets";
+        if (language === "en") {
+          routeName = "Projects";
+        } else {
+          routeName = "Projets";
+        }
+        break;
+
+      case "office":
+        if (language === "en") {
+          routeName = "Office";
+        } else {
+          routeName = "L'approche AMD";
+        }
         break;
 
       default:

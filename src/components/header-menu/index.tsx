@@ -86,7 +86,7 @@ export const HeaderMenu = ({
         justifyContent="end"
         className={styles.menuOptionContainer}
       >
-        <AriaButton onClick={() => handleNavigation()}>
+        <AriaButton onClick={() => switchLanguage("en")}>
           <Stack direction="row">
             <English />
             En
