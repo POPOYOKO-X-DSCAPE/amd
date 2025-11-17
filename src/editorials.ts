@@ -1083,19 +1083,19 @@ export const editorials = {
                 ]
               },
               {
-                "slug": "conception-3d",
+                "slug": "3d-conception",
                 "pageProps": [
                   {
                     "type": "video",
                     "pageProp": {
-                      "path": "FR/all-projects/5-project-list/4-conception-3d/1-video/projet-3d.webm",
+                      "path": "FR/all-projects/5-project-list/4-3d-conception/1-video/projet-3d.webm",
                       "alt": "Conception 3D résidence haut de gamme visualisation architecture intérieure projet résidentiel sur-mesure garage vitré voitures de luxe salle de bain marbre design bureau avec vue panoramique salle de projection immersive AMD Interior Designer 3D"
                     }
                   },
                   {
                     "type": "video",
                     "pageProp": {
-                      "path": "FR/all-projects/5-project-list/4-conception-3d/2-video/projet-3d.webm",
+                      "path": "FR/all-projects/5-project-list/4-3d-conception/2-video/projet-3d.webm",
                       "alt": "onception 3D résidence haut de gamme visualisation architecture intérieure projet résidentiel sur-mesure garage vitré voitures de luxe salle de bain marbre design bureau avec vue panoramique salle de projection immersive AMD Interior Designer 3D"
                     }
                   },
@@ -1138,21 +1138,21 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/4-image/grand-espace-futuriste-plancher-en-verre-technologique-ibiza.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/4-image/grand-espace-futuriste-plancher-en-verre-technologique-ibiza.webp",
                               "alt": "Grand espace futuriste plancher en verre technologique Ibiza"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/5-image/passage-futuriste-led-integrees-perspective-dynamique.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/5-image/passage-futuriste-led-integrees-perspective-dynamique.webp",
                               "alt": "Passage futuriste LED intégrées perspective dynamique"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/6-image/chambre-master-tete-de-lit-retroeclairee-lignes-lumineuses-dynamiques-scenario-eclairage-personnalisable-luxe-ibiza.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/6-image/chambre-master-tete-de-lit-retroeclairee-lignes-lumineuses-dynamiques-scenario-eclairage-personnalisable-luxe-ibiza.webp",
                               "alt": "Chambre Master tête de lit rétroéclairée lignes lumineuses dynamiques scénario éclairage personnalisable luxe ibiza"
                             }
                           },
@@ -1160,43 +1160,43 @@ export const editorials = {
                             "type": "slideshow",
                             "pageProp": [
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/1-image/espace-billard-bar-plafonnier-led-ibiza.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/1-image/espace-billard-bar-plafonnier-led-ibiza.webp",
                                 "alt": "espace billard bar plafonnier led ibiza"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/2-image/espace-gaming-home-video-futuriste.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/2-image/espace-gaming-home-video-futuriste.webp",
                                 "alt": "espace gaming home vidéo futuriste"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/3-image/sejour-nuit-patio-verre-contemporain-led-multicolore-ibiza.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/3-image/sejour-nuit-patio-verre-contemporain-led-multicolore-ibiza.webp",
                                 "alt": "séjour nuit patio verre contemporain led multicolore ibiza"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/4-image/bar-claustra-led-table-mixage-ibiza.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/4-image/bar-claustra-led-table-mixage-ibiza.webp",
                                 "alt": "bar claustra led table mixage ibiza"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/5-image/porte-couloir-futurists-prototype-ibiza.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/5-image/porte-couloir-futurists-prototype-ibiza.webp",
                                 "alt": "porte couloir futurists prototype Ibiza"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/6-image/cave-vin-coursive-patio-futuriste-architecture-ibiza.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/6-image/cave-vin-coursive-patio-futuriste-architecture-ibiza.webp",
                                 "alt": "cave vin coursive patio futuriste architecture ibiza"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/7-image/espace-detente-immacule-bois-cuir-blanc-ibiza-architecture-designer.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/7-image/espace-detente-immacule-bois-cuir-blanc-ibiza-architecture-designer.webp",
                                 "alt": "espace détente immaculé bois cuir blanc ibiza architecture designer"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/8-image/cuisine-vitre-open-space-ultra-moderne-ibiza-amd-interior-designer.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/8-image/cuisine-vitre-open-space-ultra-moderne-ibiza-amd-interior-designer.webp",
                                 "alt": "cuisine vitré open space ultra moderne ibiza AMD interior designer"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/9-image/couloir-open-space-ibiza-amd-interior-designer-conception-3d.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/9-image/couloir-open-space-ibiza-amd-interior-designer-conception-3d.webp",
                                 "alt": "couloir open space ibiza AMD interior designer conception 3D"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/7-slideshow/10-image/cuisine-patio-contemporain-ibiza-amd-interior-designer-conception-3d.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/7-slideshow/10-image/cuisine-patio-contemporain-ibiza-amd-interior-designer-conception-3d.webp",
                                 "alt": "cuisine patio contemporain ibiza AMD interior designer conception 3D"
                               }
                             ]
@@ -1204,21 +1204,21 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/8-image/element-architectural-sculptural-espaces-de-vie-resine-blanche-retroeclairee-motif-du-corail-ibiza-amd-interiorisai-designer.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/8-image/element-architectural-sculptural-espaces-de-vie-resine-blanche-retroeclairee-motif-du-corail-ibiza-amd-interiorisai-designer.webp",
                               "alt": "Élément architectural sculptural espaces de vie résine blanche rétroéclairée motif du corail Ibiza AMD intériorisai designer"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/9-image/poste-mixage-mobilier-sur-mesure-laquees-blanches-cadre-immersif-exclusif-soirees-privees-ibiza.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/9-image/poste-mixage-mobilier-sur-mesure-laquees-blanches-cadre-immersif-exclusif-soirees-privees-ibiza.webp",
                               "alt": "Poste mixage mobilier sur mesure laquées blanches cadre immersif exclusif soirées privées Ibiza"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/1-dagaz,-ibiza/10-image/atmosphere-futuriste-pectaculaire-reseau-de-lignes-lumineuses-integrees-ibiza.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/1-dagaz,-ibiza/10-image/atmosphere-futuriste-pectaculaire-reseau-de-lignes-lumineuses-integrees-ibiza.webp",
                               "alt": "atmosphère futuriste pectaculaire réseau de lignes lumineuses intégrées Ibiza"
                             }
                           },
@@ -1249,35 +1249,35 @@ export const editorials = {
                           {
                             "type": "video",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/4-video/monte-charges-voiture-prestige.webm",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/2-carlift-&-carport,-geneve/4-video/monte-charges-voiture-prestige.webm",
                               "alt": "Monte charges voiture prestige"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/5-image/garage-vitre-luxe-sol-paves.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/2-carlift-&-carport,-geneve/5-image/garage-vitre-luxe-sol-paves.webp",
                               "alt": "Garage vitré luxe sol pavés"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/6-image/voiture-luxe-garage-vitre-amd-interior-designer.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/2-carlift-&-carport,-geneve/6-image/voiture-luxe-garage-vitre-amd-interior-designer.webp",
                               "alt": "Voiture luxe garage vitré AMD Interior Designer"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/7-image/architecture-contemporaine-garage-verre.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/2-carlift-&-carport,-geneve/7-image/architecture-contemporaine-garage-verre.webp",
                               "alt": "Architecture contemporaine garage verre"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/2-carlift-&-carport,-geneve/9-image/facade-garage-en-verre-design-suisse.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/2-carlift-&-carport,-geneve/9-image/facade-garage-en-verre-design-suisse.webp",
                               "alt": "Façade garage en verre design Suisse"
                             }
                           },
@@ -1308,42 +1308,42 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/3-espace-master,-geneve/4-image/suite-contemporaine-mobilier-integre-malles-vintage.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/3-espace-master,-geneve/4-image/suite-contemporaine-mobilier-integre-malles-vintage.webp",
                               "alt": "Suite contemporaine mobilier intégré malles vintage"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/3-espace-master,-geneve/5-image/suite-de-luxe-mobilier-sur-mesure-lumiere-naturelle.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/3-espace-master,-geneve/5-image/suite-de-luxe-mobilier-sur-mesure-lumiere-naturelle.webp",
                               "alt": "Suite de luxe mobilier sur mesure lumière naturelle"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/3-espace-master,-geneve/6-image/suite-luxe-contemporaine-bois-nobles-finitions-amd-interior-designer.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/3-espace-master,-geneve/6-image/suite-luxe-contemporaine-bois-nobles-finitions-amd-interior-designer.webp",
                               "alt": "suite luxe contemporaine bois nobles finitions AMD Interior Designer"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/3-espace-master,-geneve/7-image/suite-luxe-contemporaine-bois-nobles-finitions-amd-interior-designer.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/3-espace-master,-geneve/7-image/suite-luxe-contemporaine-bois-nobles-finitions-amd-interior-designer.webp",
                               "alt": "suite luxe contemporaine bois nobles finitions AMD Interior Designer"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/3-espace-master,-geneve/8-image/bureau-vue-panoramique-bar-architectural-contemporain-amd-interior-designer.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/3-espace-master,-geneve/8-image/bureau-vue-panoramique-bar-architectural-contemporain-amd-interior-designer.webp",
                               "alt": "bureau vue panoramique bar architectural contemporain AMD Interior Designer"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/3-espace-master,-geneve/9-image/bureau-contemporain-bar-miroir-plafonnier-architectural-amd-interior-designer.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/3-espace-master,-geneve/9-image/bureau-contemporain-bar-miroir-plafonnier-architectural-amd-interior-designer.webp",
                               "alt": "bureau contemporain bar miroir plafonnier architectural AMD Interior Designer"
                             }
                           },
@@ -1374,21 +1374,21 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/4-image/espace-bien-etre-bassin-interieur-mur-pierre-brute-chenas.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/4-image/espace-bien-etre-bassin-interieur-mur-pierre-brute-chenas.webp",
                               "alt": "Espace bien-être bassin intérieur mur pierre brute Chénas"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/5-image/bibliotheque-luxe-boiseries-fauteuils-club-plafond-moulure.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/5-image/bibliotheque-luxe-boiseries-fauteuils-club-plafond-moulure.webp",
                               "alt": "Bibliothèque luxe boiseries fauteuils club plafond moulure"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/6-image/suite-avec-lit-baldaquin-moulures-classiques-contemporains.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/6-image/suite-avec-lit-baldaquin-moulures-classiques-contemporains.webp",
                               "alt": "Suite avec lit baldaquin moulures classiques contemporains"
                             }
                           },
@@ -1396,27 +1396,27 @@ export const editorials = {
                             "type": "slideshow",
                             "pageProp": [
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/1-image/circulation-lumineuse-arches-vitrees-vue-espace-bien-etre.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/1-image/circulation-lumineuse-arches-vitrees-vue-espace-bien-etre.webp",
                                 "alt": "Circulation lumineuse arches vitrées vue espace bien-être"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/2-image/salle-a-manger-suspensions-sculpturales-lignes-organiques.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/2-image/salle-a-manger-suspensions-sculpturales-lignes-organiques.webp",
                                 "alt": "Salle à manger suspensions sculpturales lignes organiques"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/3-image/suite-minimaliste-lignes-courbes-integrees.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/3-image/suite-minimaliste-lignes-courbes-integrees.webp",
                                 "alt": "Suite minimaliste lignes courbes intégrées"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/4-image/suite-elegante-bleu-canard-suspensions-sculpturales-parquet-chevrons.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/4-image/suite-elegante-bleu-canard-suspensions-sculpturales-parquet-chevrons.webp",
                                 "alt": "Suite élégante bleu canard suspensions sculpturales parquet chevrons"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/5-image/bibliotheque-immersive-bar-boiseries-sur-mesure-ambiance-feutree.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/5-image/bibliotheque-immersive-bar-boiseries-sur-mesure-ambiance-feutree.webp",
                                 "alt": "Bibliothèque immersive bar boiseries sur mesure ambiance feutrée"
                               },
                               {
-                                "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/6-image/suite-noire-verriere-courbe-puits-lumiere-zenithal.webp",
+                                "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/7-slideshow/6-image/suite-noire-verriere-courbe-puits-lumiere-zenithal.webp",
                                 "alt": "Suite noire verrière courbe puits lumière zénithal"
                               }
                             ]
@@ -1424,14 +1424,14 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/8-image/home-cinema-mobilier-lounge-rideaux-acoustiques.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/8-image/home-cinema-mobilier-lounge-rideaux-acoustiques.webp",
                               "alt": "Home cinéma mobilier lounge rideaux acoustiques"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/5-chateau-de-chenas,-chenas/9-image/grande-salle-a-manger-lustres-cristal-chaises-velours.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/5-chateau-de-chenas,-chenas/9-image/grande-salle-a-manger-lustres-cristal-chaises-velours.webp",
                               "alt": "Grande salle à manger grand luxe lustres cristal chaises velours"
                             }
                           },
@@ -1462,28 +1462,28 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/6-palais-valetta,-malte/4-image/salon-cheminee-pierre-et-fauteuils-vintage.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/6-palais-valetta,-malte/4-image/salon-cheminee-pierre-et-fauteuils-vintage.webp",
                               "alt": "Salon chaleureux avec cheminée en pierre et fauteuils vintage"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/6-palais-valetta,-malte/5-image/salon-avec-bar-rotin-fauteuils-creme.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/6-palais-valetta,-malte/5-image/salon-avec-bar-rotin-fauteuils-creme.webp",
                               "alt": "Salon avec bar en rotin et fauteuils crème"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/6-palais-valetta,-malte/6-image/salon-principal-bar-vert-canapes-blancs.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/6-palais-valetta,-malte/6-image/salon-principal-bar-vert-canapes-blancs.webp",
                               "alt": "Salon principal avec bar vert et canapés blancs"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/6-palais-valetta,-malte/7-image/espace-d'accueil-boiseries-canape-blanc-ceramique-verte-.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/6-palais-valetta,-malte/7-image/espace-d'accueil-boiseries-canape-blanc-ceramique-verte-.webp",
                               "alt": "Perspective latérale de l’espace d’accueil avec ses boiseries, canapés blancs, tapis graphique et comptoir en céramique verte. Suspensions sculpturales en laiton, murs texturés et végétation soignée. Projet AMD Interior Designer."
                             }
                           },
@@ -1514,35 +1514,35 @@ export const editorials = {
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/7-guest-house-geneve/4-image/espace-detente-bois-naturel-meridienne-cloison-texturee.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/7-guest-house-geneve/4-image/espace-detente-bois-naturel-meridienne-cloison-texturee.webp",
                               "alt": "Espace détente en bois naturel avec méridienne et cloison texturée"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/7-guest-house-geneve/5-image/suite-sous-combles-plafond-cathedrale-palette-textile.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/7-guest-house-geneve/5-image/suite-sous-combles-plafond-cathedrale-palette-textile.webp",
                               "alt": "Suite sous combles avec plafond cathédrale et palette textile raffinée"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/7-guest-house-geneve/6-image/salle-d'eau-vasque-en-marbre-vert-et-boiseries.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/7-guest-house-geneve/6-image/salle-d'eau-vasque-en-marbre-vert-et-boiseries.webp",
                               "alt": "Salle d’eau avec vasque en marbre vert et boiseries sur mesure"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/7-guest-house-geneve/7-image/salle-d'eau-marbre-vert,-parois-paves-de-verre-finitions-bronze.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/7-guest-house-geneve/7-image/salle-d'eau-marbre-vert,-parois-paves-de-verre-finitions-bronze.webp",
                               "alt": "Salle d’eau avec marbre vert, parois en pavés de verre et finitions bronze"
                             }
                           },
                           {
                             "type": "image",
                             "pageProp": {
-                              "path": "FR/all-projects/5-project-list/4-conception-3d/5-project-list/7-guest-house-geneve/8-image/detail-architectural-de-cloison-en-paves-de-verre-bois-texture.webp",
+                              "path": "FR/all-projects/5-project-list/4-3d-conception/5-project-list/7-guest-house-geneve/8-image/detail-architectural-de-cloison-en-paves-de-verre-bois-texture.webp",
                               "alt": "Détail architectural de cloison en pavés de verre et bois texturé"
                             }
                           },
@@ -3318,6 +3318,18 @@ export const editorials = {
             "pageProp": "Home"
           }
         ]
+      }
+    ]
+  },
+  "editorial-contents": {
+    "routes": [
+      {
+        "slug": "FR",
+        "pageProps": []
+      },
+      {
+        "slug": "EN",
+        "pageProps": []
       }
     ]
   }
