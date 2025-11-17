@@ -35,13 +35,5 @@ const styles = {
 export const PageChangeAnimation = () => {
   const { animating } = useAnimation();
 
-  useEffect(() => {
-    if (animating) {
-      console.log(animating);
-    } else {
-      console.log(animating);
-    }
-  }, [animating]);
-
   return <div className={animating ? styles.end : styles.initial} />;
 };

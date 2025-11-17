@@ -1,12 +1,12 @@
 import {
-	Button as AriaButton,
-	Disclosure,
-	DisclosureContent,
-	Select,
-	SelectItem,
-	SelectPopover,
-	SelectProvider,
-	useDisclosureStore,
+  Button as AriaButton,
+  Disclosure,
+  DisclosureContent,
+  Select,
+  SelectItem,
+  SelectPopover,
+  SelectProvider,
+  useDisclosureStore,
 } from "@ariakit/react";
 import { Stack } from "@packages/ui";
 import useMobile from "@packages/ui/hooks/use-mobile";
@@ -18,207 +18,208 @@ import Close from "../../assets/svgs/Close.svg?react";
 import Dark from "../../assets/svgs/Dark.svg?react";
 import Light from "../../assets/svgs/Light.svg?react";
 
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useColorMode } from "../../contexts/color-mode-context";
 import { useLang } from "../../contexts/language-context";
 import { editorials } from "../../editorials";
+import usePageTransition from "../../hooks/usePageTransition";
 import HeaderMenu from "../header-menu";
 
 const styles = {
-	header: css({
-		display: "flex",
-		padding: "s.m",
-		top: 0,
-		left: 0,
-		right: 0,
-		zIndex: 1002,
-		backgroundColor: "s.bg.default.initial",
-		width: "100%",
-		boxSizing: "border-box",
-		color: "s.fg.default.initial",
-	}),
-	logo: css({
-		maxWidth: "242px",
-		_desktop: {
-			maxWidth: "424px",
-		},
-	}),
-	content: css({
-		maxWidth: "s.FluxMaxWidth",
-		marginTop: "s.s",
-	}),
-	links: css({
-		textStyle: "section.title",
-		gap: "s.xl",
-	}),
-	languageAndMode: css({
-		gap: "s.s",
-	}),
-	headerButton: css({
-		padding: "s.s",
-	}),
-	disclosureContent: css({
-		position: "fixed",
-		top: 0,
-		left: 0,
-		right: 0,
-		bottom: 0,
-		zIndex: 1001,
-		backgroundColor: "s.bg.default.initial",
-		paddingTop: "64px",
-		"&:not([data-enter]):not([data-leave])": {
-			display: "none",
-		},
-		"&[data-enter]": {
-			animationStyle: "slide-down",
-		},
-		"&[data-leave]": {
-			animationStyle: "slide-up",
-		},
-	}),
+  header: css({
+    display: "flex",
+    padding: "s.m",
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 1002,
+    backgroundColor: "s.bg.default.initial",
+    width: "100%",
+    boxSizing: "border-box",
+    color: "s.fg.default.initial",
+  }),
+  logo: css({
+    maxWidth: "242px",
+    _desktop: {
+      maxWidth: "424px",
+    },
+  }),
+  content: css({
+    maxWidth: "s.FluxMaxWidth",
+    marginTop: "s.s",
+  }),
+  links: css({
+    textStyle: "section.title",
+    gap: "s.xl",
+  }),
+  languageAndMode: css({
+    gap: "s.s",
+  }),
+  headerButton: css({
+    padding: "s.s",
+  }),
+  disclosureContent: css({
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 1001,
+    backgroundColor: "s.bg.default.initial",
+    paddingTop: "64px",
+    "&:not([data-enter]):not([data-leave])": {
+      display: "none",
+    },
+    "&[data-enter]": {
+      animationStyle: "slide-down",
+    },
+    "&[data-leave]": {
+      animationStyle: "slide-up",
+    },
+  }),
 };
 
 export const AMDHeader = () => {
-	const disclosure = useDisclosureStore();
+  const disclosure = useDisclosureStore();
 
-	const isOpen = disclosure.useState("open");
+  const isOpen = disclosure.useState("open");
 
-	const isMobile = useMobile(740);
-	const navigate = useNavigate();
-	const { language } = useLang();
+  const isMobile = useMobile(740);
+  const { transitionTo } = usePageTransition();
 
-	useEffect(() => {
-		if (isOpen) {
-			document.body.style.overflow = "hidden";
-		} else {
-			document.body.style.overflow = "unset";
-		}
-	}, [isOpen]);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { language } = useLang();
 
-	const handleCloseMenu = () => {
-		disclosure.hide();
-	};
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
-	const { colorMode, setColorMode } = useColorMode();
+  const handleCloseMenu = () => {
+    disclosure.hide();
+  };
 
-	const toggleColorMode = () => {
-		setColorMode((prevMode) =>
-			prevMode === "light" ? "dark" : "light",
-		);
-	};
+  const { colorMode, setColorMode } = useColorMode();
 
-	const headerRoutes = editorials.FR.routes.map((route) => {
-		let routeName = "";
+  const toggleColorMode = () => {
+    setColorMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+  };
 
-		switch (route.slug) {
-			case "all-projects":
-				routeName = "Projets";
-				break;
+  const headerRoutes = editorials.FR.routes.map((route) => {
+    let routeName = "";
 
-			default:
-				routeName =
-					route.slug.charAt(0).toUpperCase() + route.slug.slice(1);
-				break;
-		}
+    switch (route.slug) {
+      case "all-projects":
+        routeName = "Projets";
+        break;
 
-		return {
-			name: routeName,
-			slug: route.slug,
-		};
-	});
+      default:
+        routeName = route.slug.charAt(0).toUpperCase() + route.slug.slice(1);
+        break;
+    }
 
-	const { setLanguage } = useLang();
+    return {
+      name: routeName,
+      slug: route.slug,
+    };
+  });
 
-	const switchLanguage = (lang: "fr" | "en") => {
-		setLanguage(lang);
-		navigate(`/${lang}/`);
-	};
+  const { setLanguage } = useLang();
 
-	return (
-		<Stack>
-			<Stack
-				className={styles.header}
-				justifyContent="center"
-				grow
-				direction="row"
-			>
-				<Stack
-					direction="row"
-					alignItems="center"
-					grow
-					className={styles.content}
-				>
-					<Stack grow>
-						<AriaButton
-							className={styles.logo}
-							onClick={() => navigate(`${language}/`)}
-						>
-							<Logo />
-						</AriaButton>
-					</Stack>
-					{isMobile && (
-						<Disclosure store={disclosure}>
-							{isOpen ? <Close /> : <Burger />}
-						</Disclosure>
-					)}
-					{!isMobile && (
-						<Stack
-							className={styles.links}
-							direction="row"
-							alignItems="center"
-						>
-							{headerRoutes.map((route) => (
-								<AriaButton
-									onClick={() => navigate(`${language}/${route.slug}`)}
-									key={route.slug}
-								>
-									{route.name}
-								</AriaButton>
-							))}
-							<Stack className={styles.languageAndMode} direction="row">
-								<Stack className={styles.headerButton}>
-									<SelectProvider>
-										<Select />
-										<SelectPopover>
-											<SelectItem
-												value="FR"
-												onClick={() => switchLanguage("fr")}
-											>
-												Fr
-											</SelectItem>
-											<SelectItem
-												value="EN"
-												onClick={() => switchLanguage("en")}
-											>
-												En
-											</SelectItem>
-										</SelectPopover>
-									</SelectProvider>
-								</Stack>
-								<AriaButton
-									onClick={toggleColorMode}
-									className={styles.headerButton}
-								>
-									<Stack direction="row" alignItems="center">
-										{colorMode === "light" ? <Light /> : <Dark />}
-									</Stack>
-								</AriaButton>
-							</Stack>
-						</Stack>
-					)}
-				</Stack>
-			</Stack>
-			{isMobile && (
-				<DisclosureContent
-					store={disclosure}
-					className={styles.disclosureContent}
-				>
-					<HeaderMenu
-						onCloseMenu={handleCloseMenu}
-						routes={headerRoutes}
-					/>
-				</DisclosureContent>
-			)}
-		</Stack>
-	);
+  const switchLanguage = (lang: "fr" | "en") => {
+    setLanguage(lang);
+    const currentPath = location.pathname;
+    let newPath = "";
+    if (lang === "fr") {
+      newPath = currentPath.replace("/en/", "/fr/");
+    } else if (lang === "en") {
+      newPath = currentPath.replace("/fr/", "/en/");
+    }
+    transitionTo(newPath);
+  };
+
+  return (
+    <Stack>
+      <Stack
+        className={styles.header}
+        justifyContent="center"
+        grow
+        direction="row"
+      >
+        <Stack
+          direction="row"
+          alignItems="center"
+          grow
+          className={styles.content}
+        >
+          <Stack grow>
+            <AriaButton
+              className={styles.logo}
+              onClick={() => navigate(`${language}/`)}
+            >
+              <Logo />
+            </AriaButton>
+          </Stack>
+          {isMobile && (
+            <Disclosure store={disclosure}>
+              {isOpen ? <Close /> : <Burger />}
+            </Disclosure>
+          )}
+          {!isMobile && (
+            <Stack className={styles.links} direction="row" alignItems="center">
+              {headerRoutes.map((route) => (
+                <AriaButton
+                  onClick={() => navigate(`${language}/${route.slug}`)}
+                  key={route.slug}
+                >
+                  {route.name}
+                </AriaButton>
+              ))}
+              <Stack className={styles.languageAndMode} direction="row">
+                <Stack className={styles.headerButton}>
+                  <SelectProvider>
+                    <Select />
+                    <SelectPopover>
+                      <SelectItem
+                        value="FR"
+                        onClick={() => switchLanguage("fr")}
+                      >
+                        Fr
+                      </SelectItem>
+                      <SelectItem
+                        value="EN"
+                        onClick={() => switchLanguage("en")}
+                      >
+                        En
+                      </SelectItem>
+                    </SelectPopover>
+                  </SelectProvider>
+                </Stack>
+                <AriaButton
+                  onClick={toggleColorMode}
+                  className={styles.headerButton}
+                >
+                  <Stack direction="row" alignItems="center">
+                    {colorMode === "light" ? <Light /> : <Dark />}
+                  </Stack>
+                </AriaButton>
+              </Stack>
+            </Stack>
+          )}
+        </Stack>
+      </Stack>
+      {isMobile && (
+        <DisclosureContent
+          store={disclosure}
+          className={styles.disclosureContent}
+        >
+          <HeaderMenu onCloseMenu={handleCloseMenu} routes={headerRoutes} />
+        </DisclosureContent>
+      )}
+    </Stack>
+  );
 };
