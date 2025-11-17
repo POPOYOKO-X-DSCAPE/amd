@@ -75,10 +75,10 @@ export const Home = () => {
   const { transitionTo } = usePageTransition();
   const { language } = useLang();
 
-  const goToRoute = (path: string) => {
-    navigate(path); // Change le chemin
-    window.scrollTo(0, 0); // Réinitialise le défilement
-  };
+  //   const goToRoute = (path: string) => {
+  //     navigate(path); // Change le chemin
+  //     window.scrollTo(0, 0); // Réinitialise le défilement
+  //   };
 
   const images = [
     assets.chaletCine,
@@ -143,7 +143,7 @@ export const Home = () => {
                 label="Chalet, Verbier"
                 onClick={() =>
                   transitionTo(
-                    `${language}/all-projects/prestige-et-exception/chalet,-verbier`
+                    `/${language}/all-projects/prestige-et-exception/chalet,-verbier`
                   )
                 }
               />
@@ -151,7 +151,7 @@ export const Home = () => {
                 label="Cologny, Genève"
                 onClick={() =>
                   transitionTo(
-                    `${language}/all-projects/prestige-et-exception/cologny,-geneve`
+                    `/${language}/all-projects/prestige-et-exception/cologny,-geneve`
                   )
                 }
               />
@@ -159,7 +159,7 @@ export const Home = () => {
                 label="La Côte d’Or, Bernard Loiseau"
                 onClick={() =>
                   transitionTo(
-                    `${language}/all-projects/hospitalite-&-art-de-vivre/loiseau-des-vignes,-beaune`
+                    `/${language}/all-projects/hospitalite-&-art-de-vivre/loiseau-des-vignes,-beaune`
                   )
                 }
               />
@@ -167,7 +167,7 @@ export const Home = () => {
                 label="Dagaz, Ibiza"
                 onClick={() =>
                   transitionTo(
-                    `${language}/all-projects/prestige-et-exception/dagaz,-ibiza`
+                    `/${language}/all-projects/prestige-et-exception/dagaz,-ibiza`
                   )
                 }
               />
@@ -177,7 +177,7 @@ export const Home = () => {
             level="secondary"
             label="Tous les projets"
             position="left"
-            onClick={() => transitionTo(`${language}/all-projects`)}
+            onClick={() => transitionTo(`/${language}/all-projects`)}
           >
             <ArrowRight />
           </Button>
@@ -201,7 +201,7 @@ export const Home = () => {
             level="secondary"
             label="L’Agence"
             position="left"
-            onClick={() => transitionTo(`${language}/office`)}
+            onClick={() => transitionTo(`/${language}/office`)}
           >
             <ArrowRight />
           </Button>
