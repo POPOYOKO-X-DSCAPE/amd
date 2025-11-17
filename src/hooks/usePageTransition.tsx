@@ -5,11 +5,12 @@ const usePageTransition = () => {
   const { startAnimation, endAnimation } = useAnimation();
   const navigate = useNavigate();
 
-  const transitionTo = (path: string) => {
+  const transitionTo = (path: string, callback?: () => void) => {
     startAnimation();
 
     setTimeout(() => {
       navigate(path);
+      callback?.();
       endAnimation();
     }, 1500);
   };

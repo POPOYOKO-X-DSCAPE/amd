@@ -18,9 +18,9 @@ import Close from "../../assets/svgs/Close.svg?react";
 import Dark from "../../assets/svgs/Dark.svg?react";
 import Light from "../../assets/svgs/Light.svg?react";
 
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useColorMode } from "../../contexts/color-mode-context";
-import { useLang } from "../../contexts/language-context";
+import { LanguageProvider, useLang } from "../../contexts/language-context";
 import { editorials } from "../../editorials";
 import usePageTransition from "../../hooks/usePageTransition";
 import HeaderMenu from "../header-menu";
@@ -42,6 +42,22 @@ const styles = {
     maxWidth: "242px",
     _desktop: {
       maxWidth: "424px",
+    },
+  }),
+  languageSelector: css({
+    backgroundColor: "s.bg.default.initial",
+    display: "flex",
+    flexDirection: "column",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    borderColor: "s.fg.elevated.initial",
+  }),
+  languageOption: css({
+    backgroundColor: "s.bg.elevated.initial",
+    paddingX: "s.s",
+    cursor: "pointer",
+    _hover: {
+      backgroundColor: "s.bg.elevated.hover",
     },
   }),
   content: css({
@@ -85,10 +101,8 @@ export const AMDHeader = () => {
   const isOpen = disclosure.useState("open");
 
   const isMobile = useMobile(740);
-  const { transitionTo } = usePageTransition();
 
   const navigate = useNavigate();
-  const location = useLocation();
   const { language } = useLang();
 
   useEffect(() => {
@@ -124,22 +138,15 @@ export const AMDHeader = () => {
 
     return {
       name: routeName,
-      slug: route.slug,
+      slug: `${language}/${route.slug}`,
     };
   });
 
   const { setLanguage } = useLang();
+  const { transitionTo } = usePageTransition();
 
   const switchLanguage = (lang: "fr" | "en") => {
     setLanguage(lang);
-    const currentPath = location.pathname;
-    let newPath = "";
-    if (lang === "fr") {
-      newPath = currentPath.replace("/en/", "/fr/");
-    } else if (lang === "en") {
-      newPath = currentPath.replace("/fr/", "/en/");
-    }
-    transitionTo(newPath);
   };
 
   return (
@@ -159,7 +166,7 @@ export const AMDHeader = () => {
           <Stack grow>
             <AriaButton
               className={styles.logo}
-              onClick={() => navigate(`${language}/`)}
+              onClick={() => transitionTo(`${language}/`)}
             >
               <Logo />
             </AriaButton>
@@ -173,26 +180,28 @@ export const AMDHeader = () => {
             <Stack className={styles.links} direction="row" alignItems="center">
               {headerRoutes.map((route) => (
                 <AriaButton
-                  onClick={() => navigate(`${language}/${route.slug}`)}
+                  onClick={() => transitionTo(`${route.slug}`)}
                   key={route.slug}
                 >
                   {route.name}
                 </AriaButton>
               ))}
               <Stack className={styles.languageAndMode} direction="row">
-                <Stack className={styles.headerButton}>
+                <Stack>
                   <SelectProvider>
                     <Select />
-                    <SelectPopover>
+                    <SelectPopover className={styles.languageSelector}>
                       <SelectItem
                         value="FR"
                         onClick={() => switchLanguage("fr")}
+                        className={styles.languageOption}
                       >
                         Fr
                       </SelectItem>
                       <SelectItem
                         value="EN"
                         onClick={() => switchLanguage("en")}
+                        className={styles.languageOption}
                       >
                         En
                       </SelectItem>
@@ -217,7 +226,11 @@ export const AMDHeader = () => {
           store={disclosure}
           className={styles.disclosureContent}
         >
-          <HeaderMenu onCloseMenu={handleCloseMenu} routes={headerRoutes} />
+          <HeaderMenu
+            onCloseMenu={handleCloseMenu}
+            routes={headerRoutes}
+            switchLanguage={switchLanguage}
+          />
         </DisclosureContent>
       )}
     </Stack>

@@ -190,6 +190,8 @@ const RenderedRoutes = () => {
 
   if (routes.length === 0) return null;
 
+  console.log(routes.map((route) => route.props?.path).join("\n"));
+
   return routes;
 };
 
@@ -210,16 +212,16 @@ const AllRoutes = () => {
 const AMD = () => {
   return (
     <ColorModeProvider>
-      <LanguageProvider>
-        <AnimationProvider>
-          <PageChangeAnimation />
-          <Router>
+      <AnimationProvider>
+        <Router>
+          <LanguageProvider>
+            <PageChangeAnimation />
             <Main>
               <AllRoutes />
             </Main>
-          </Router>
-        </AnimationProvider>
-      </LanguageProvider>
+          </LanguageProvider>
+        </Router>
+      </AnimationProvider>
     </ColorModeProvider>
   );
 };
