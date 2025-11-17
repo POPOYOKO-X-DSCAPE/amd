@@ -10,6 +10,7 @@ const usePageTransition = () => {
 
     setTimeout(() => {
       navigate(path);
+      window.scrollTo(0, 0);
       callback?.();
       endAnimation();
     }, 1500);

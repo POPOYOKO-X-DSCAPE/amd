@@ -70,15 +70,9 @@ const styles = {
 };
 
 export const Home = () => {
-  const navigate = useNavigate();
   const isMobile = useMobile(700);
   const { transitionTo } = usePageTransition();
   const { language } = useLang();
-
-  //   const goToRoute = (path: string) => {
-  //     navigate(path); // Change le chemin
-  //     window.scrollTo(0, 0); // Réinitialise le défilement
-  //   };
 
   const images = [
     assets.chaletCine,
@@ -119,7 +113,10 @@ export const Home = () => {
               <Stack alignItems="center" className={styles.textProject}>
                 Un projet en tête?
               </Stack>
-              <Button label="Parlons-en">
+              <Button
+                label="Parlons-en"
+                onClick={() => transitionTo(`/${language}/contact`)}
+              >
                 <SpeechBalloon />
               </Button>
             </Stack>
@@ -143,7 +140,7 @@ export const Home = () => {
                 label="Chalet, Verbier"
                 onClick={() =>
                   transitionTo(
-                    `/${language}/all-projects/prestige-et-exception/chalet,-verbier`
+                    `/${language}/all-projects/exceptional-and-Luxury/chalet,-verbier`
                   )
                 }
               />
@@ -151,7 +148,7 @@ export const Home = () => {
                 label="Cologny, Genève"
                 onClick={() =>
                   transitionTo(
-                    `/${language}/all-projects/prestige-et-exception/cologny,-geneve`
+                    `/${language}/all-projects/exceptional-and-Luxury/cologny,-geneve`
                   )
                 }
               />
@@ -159,7 +156,7 @@ export const Home = () => {
                 label="La Côte d’Or, Bernard Loiseau"
                 onClick={() =>
                   transitionTo(
-                    `/${language}/all-projects/hospitalite-&-art-de-vivre/loiseau-des-vignes,-beaune`
+                    `/${language}/all-projects/hospitality-and-art-de-vivre/loiseau-des-vignes,-beaune`
                   )
                 }
               />
@@ -167,7 +164,7 @@ export const Home = () => {
                 label="Dagaz, Ibiza"
                 onClick={() =>
                   transitionTo(
-                    `/${language}/all-projects/prestige-et-exception/dagaz,-ibiza`
+                    `/${language}/all-projects/exceptional-and-Luxury/dagaz,-ibiza`
                   )
                 }
               />
