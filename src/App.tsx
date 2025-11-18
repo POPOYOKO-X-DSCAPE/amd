@@ -190,8 +190,6 @@ const RenderedRoutes = () => {
 
   if (routes.length === 0) return null;
 
-  console.log(routes.map((route) => route.props?.path).join("\n"));
-
   return routes;
 };
 
