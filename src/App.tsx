@@ -20,6 +20,7 @@ import { ColorModeProvider } from "./contexts/color-mode-context";
 import { LanguageProvider, useLang } from "./contexts/language-context";
 import { editorials } from "./editorials";
 import usePageTransition from "./hooks/usePageTransition";
+import { PageNotFound } from "./pages/404";
 import { Contact } from "./pages/Contact";
 import { styles } from "./styles";
 
@@ -202,7 +203,7 @@ const AllRoutes = () => {
       <Route path={`${language}/`} element={<Home />} />
       <Route path={`${language}/contact/`} element={<Contact />} />
       {RenderedRoutes()}
-      <Route path="*" element={"404"} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
 };
