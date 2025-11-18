@@ -73,6 +73,11 @@ const styles = {
   headerButton: css({
     padding: "s.s",
   }),
+  select: css({
+    display: "flex",
+    alignItems: "center !important",
+    gap: "s.xs",
+  }),
   disclosureContent: css({
     position: "fixed",
     top: 0,
@@ -193,10 +198,14 @@ export const AMDHeader = () => {
                   {route.name}
                 </AriaButton>
               ))}
-              <Stack className={styles.languageAndMode} direction="row">
-                <Stack>
+              <Stack
+                className={styles.languageAndMode}
+                direction="row"
+                alignItems="center"
+              >
+                <Stack alignItems="center">
                   <SelectProvider>
-                    <Select />
+                    <Select className={styles.select} />
                     <SelectPopover className={styles.languageSelector}>
                       <SelectItem
                         value="FR"
