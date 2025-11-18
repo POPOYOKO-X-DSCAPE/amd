@@ -10,7 +10,7 @@ const styles = {
   container: css({
     width: "100%",
     maxWidth: "s.FluxMaxWidth",
-    overflow: "hidden",
+    overflowX: "hidden",
   }),
   content: css({
     padding: "s.m",
@@ -57,7 +57,7 @@ export const Main = ({ children }: MainProps) => {
             <Stack className={styles.container}>
               c
               <Stack className={styles.content}>
-                <main>{children}</main>
+                d<main>{children}</main>
                 <Footer />
               </Stack>
             </Stack>
