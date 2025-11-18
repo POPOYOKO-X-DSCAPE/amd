@@ -35,7 +35,6 @@ export const Main = ({ children }: MainProps) => {
 
   useEffect(() => {
     if (location.pathname && scrollableRef.current) {
-      console.log(scrollableRef);
       scrollableRef.current.scrollTop = 0;
     }
   }, [location.pathname]);
@@ -52,7 +51,6 @@ export const Main = ({ children }: MainProps) => {
         >
           <Stack alignItems="center">
             <Stack className={styles.container}>
-              b
               <Stack className={styles.content}>
                 <main>{children}</main>
                 <Footer />
