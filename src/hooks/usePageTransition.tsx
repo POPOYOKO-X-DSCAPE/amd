@@ -13,7 +13,7 @@ const usePageTransition = () => {
       window.scrollTo(0, 0);
       callback?.();
       endAnimation();
-    }, 1500);
+    }, 500);
   };
 
   return { transitionTo };

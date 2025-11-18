@@ -12,10 +12,12 @@ const styles = {
     left: 0,
     zIndex: 10000,
     backgroundColor: "s.bg.elevated.initial",
-    transitionDuration: "750ms",
+    transitionDuration: "250ms",
     transitionProperty: "all",
     transitionTimingFunction: "ease-in-out",
     overflow: "hidden",
+    borderTop: "2px solid black",
+    borderColor: "s.fg.default.initial",
   }),
   end: css({
     width: "100%",
@@ -25,10 +27,12 @@ const styles = {
     left: 0,
     zIndex: 10000,
     backgroundColor: "s.bg.elevated.initial",
-    transitionDuration: "750ms",
+    transitionDuration: "250ms",
     transitionProperty: "all",
     transitionTimingFunction: "ease-in-out",
     overflow: "hidden",
+    borderTop: "2px solid black",
+    borderColor: "s.fg.default.initial",
   }),
 };
 
