@@ -10,7 +10,7 @@ const styles = {
   container: css({
     width: "100%",
     maxWidth: "s.FluxMaxWidth",
-    overflowX: "hidden",
+    overflow: "hidden",
   }),
   content: css({
     padding: "s.m",
