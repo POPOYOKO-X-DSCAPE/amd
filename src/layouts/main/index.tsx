@@ -54,10 +54,9 @@ export const Main = ({ children }: MainProps) => {
           a
           <Stack alignItems="center">
             b
-            <Stack className={styles.container}>
-              c
+            <Stack>
               <Stack className={styles.content}>
-                d<main>{children}</main>
+                <main>{children}</main>
                 <Footer />
               </Stack>
             </Stack>
