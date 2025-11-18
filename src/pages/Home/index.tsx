@@ -36,7 +36,8 @@ const styles = {
     justifyContent: "space-between",
     gap: "s.s",
     _desktop: {
-      width: "30%",
+      width: "50%",
+      paddingX: "s.xl",
     },
   }),
   textDescription: css({
@@ -58,8 +59,9 @@ const styles = {
     maxWidth: "70ch",
   }),
   officeCta: css({
+    gap: "s.xl",
     _desktop: {
-      gap: "s.x2l",
+      gap: "s.m",
     },
   }),
   projectsCta: css({
@@ -70,7 +72,7 @@ const styles = {
 };
 
 export const Home = () => {
-  const isMobile = useMobile(700);
+  const isMobile = useMobile(1100);
   const { transitionTo } = usePageTransition();
   const { language } = useLang();
 
@@ -103,13 +105,13 @@ export const Home = () => {
             direction={isMobile ? "column" : "row"}
             className={styles.officeCta}
           >
-            <Stack className={styles.textProject}>
+            <Stack className={styles.textProject} justifyContent="center">
               Analyse immobilière, étude de faisabilité avant investissement,
               conseil d’architecture et design d’intérieur, conception,
               exécution et maîtrise d’œuvre, nous vous accompagnons du premier
               coup de pelle au dernier détail.
             </Stack>
-            <Stack className={styles.cta} alignItems="center">
+            <Stack className={styles.cta} alignItems="center" grow>
               <Stack alignItems="center" className={styles.textProject}>
                 Un projet en tête?
               </Stack>

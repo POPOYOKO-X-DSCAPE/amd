@@ -16,6 +16,13 @@ const styles = {
     paddingTop: "s.xs",
     cursor: "pointer",
     textAlign: "right",
+    _desktop: {
+      lineHeight: "40px",
+      marginBottom: "s.xs",
+      _last: {
+        marginBottom: "0",
+      },
+    },
     "& .arrow": {
       paddingRight: "10px",
       left: 0,

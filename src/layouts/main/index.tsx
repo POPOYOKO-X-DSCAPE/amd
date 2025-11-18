@@ -16,7 +16,7 @@ const styles = {
     padding: "s.m",
     _desktop: { padding: "0" },
     "@media screen and (max-width: 2560px)": {
-      paddingX: "s.l",
+      paddingX: "s.m",
     },
   }),
   scrollable: css({

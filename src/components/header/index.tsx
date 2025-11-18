@@ -97,7 +97,7 @@ const styles = {
 export const AMDHeader = () => {
   const disclosure = useDisclosureStore();
   const isOpen = disclosure.useState("open");
-  const isMobile = useMobile(740);
+  const isMobile = useMobile(1100);
   const { language } = useLang();
 
   useEffect(() => {
