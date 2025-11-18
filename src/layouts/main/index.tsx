@@ -51,10 +51,9 @@ export const Main = ({ children }: MainProps) => {
           grow
           className={styles.scrollable}
         >
-          a
           <Stack alignItems="center">
-            b
             <Stack className={styles.container}>
+              b
               <Stack className={styles.content}>
                 <main>{children}</main>
                 <Footer />
