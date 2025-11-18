@@ -33,6 +33,8 @@ export const Main = ({ children }: MainProps) => {
   const location = useLocation();
   const scrollableRef = useRef<HTMLDivElement>(null);
 
+  console.log(scrollableRef);
+
   useEffect(() => {
     if (location.pathname && scrollableRef.current) {
       scrollableRef.current.scrollTop = 0;
@@ -49,6 +51,7 @@ export const Main = ({ children }: MainProps) => {
           grow
           className={styles.scrollable}
         >
+          a
           <Stack alignItems="center">
             <Stack className={styles.container}>
               <Stack className={styles.content}>
