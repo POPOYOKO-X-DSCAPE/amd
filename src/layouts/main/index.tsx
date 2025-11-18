@@ -32,6 +32,7 @@ interface MainProps {
 export const Main = ({ children }: MainProps) => {
   const location = useLocation();
   const scrollableRef = useRef<HTMLDivElement>(null);
+  const unScrollableRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (location.pathname && scrollableRef.current) {
@@ -50,7 +51,7 @@ export const Main = ({ children }: MainProps) => {
           className={styles.scrollable}
         >
           <Stack alignItems="center">
-            <Stack className={styles.container}>
+            <Stack className={styles.container} ref={unScrollableRef}>
               <Stack className={styles.content}>
                 <main>{children}</main>
                 <Footer />
