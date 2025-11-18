@@ -33,10 +33,9 @@ export const Main = ({ children }: MainProps) => {
   const location = useLocation();
   const scrollableRef = useRef<HTMLDivElement>(null);
 
-  console.log(scrollableRef);
-
   useEffect(() => {
     if (location.pathname && scrollableRef.current) {
+      console.log(scrollableRef);
       scrollableRef.current.scrollTop = 0;
     }
   }, [location.pathname]);
