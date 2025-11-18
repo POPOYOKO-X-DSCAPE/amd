@@ -1,6 +1,5 @@
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
-import { container } from "../../../../documentation/styled-system/patterns";
 import { Button } from "../../components/button";
 import usePageTransition from "../../hooks/usePageTransition";
 
