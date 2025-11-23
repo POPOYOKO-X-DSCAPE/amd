@@ -3320,17 +3320,5 @@ export const editorials = {
         ]
       }
     ]
-  },
-  "editorial-contents": {
-    "routes": [
-      {
-        "slug": "FR",
-        "pageProps": []
-      },
-      {
-        "slug": "EN",
-        "pageProps": []
-      }
-    ]
   }
 } as const satisfies JSONEditorials;
