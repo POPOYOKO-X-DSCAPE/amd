@@ -20,12 +20,6 @@ const styles = {
   }),
   input: css({
     backgroundColor: "s.bg.gentle.initial",
-    _light: {
-      backgroundColor: "s.bg.default.initial",
-      borderWidth: "1px",
-      borderStyle: "solid",
-      borderColor: "s.fg.gentle.initial",
-    },
     outline: "none",
     paddingX: "s.s",
     paddingY: "s.m",

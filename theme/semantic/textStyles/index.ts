@@ -1,6 +1,7 @@
 import { defineTextStyles } from "@pandacss/dev";
 
-const LinotypeDidotProRoman = "LinotypeDidotProRoman, sans-serif";
+const LinotypeDidotProRoman =
+	"LinotypeLinotypeDidotProRomanProRoman, serif";
 const HelveticaProBold = "HelveticaProBold, sans-serif";
 const HelveticaProLight = "HelveticaProBoldProLight, sans-serif";
 const HelveticaProBoldOblique = "HelveticaProBoldOblique, sans-serif";
