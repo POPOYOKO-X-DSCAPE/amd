@@ -48,8 +48,8 @@ export default defineConfig({
 	conditions: {
 		light: "[data-color-mode=light] &",
 		dark: "[data-color-mode=dark] &",
-		mobile: "@media (max-width: 740px)",
-		desktop: "@media (min-width: 740px)",
+		mobile: "@media (max-width: 1100px)",
+		desktop: "@media (min-width: 1100px)",
 	},
 
 	// Whether to use css reset

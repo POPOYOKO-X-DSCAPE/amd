@@ -1,5 +1,4 @@
 import { Stack } from "@packages/ui";
-import { css } from "@styles";
 import SpeechBalloon from "../../assets/svgs/SpeechBalloon.svg?react";
 import { Button } from "../../components/button";
 import { ContactField } from "../../components/contact-field";
@@ -22,7 +21,7 @@ export const Contact = () => {
           placeholder="I need your help for my next project..."
         />
 
-        <Button label="Send">
+        <Button label="Send" type="submit">
           <SpeechBalloon />
         </Button>
       </ContactForm>
