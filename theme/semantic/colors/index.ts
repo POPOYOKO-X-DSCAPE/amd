@@ -26,8 +26,8 @@ export const colors = defineSemanticTokens.colors({
 			},
 			hover: {
 				value: {
-					base: brand.colors.lighterGrey.value,
-					_dark: brand.colors.darkGrey.value,
+					base: brand.colors.white.value,
+					_dark: brand.colors.black.value,
 				},
 			},
 		},

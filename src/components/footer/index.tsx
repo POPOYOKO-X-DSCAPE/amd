@@ -8,17 +8,12 @@ import Separator from "../separator";
 import AMD from "../../assets/svgs/AMD.svg?react";
 import ArrowRight from "../../assets/svgs/ArrowRight.svg?react";
 import ArrowTopRight from "../../assets/svgs/ArrowTopRight.svg?react";
-import { useLang } from "../../contexts/language-context";
-import usePageTransition from "../../hooks/usePageTransition";
 
 const styles = {
   footer: css({
     padding: 0,
     paddingTop: "s.m",
     gap: "s.l",
-    _desktop: {
-      paddingBottom: "s.m",
-    },
   }),
   navigation: css({
     alignItems: "flex-end",
@@ -39,8 +34,6 @@ const styles = {
 
 export const Footer = () => {
   const navigate = useNavigate();
-  const { language } = useLang();
-  const { transitionTo } = usePageTransition();
 
   return (
     <Stack className={styles.footer}>
@@ -50,7 +43,7 @@ export const Footer = () => {
         <Button
           level="secondary"
           label="Contact"
-          onClick={() => transitionTo(`${language}/contact`)}
+          onClick={() => navigate("/contact")}
         >
           <ArrowRight />
         </Button>
@@ -58,13 +51,7 @@ export const Footer = () => {
         <Button
           level="secondary"
           label="Instagram"
-          onClick={() =>
-            window.open(
-              "https://www.instagram.com/",
-              "_blank",
-              "noopener,noreferrer"
-            )
-          }
+          onClick={() => navigate("/")}
         >
           <ArrowTopRight />
         </Button>
@@ -72,7 +59,7 @@ export const Footer = () => {
 
       <Stack direction="column" className={styles.addresses}>
         <FooterAdress
-          title="Switzerland"
+          title="Swizerland"
           content="AMD Swiss Interior designer
           Route de L’aéroport, 7
           1950 Sion"
