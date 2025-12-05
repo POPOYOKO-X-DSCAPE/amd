@@ -1,42 +1,27 @@
-import {
-	Route,
-	BrowserRouter as Router,
-	Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Main } from "./layouts/main";
-import { Contact } from "./pages/Contact";
-import { Home } from "./pages/Home";
-import { Projects } from "./pages/Projects";
-import { DProjects } from "./pages/Projects/Categories/d-projects";
-import { Designfurniture } from "./pages/Projects/Categories/design-furniture";
-import { ExceptionalLuxury } from "./pages/Projects/Categories/exceptional-luxury";
-import { HospitalityStore } from "./pages/Projects/Categories/hospitality-store";
+
+import { PageChangeAnimation } from "./components/pageChangeAnimation/page-change-animation";
+import { AnimationProvider } from "./contexts/animation-context";
+import { ColorModeProvider } from "./contexts/color-mode-context";
+import { LanguageProvider } from "./contexts/language-context";
+import { AllRoutes } from "./routes/routes";
 
 const AMD = () => {
-	return (
-		<Router>
-			<Main>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/projects" element={<Projects />} />
-					<Route
-						path="/projects/exceptional-luxury"
-						element={<ExceptionalLuxury />}
-					/>
-					<Route
-						path="/projects/hospitality-store"
-						element={<HospitalityStore />}
-					/>
-					<Route path="/projects/3d-projects" element={<DProjects />} />
-					<Route
-						path="/projects/design-furniture"
-						element={<Designfurniture />}
-					/>
-					<Route path="/contact" element={<Contact />} />
-				</Routes>
-			</Main>
-		</Router>
-	);
+  return (
+    <ColorModeProvider>
+      <AnimationProvider>
+        <Router>
+          <LanguageProvider>
+            <PageChangeAnimation />
+            <Main>
+              <AllRoutes />
+            </Main>
+          </LanguageProvider>
+        </Router>
+      </AnimationProvider>
+    </ColorModeProvider>
+  );
 };
 
 export default AMD;
