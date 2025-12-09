@@ -16,6 +16,7 @@ const styles = {
     paddingTop: "s.xs",
     cursor: "pointer",
     textAlign: "right",
+    lineHeight: "24px",
     _desktop: {
       lineHeight: "40px",
       marginBottom: "s.xs",

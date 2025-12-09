@@ -11,6 +11,7 @@ const styles = {
     backgroundColor: "s.bg.actionHigh.initial",
     borderColor: "s.fg.actionHigh.initial",
     color: "s.fg.actionHigh.initial",
+
     _hover: {
       backgroundColor: "s.bg.actionHigh.hover",
     },
@@ -32,7 +33,7 @@ const styles = {
 interface ButtonProps {
   level?: "primary" | "secondary";
   type?: "button" | "submit" | "reset";
-  label: string;
+  label?: string;
   position?: "left" | "right";
   onClick?: () => void;
   children?: React.ReactNode;
@@ -57,11 +58,11 @@ export const Button = ({
         {position === "left" ? (
           <>
             {children}
-            <span className={styles.text}>{label}</span>
+            {label && <span className={styles.text}>{label}</span>}
           </>
         ) : (
           <>
-            <span className={styles.text}>{label}</span>
+            {label && <span className={styles.text}>{label}</span>}
             {children}
           </>
         )}
