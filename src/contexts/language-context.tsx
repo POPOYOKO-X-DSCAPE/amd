@@ -4,7 +4,10 @@ import usePageTransition from "../hooks/usePageTransition";
 type Language = "fr" | "en";
 
 const getDefaultLanguage = (): Language => {
-  const browserLanguage = navigator.language || navigator.languages[0];
+  let browserLanguage = "fr";
+  if (typeof window !== "undefined") {
+    browserLanguage = navigator.language || navigator.languages[0];
+  }
   return browserLanguage.startsWith("fr") ? "fr" : "en";
 };
 interface LanguageContextType {

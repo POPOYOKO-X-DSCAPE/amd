@@ -13,7 +13,7 @@ export const textStyles = defineTextStyles({
 			_mobile: {
 				fontFamily: LinotypeDidotProRoman,
 				fontSize: "60px",
-				lineHeight: "55px",
+				lineHeight: "52px",
 			},
 			_desktop: {
 				fontFamily: LinotypeDidotProRoman,
@@ -51,7 +51,7 @@ export const textStyles = defineTextStyles({
 				_mobile: {
 					fontFamily: HelveticaProBold,
 					fontSize: "24px",
-					lineHeight: "28px",
+					lineHeight: "24px",
 				},
 				_desktop: {
 					fontFamily: HelveticaProBold,
@@ -64,8 +64,7 @@ export const textStyles = defineTextStyles({
 			value: {
 				_mobile: {
 					fontFamily: HelveticaProBold,
-					fontSize: "15px",
-					lineHeight: "19px",
+					fontSize: "16px",
 					letterSpacing: "1px",
 				},
 				_desktop: {
@@ -80,7 +79,6 @@ export const textStyles = defineTextStyles({
 				_mobile: {
 					fontFamily: HelveticaProLight,
 					fontSize: "16px",
-					lineHeight: "19px",
 				},
 				_desktop: {
 					fontFamily: HelveticaProLight,
@@ -93,11 +91,11 @@ export const textStyles = defineTextStyles({
 		title: {
 			value: {
 				_mobile: {
-					fontFamily: HelveticaProBoldOblique,
+					fontFamily: HelveticaProBold,
 					fontSize: "12px",
 				},
 				_desktop: {
-					fontFamily: HelveticaProBoldOblique,
+					fontFamily: HelveticaProBold,
 					fontSize: "24px",
 				},
 			},

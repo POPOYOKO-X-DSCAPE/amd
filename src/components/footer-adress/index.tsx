@@ -1,15 +1,14 @@
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
-import type { ReactNode } from "react";
 
 interface FooterAdressProps {
   title: string;
-  children: ReactNode;
+  content: string;
 }
 
 const styles = {
   container: css({
-    width: "260px",
+    width: "218px",
     gap: "s.xs",
   }),
   title: css({
@@ -20,10 +19,10 @@ const styles = {
   }),
 };
 
-const FooterAdress: React.FC<FooterAdressProps> = ({ title, children }) => (
+const FooterAdress: React.FC<FooterAdressProps> = ({ title, content }) => (
   <Stack className={styles.container}>
     <span className={styles.title}>{title}</span>
-    <span className={styles.content}>{children}</span>
+    <span className={styles.content}>{content}</span>
   </Stack>
 );
 

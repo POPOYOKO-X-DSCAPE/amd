@@ -11,18 +11,12 @@ const styles = {
   container: css({
     width: "100%",
     gap: "s.l",
-    marginBottom: "s.xl",
   }),
   title: css({
     flexGrow: 1,
     textStyle: "section.title",
   }),
   number: css({
-    lineHeight: "40px",
-    _desktop: {
-      lineHeight: "104px",
-    },
-
     paddingRight: { _desktop: "7px", _mobile: "s.xs" },
     textStyle: "section.number",
   }),

@@ -7,16 +7,11 @@ export const styles = {
 		},
 	}),
 	fluxText: css({
-		_desktop: {
-			maxWidth: "60%",
-		},
+		maxWidth: "70ch",
 		textStyle: "body.s",
 	}),
 	fluxButton: css({
-		textStyle: "emphasis",
-		marginTop: "b.x2l",
 		_desktop: {
-			marginTop: "b.x4l",
 			maxWidth: "30%",
 		},
 	}),
