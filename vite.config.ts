@@ -1,9 +1,10 @@
 import {
 	copyFileSync,
 	mkdirSync,
-	readdirSync,
 	readFileSync,
+	readdirSync,
 	statSync,
+	writeFileSync,
 } from "node:fs";
 import { join } from "node:path";
 import { defineConfig } from "vite";
