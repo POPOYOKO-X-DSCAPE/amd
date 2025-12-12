@@ -15,7 +15,7 @@ const styles = {
   footer: css({
     padding: 0,
     paddingTop: "s.m",
-    gap: "s.l",
+    gap: "s.x2l",
     _desktop: {
       paddingBottom: "s.m",
     },
@@ -71,18 +71,19 @@ export const Footer = () => {
       </Stack>
 
       <Stack direction="column" className={styles.addresses}>
-        <FooterAdress
-          title="Switzerland"
-          content="AMD Swiss Interior designer
-          Route de L’aéroport, 7
-          1950 Sion"
-        />
-        <FooterAdress
-          title="Spain"
-          content="AMD Swiss Interior designer
-          Route de L’aéroport, 7
-          1950 Sion"
-        />
+        <FooterAdress title="Switzerland">
+          AMD Swiss Interior Designer
+          <br /> Route de l’aéroport, 7
+          <br />
+          1950 SION
+          <br />
+          Canton du Valais
+        </FooterAdress>
+        <FooterAdress title="Spain">
+          AMD Iberia Ibiza <br /> C/ Can Ramón, 65 <br />
+          07819 Santa Eulalia del Rio <br />
+          Islas Baleares{" "}
+        </FooterAdress>
       </Stack>
 
       <AMD style={{ maxWidth: "100%", bottom: 0 }} />
