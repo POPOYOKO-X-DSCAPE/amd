@@ -14,6 +14,8 @@ import ArrowLeft from "../src/assets/svgs/ArrowLeft.svg?react";
 import { Button } from "./components/button";
 import ListElement from "./components/list-element";
 import { ProjectCard } from "./components/project-card";
+import { ProjectCardCarrousel } from "./components/project-card-carrousel";
+import useMobile from "@packages/ui/hooks/use-mobile";
 import { PageChangeAnimation } from "./components/pageChangeAnimation/page-change-animation";
 import Section from "./components/section";
 import { AnimationProvider } from "./contexts/animation-context";
@@ -131,6 +133,7 @@ const RouteContent = ({
   const navigate = useNavigate();
   const { transitionTo } = usePageTransition();
   const location = useLocation();
+  const isMobile = useMobile(1100);
 
   const goBackLink = () => {
     const currentPath = location.pathname;
@@ -238,9 +241,12 @@ const RouteContent = ({
       >
         {sectionContent}
       </Section>
-      {categoryProjects.length > 0 && (
-        <ProjectCard children={categoryProjects} />
-      )}
+      {categoryProjects.length > 0 &&
+        (isMobile ? (
+          <ProjectCardCarrousel children={categoryProjects} />
+        ) : (
+          <ProjectCard children={categoryProjects} />
+        ))}
     </Stack>
   );
 };

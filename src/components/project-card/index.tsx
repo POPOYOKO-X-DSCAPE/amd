@@ -27,7 +27,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
-
+    cursor: "pointer",
     transition: "all 0.3s ease-in-out",
     "&.hovered": {
       width: "400px",
