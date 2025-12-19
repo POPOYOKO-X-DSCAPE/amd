@@ -20,7 +20,6 @@ const styles = {
     padding: "s.2xl",
   }),
   container: css({
-    height: "50vh",
     width: "100%",
   }),
 
@@ -38,7 +37,7 @@ const styles = {
   }),
   image: css({
     width: "100%",
-    aspectRatio: "4/3",
+    aspectRatio: "310.00/201.59",
     objectFit: "cover",
   }),
   title: css({
