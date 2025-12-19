@@ -18,7 +18,7 @@ const styles = {
     width: "fit-content",
     maxWidth: "100%",
     alignItems: "flex-start",
-    padding: "s.4xl",
+    marginY: "s.x4l",
     gap: "s.m",
     transition: "all 0.3s ease-in-out",
   }),
@@ -47,7 +47,7 @@ const styles = {
   }),
   image: css({
     width: "100%",
-    aspectRatio: "4/3",
+    aspectRatio: "393/256",
     objectFit: "cover",
     borderRadius: "s.xs",
     transition: "all 0.3s ease-in-out",
