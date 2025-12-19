@@ -52,9 +52,17 @@ const styles = {
     borderRadius: "s.xs",
     transition: "all 0.3s ease-in-out",
   }),
+  titleContainer: css({
+    width: "400px",
+    display: "flex",
+    justifyContent: "flex-end",
+    transition: "all 0.3s ease-in-out",
+    _mobile: {
+      width: "250px",
+    },
+  }),
   title: css({
     textStyle: "emphasis",
-    alignSelf: "flex-end",
     wordWrap: "break-word",
     opacity: 1,
     transform: "translateY(0)",
@@ -97,10 +105,12 @@ export const ProjectCard = ({ children }: ProjectCardProps) => {
               alt={child.alt || child.title}
               className={styles.image}
             />
-            <div
-              className={`${styles.title} ${shouldShowTitle ? "" : "hidden"}`}
-            >
-              {child.title}
+            <div className={styles.titleContainer}>
+              <div
+                className={`${styles.title} ${shouldShowTitle ? "" : "hidden"}`}
+              >
+                {child.title}
+              </div>
             </div>
           </div>
         );
