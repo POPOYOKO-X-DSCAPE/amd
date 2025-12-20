@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
-import { Button } from "../button";
 import usePageTransition from "../../hooks/usePageTransition";
 
 interface ProjectChild {
@@ -99,17 +98,16 @@ export const ProjectCard = ({ children }: ProjectCardProps) => {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
-            <Button
-              level="image"
-              type="button"
+            <div
               onClick={() => goToProject(child.slug)}
+              onKeyDown={(e) => e.key === "Enter" && goToProject(child.slug)}
             >
               <img
                 src={child.image}
                 alt={child.alt || child.title}
                 className={styles.image}
               />
-            </Button>
+            </div>
             <div className={styles.titleContainer}>
               <div
                 className={`${styles.title} ${shouldShowTitle ? "" : "hidden"}`}

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import ArrowBottomRight from "../../assets/svgs/ArrowBottomRight.svg?react";
-import { Button } from "../button";
 import usePageTransition from "../../hooks/usePageTransition";
 
 interface ProjectChild {
@@ -48,6 +47,9 @@ const styles = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
+  }),
+  clickableImageContainer: css({
+    cursor: "pointer",
   }),
   title: css({
     padding: "s.s",
@@ -119,9 +121,14 @@ export const ProjectCardCarrousel = ({
               key={`${child.title}-${index}`}
               className={getImageClass(index)}
             >
-              <Button
+              <div
                 onClick={
                   index === currentImageIndex ? handleProjectClick : undefined
+                }
+                onKeyDown={
+                  index === currentImageIndex
+                    ? (e) => e.key === "Enter" && handleProjectClick()
+                    : undefined
                 }
               >
                 <img
@@ -130,7 +137,7 @@ export const ProjectCardCarrousel = ({
                   className={styles.image}
                   loading="eager"
                 />
-              </Button>
+              </div>
             </Stack>
           ))}
         </Stack>
