@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
+import { Button } from "../button";
+import usePageTransition from "../../hooks/usePageTransition";
 
 interface ProjectChild {
   image: string;
   title: string;
   alt?: string;
+  slug: string;
 }
 
 interface ProjectCardProps {
@@ -76,14 +79,10 @@ const styles = {
 
 export const ProjectCard = ({ children }: ProjectCardProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const { goToProject } = usePageTransition();
 
-  const handleMouseEnter = (index: number) => {
-    setHoveredIndex(index);
-  };
-
-  const handleMouseLeave = () => {
-    setHoveredIndex(null);
-  };
+  const handleMouseEnter = (index: number) => setHoveredIndex(index);
+  const handleMouseLeave = () => setHoveredIndex(null);
 
   return (
     <Stack direction="row" className={styles.container}>
@@ -100,11 +99,17 @@ export const ProjectCard = ({ children }: ProjectCardProps) => {
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={handleMouseLeave}
           >
-            <img
-              src={child.image}
-              alt={child.alt || child.title}
-              className={styles.image}
-            />
+            <Button
+              level="image"
+              type="button"
+              onClick={() => goToProject(child.slug)}
+            >
+              <img
+                src={child.image}
+                alt={child.alt || child.title}
+                className={styles.image}
+              />
+            </Button>
             <div className={styles.titleContainer}>
               <div
                 className={`${styles.title} ${shouldShowTitle ? "" : "hidden"}`}

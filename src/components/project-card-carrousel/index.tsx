@@ -3,11 +3,13 @@ import { Stack } from "@packages/ui";
 import { css } from "@styles";
 import ArrowBottomRight from "../../assets/svgs/ArrowBottomRight.svg?react";
 import { Button } from "../button";
+import usePageTransition from "../../hooks/usePageTransition";
 
 interface ProjectChild {
   image: string;
   title: string;
   alt?: string;
+  slug: string;
 }
 
 interface ProjectCardCarrouselProps {
@@ -46,7 +48,6 @@ const styles = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
-    cursor: "pointer",
   }),
   title: css({
     padding: "s.s",
@@ -65,6 +66,7 @@ export const ProjectCardCarrousel = ({
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [titleVisible, setTitleVisible] = useState(true);
+  const { goToProject } = usePageTransition();
 
   useEffect(() => {
     if (children.length <= 1) return;
@@ -96,6 +98,9 @@ export const ProjectCardCarrousel = ({
   const getImageClass = (index: number) =>
     `${styles.imageWrapper} ${index === currentImageIndex ? "active" : ""}`;
 
+  const handleProjectClick = () =>
+    goToProject(children[currentImageIndex]?.slug);
+
   return (
     <Stack direction="column" className={styles.wrapper}>
       <Stack
@@ -114,12 +119,18 @@ export const ProjectCardCarrousel = ({
               key={`${child.title}-${index}`}
               className={getImageClass(index)}
             >
-              <img
-                src={child.image}
-                alt={child.alt || child.title}
-                className={styles.image}
-                loading="eager"
-              />
+              <Button
+                onClick={
+                  index === currentImageIndex ? handleProjectClick : undefined
+                }
+              >
+                <img
+                  src={child.image}
+                  alt={child.alt || child.title}
+                  className={styles.image}
+                  loading="eager"
+                />
+              </Button>
             </Stack>
           ))}
         </Stack>
