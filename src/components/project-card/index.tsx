@@ -1,6 +1,6 @@
-import React, { useState } from "react";
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
+import React, { useState } from "react";
 import usePageTransition from "../../hooks/usePageTransition";
 
 interface ProjectChild {
@@ -26,7 +26,7 @@ const styles = {
     display: "flex",
   }),
   child: css({
-    flex: "0 1 400px",
+    flex: "1 1 0%",
     minWidth: "200px",
     display: "flex",
     flexDirection: "column",
@@ -34,19 +34,19 @@ const styles = {
     cursor: "pointer",
     transition: "flex 0.3s ease-in-out",
     "&.hovered": {
-      flex: "0 1 600px",
+      flex: "2 1 0%",
     },
     "&.not-hovered": {
-      flex: "0 1 300px",
+      flex: "1 1 0%",
     },
     _mobile: {
-      flex: "0 1 200px",
+      flex: "1 1 0%",
       minWidth: "120px",
       "&.hovered": {
-        flex: "0 1 300px",
+        flex: "2 1 0%",
       },
       "&.not-hovered": {
-        flex: "0 1 150px",
+        flex: "1 1 0%",
       },
     },
   }),
