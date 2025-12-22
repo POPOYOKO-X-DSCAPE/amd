@@ -26,7 +26,7 @@ const styles = {
     display: "flex",
   }),
   child: css({
-    flex: "1 1 0%",
+    flex: "0 1 25%",
     minWidth: "200px",
     display: "flex",
     flexDirection: "column",
@@ -34,19 +34,19 @@ const styles = {
     cursor: "pointer",
     transition: "flex 0.3s ease-in-out",
     "&.hovered": {
-      flex: "2 1 0%",
+      flex: "0 1 35%",
     },
     "&.not-hovered": {
-      flex: "1 1 0%",
+      flex: "0 1 20%",
     },
     _mobile: {
-      flex: "1 1 0%",
+      flex: "0 1 40%",
       minWidth: "120px",
       "&.hovered": {
-        flex: "2 1 0%",
+        flex: "0 1 50%",
       },
       "&.not-hovered": {
-        flex: "1 1 0%",
+        flex: "0 1 30%",
       },
     },
   }),
