@@ -178,7 +178,11 @@ const RouteContent = ({
         break;
       case "image":
         sectionContent.push(
-          <Stack direction="row" alignItems="end">
+          <Stack
+            direction="row"
+            alignItems="end"
+            className={styles.fluxImgText}
+          >
             <img
               alt={pageProp.pageProp.alt}
               src={`/src/editorial-contents/${pageProp.pageProp.path}`}
