@@ -46,7 +46,8 @@ const styles = {
   image: css({
     width: "100%",
     height: "100%",
-    objectFit: "cover",
+    aspectRatio: "393/256",
+    cursor: "pointer",
   }),
   clickableImageContainer: css({
     cursor: "pointer",
