@@ -25,6 +25,14 @@ type EditorialLang = (typeof editorials)[LangKey];
 type EditorialRoute = EditorialLang["routes"][number];
 type RealPageProp = EditorialRoute["pageProps"][number];
 
+type ImagePageProp = Extract<RealPageProp, { type: "image" }> & {
+  pageProp: {
+    path: string;
+    alt: string;
+    text?: string;
+  };
+};
+
 const kebabToCustomCase = (kebabStr: string): string => {
   return kebabStr
     .split("-")
@@ -91,17 +99,21 @@ export const RouteContent = ({ pageProps }: IRenderedRoutes) => {
           </Stack>
         );
         break;
-      case "image":
+      case "image": {
         sectionContent.push(
-          <Stack>
+          <Stack direction="row">
             <img
               alt={pageProp.pageProp.alt}
               src={`/src/editorial-contents/${pageProp.pageProp.path}`}
               className={styles.fluxImg}
             />
+            {pageProp.pageProp.text && !isMobile && (
+              <p>{pageProp.pageProp.text}</p>
+            )}
           </Stack>
         );
         break;
+      }
       case "project-list":
         sectionContent.push(
           <Stack>

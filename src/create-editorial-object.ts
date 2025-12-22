@@ -27,7 +27,7 @@ export type PagePropMap = {
 	section: { title: string; number: string };
 	title: string;
 	text: string;
-	image: { path: string; alt: string };
+	image: { path: string; alt: string; text?: string };
 	slideshow: PagePropMap["image"][];
 	video: { path: string; alt: string };
 	button: string;
@@ -105,6 +105,7 @@ const getOrderedDirsByIndex = (src: string) =>
 // ----------------------
 const buildImageProp = (dirPath: string): PagePropMap["image"] => {
 	const alt = readTextFile(path.join(dirPath, "alt.txt"));
+	const text = readTextFile(path.join(dirPath, "text.txt"));
 	const files = fs
 		.readdirSync(dirPath)
 		.filter(
@@ -119,7 +120,11 @@ const buildImageProp = (dirPath: string): PagePropMap["image"] => {
 		path.join(dirPath, imgFile),
 	);
 
-	return { path: relativePath.replace(/\\/g, "/"), alt };
+	return {
+		path: relativePath.replace(/\\/g, "/"),
+		alt,
+		...(text && { text }),
+	};
 };
 
 const buildVideoProp = (dirPath: string): PagePropMap["video"] => {

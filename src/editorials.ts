@@ -363,7 +363,8 @@ export const editorials = {
                             "type": "image",
                             "pageProp": {
                               "path": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/5-project-list/2-chalet,-verbier/5-image/piscine-interieure-privee-spa-espace-bien-etre-verbier-suisse.webp",
-                              "alt": "piscine intérieure privée SPA espace Bien-être Verbier Suisse"
+                              "alt": "piscine intérieure privée SPA espace Bien-être Verbier Suisse",
+                              "text": "Analyse immobilière, étude de faisabilité avant investissent, conseil d’architecture et design d’intérieur, conception."
                             }
                           },
                           {

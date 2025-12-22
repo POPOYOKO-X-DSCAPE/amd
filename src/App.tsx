@@ -9,14 +9,14 @@ import {
 import { Main } from "./layouts/main";
 
 import { Stack } from "@packages/ui";
+import useMobile from "@packages/ui/hooks/use-mobile";
 import type React from "react";
 import ArrowLeft from "../src/assets/svgs/ArrowLeft.svg?react";
 import { Button } from "./components/button";
 import ListElement from "./components/list-element";
+import { PageChangeAnimation } from "./components/pageChangeAnimation/page-change-animation";
 import { ProjectCard } from "./components/project-card";
 import { ProjectCardCarrousel } from "./components/project-card-carrousel";
-import useMobile from "@packages/ui/hooks/use-mobile";
-import { PageChangeAnimation } from "./components/pageChangeAnimation/page-change-animation";
 import Section from "./components/section";
 import { AnimationProvider } from "./contexts/animation-context";
 import { ColorModeProvider } from "./contexts/color-mode-context";
@@ -178,12 +178,15 @@ const RouteContent = ({
         break;
       case "image":
         sectionContent.push(
-          <Stack>
+          <Stack direction="row" alignItems="end">
             <img
               alt={pageProp.pageProp.alt}
               src={`/src/editorial-contents/${pageProp.pageProp.path}`}
               className={styles.fluxImg}
             />
+            {pageProp.pageProp.text && !isMobile && (
+              <p>{pageProp.pageProp.text}</p>
+            )}
           </Stack>
         );
         break;
