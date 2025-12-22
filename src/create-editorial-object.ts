@@ -12,7 +12,16 @@ export type PagePropType =
 	| "slideshow"
 	| "video"
 	| "button"
-	| "project-list";
+	| "project-list"
+	| "project-card"
+	| "project-card-carrousel";
+
+export type ProjectCardItem = {
+	image: string;
+	title: string;
+	alt?: string;
+	slug: string;
+};
 
 export type PagePropMap = {
 	section: { title: string; number: string };
@@ -23,6 +32,8 @@ export type PagePropMap = {
 	video: { path: string; alt: string };
 	button: string;
 	"project-list": EditorialRoute[];
+	"project-card": ProjectCardItem[];
+	"project-card-carrousel": ProjectCardItem[];
 };
 
 export type PageProp<T extends PagePropType = PagePropType> = {
@@ -44,7 +55,7 @@ export type JSONEditorials = {
 // ----------------------
 // Utils
 // ----------------------
-const BASE_DIR = path.resolve("editorial-contents");
+const BASE_DIR = path.resolve("src/editorial-contents");
 
 const readTextFile = (filePath: string): string =>
 	fs.existsSync(filePath)
@@ -198,6 +209,14 @@ const buildPageProp = (
 			return { type, pageProp: routes };
 		}
 
+		case "project-card":
+		case "project-card-carrousel": {
+			return {
+				type,
+				pageProp: [],
+			};
+		}
+
 		default:
 			throw new Error(`Type inconnu: ${type}`);
 	}
@@ -256,7 +275,7 @@ if (require.main === module) {
 	const json = buildEditorialsJSON();
 
 	// 💡 On génère maintenant un fichier TypeScript au lieu d’un JSON
-	const outPath = path.resolve("editorials.ts");
+	const outPath = path.resolve("src/editorials.ts");
 
 	const fileContent = `// ⚙️ Fichier généré automatiquement – ne pas modifier\nimport type { JSONEditorials } from "./create-editorial-object";\n\nexport const editorials = ${JSON.stringify(json, null, 2)} as const satisfies JSONEditorials;\n`;
 

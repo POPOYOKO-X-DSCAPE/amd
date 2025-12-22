@@ -1,4 +1,5 @@
 import { Stack } from "@packages/ui";
+import useMobile from "@packages/ui/hooks/use-mobile";
 import {
   Navigate,
   Route,
@@ -8,6 +9,8 @@ import {
 } from "react-router-dom";
 import { Button } from "../components/button";
 import ListElement from "../components/list-element";
+import { ProjectCard } from "../components/project-card";
+import { ProjectCardCarrousel } from "../components/project-card-carrousel";
 import Section from "../components/section";
 import { useLang } from "../contexts/language-context.tsx";
 import { editorials } from "../editorials";
@@ -48,6 +51,7 @@ export const RouteContent = ({ pageProps }: IRenderedRoutes) => {
 
   const { transitionTo } = usePageTransition();
   const location = useLocation();
+  const isMobile = useMobile();
 
   const goBackLink = () => {
     const currentPath = location.pathname;
@@ -101,13 +105,27 @@ export const RouteContent = ({ pageProps }: IRenderedRoutes) => {
       case "project-list":
         sectionContent.push(
           <Stack>
-            {pageProp.pageProp.map((a, i) => (
-              <ListElement
-                label={kebabToCustomCase(a.slug)}
-                onClick={() => transitionTo(a.slug)}
-                key={`${a.slug}-${i}`}
+            {isMobile ? (
+              <ProjectCardCarrousel
+                projects={pageProp.pageProp.map((project) => ({
+                  image: project.image,
+                  title: project.title,
+                  alt: project.alt || project.title,
+                  slug: project.slug,
+                }))}
+                onProjectClick={(slug) => transitionTo(slug)}
               />
-            ))}
+            ) : (
+              pageProp.pageProp.map((project, i) => (
+                <ProjectCard
+                  key={`${project.slug}-${i}`}
+                  image={project.image}
+                  title={project.title}
+                  alt={project.alt || project.title}
+                  onClick={() => transitionTo(project.slug)}
+                />
+              ))
+            )}
           </Stack>
         );
         break;
