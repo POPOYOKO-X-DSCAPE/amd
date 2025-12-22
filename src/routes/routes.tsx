@@ -114,29 +114,13 @@ export const RouteContent = ({ pageProps }: IRenderedRoutes) => {
         );
         break;
       }
-      case "project-list":
+      case "project-card":
         sectionContent.push(
           <Stack>
             {isMobile ? (
-              <ProjectCardCarrousel
-                projects={pageProp.pageProp.map((project) => ({
-                  image: project.image,
-                  title: project.title,
-                  alt: project.alt || project.title,
-                  slug: project.slug,
-                }))}
-                onProjectClick={(slug) => transitionTo(slug)}
-              />
+              <ProjectCardCarrousel>{pageProp.pageProp}</ProjectCardCarrousel>
             ) : (
-              pageProp.pageProp.map((project, i) => (
-                <ProjectCard
-                  key={`${project.slug}-${i}`}
-                  image={project.image}
-                  title={project.title}
-                  alt={project.alt || project.title}
-                  onClick={() => transitionTo(project.slug)}
-                />
-              ))
+              <ProjectCard>{pageProp.pageProp}</ProjectCard>
             )}
           </Stack>
         );

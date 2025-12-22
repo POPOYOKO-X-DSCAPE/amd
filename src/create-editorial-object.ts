@@ -13,8 +13,7 @@ export type PagePropType =
 	| "video"
 	| "button"
 	| "project-list"
-	| "project-card"
-	| "project-card-carrousel";
+	| "project-card";
 
 export type ProjectCardItem = {
 	image: string;
@@ -33,7 +32,6 @@ export type PagePropMap = {
 	button: string;
 	"project-list": EditorialRoute[];
 	"project-card": ProjectCardItem[];
-	"project-card-carrousel": ProjectCardItem[];
 };
 
 export type PageProp<T extends PagePropType = PagePropType> = {
@@ -127,6 +125,37 @@ const buildImageProp = (dirPath: string): PagePropMap["image"] => {
 	};
 };
 
+const buildProjectCardItems = (dirPath: string): ProjectCardItem[] => {
+	const projectDirs = getOrderedDirsByIndex(dirPath);
+
+	return projectDirs.map((projectDir) => {
+		const title = readTextFile(
+			path.join(projectDir.dirPath, "title.txt"),
+		);
+		const alt = readTextFile(path.join(projectDir.dirPath, "alt.txt"));
+		const files = fs
+			.readdirSync(projectDir.dirPath)
+			.filter(
+				(f) =>
+					!f.endsWith(".txt") &&
+					!fs.statSync(path.join(projectDir.dirPath, f)).isDirectory(),
+			);
+
+		const imgFile = files[0] ?? "";
+		const relativePath = path.relative(
+			BASE_DIR,
+			path.join(projectDir.dirPath, imgFile),
+		);
+
+		return {
+			image: relativePath.replace(/\\/g, "/"),
+			title,
+			alt: alt || undefined,
+			slug: projectDir.name.replace(/-/g, " ").toLowerCase(),
+		};
+	});
+};
+
 const buildVideoProp = (dirPath: string): PagePropMap["video"] => {
 	const alt = readTextFile(path.join(dirPath, "alt.txt"));
 	const files = fs
@@ -214,11 +243,10 @@ const buildPageProp = (
 			return { type, pageProp: routes };
 		}
 
-		case "project-card":
-		case "project-card-carrousel": {
+		case "project-card": {
 			return {
 				type,
-				pageProp: [],
+				pageProp: buildProjectCardItems(dirPath),
 			};
 		}
 
