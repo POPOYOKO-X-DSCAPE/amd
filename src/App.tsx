@@ -9,14 +9,11 @@ import {
 import { Main } from "./layouts/main";
 
 import { Stack } from "@packages/ui";
-import useMobile from "@packages/ui/hooks/use-mobile";
 import type React from "react";
 import ArrowLeft from "../src/assets/svgs/ArrowLeft.svg?react";
 import { Button } from "./components/button";
 import ListElement from "./components/list-element";
 import { PageChangeAnimation } from "./components/pageChangeAnimation/page-change-animation";
-import { ProjectCard } from "./components/project-card";
-import { ProjectCardCarrousel } from "./components/project-card-carrousel";
 import Section from "./components/section";
 import { AnimationProvider } from "./contexts/animation-context";
 import { ColorModeProvider } from "./contexts/color-mode-context";
@@ -33,17 +30,8 @@ type EditorialLang = (typeof editorials)[LangKey];
 type EditorialRoute = EditorialLang["routes"][number];
 type RealPageProp = EditorialRoute["pageProps"][number];
 
-interface ProjectInfo {
-  slug: string;
-  title: string;
-  image: string;
-  alt?: string;
-}
-
 interface IRenderedRoutes {
   pageProps: RealPageProp[];
-  currentPath?: string;
-  language?: "fr" | "en";
 }
 
 const kebabToCustomCase = (kebabStr: string): string => {
@@ -58,71 +46,7 @@ const extractNumber = (input: string): string => {
   return match ? match[0] : "99";
 };
 
-const getCategoryProjects = (
-  language: "fr" | "en",
-  categorySlug: string
-): ProjectInfo[] => {
-  const langData = editorials[language.toUpperCase() as LangKey];
-
-  const findCategory = (routes: any[]): any => {
-    for (const route of routes) {
-      if (route.slug === categorySlug) {
-        return route;
-      }
-      if (Array.isArray(route.pageProps)) {
-        for (const prop of route.pageProps) {
-          if (prop.type === "project-list" && Array.isArray(prop.pageProp)) {
-            for (const project of prop.pageProp) {
-              if (project.slug === categorySlug) {
-                return project;
-              }
-            }
-          }
-        }
-      }
-    }
-    return null;
-  };
-
-  const category = findCategory(langData.routes);
-  if (!category) return [];
-
-  const projects: ProjectInfo[] = [];
-  if (Array.isArray(category.pageProps)) {
-    for (const prop of category.pageProps) {
-      if (prop.type === "project-list" && Array.isArray(prop.pageProp)) {
-        for (const project of prop.pageProp) {
-          let firstImage = "";
-          let altText = "";
-          if (Array.isArray(project.pageProps)) {
-            for (const projectProp of project.pageProps) {
-              if (projectProp.type === "image" && projectProp.pageProp.path) {
-                firstImage = `/src/editorial-contents/${projectProp.pageProp.path}`;
-                altText = projectProp.pageProp.alt || "";
-                break;
-              }
-            }
-          }
-
-          projects.push({
-            slug: project.slug,
-            title: kebabToCustomCase(project.slug),
-            image: firstImage,
-            alt: altText,
-          });
-        }
-      }
-    }
-  }
-
-  return projects;
-};
-
-const RouteContent = ({
-  pageProps,
-  currentPath,
-  language,
-}: IRenderedRoutes) => {
+const RouteContent = ({ pageProps }: IRenderedRoutes) => {
   let headingVideoPath: string | null = null;
   let headingVideoAlt: string | null = null;
   let sectionTitle = "";
@@ -133,7 +57,6 @@ const RouteContent = ({
   const navigate = useNavigate();
   const { transitionTo } = usePageTransition();
   const location = useLocation();
-  const isMobile = useMobile(1100);
 
   const goBackLink = () => {
     const currentPath = location.pathname;
@@ -178,19 +101,12 @@ const RouteContent = ({
         break;
       case "image":
         sectionContent.push(
-          <Stack
-            direction="row"
-            alignItems="end"
-            className={styles.fluxImgText}
-          >
+          <Stack>
             <img
               alt={pageProp.pageProp.alt}
               src={`/src/editorial-contents/${pageProp.pageProp.path}`}
               className={styles.fluxImg}
             />
-            {pageProp.pageProp.text && !isMobile && (
-              <p>{pageProp.pageProp.text}</p>
-            )}
           </Stack>
         );
         break;
@@ -208,23 +124,6 @@ const RouteContent = ({
         );
         break;
       default:
-    }
-  }
-
-  const isProjectPage =
-    currentPath &&
-    language &&
-    !pageProps.some((prop) => prop.type === "project-list");
-
-  let categoryProjects: ProjectInfo[] = [];
-  if (isProjectPage && currentPath && language) {
-    const pathParts = currentPath.split("/").filter((p) => p);
-    const allProjectsIndex = pathParts.findIndex(
-      (part) => part === "all-projects"
-    );
-    if (allProjectsIndex !== -1 && allProjectsIndex + 1 < pathParts.length) {
-      const categorySlug = pathParts[allProjectsIndex + 1];
-      categoryProjects = getCategoryProjects(language, categorySlug);
     }
   }
 
@@ -248,12 +147,6 @@ const RouteContent = ({
       >
         {sectionContent}
       </Section>
-      {categoryProjects.length > 0 &&
-        (isMobile ? (
-          <ProjectCardCarrousel children={categoryProjects} />
-        ) : (
-          <ProjectCard children={categoryProjects} />
-        ))}
     </Stack>
   );
 };
@@ -274,13 +167,7 @@ const RenderedRoutes = () => {
       <Route
         key={`${endPath}`}
         path={`${language}${endPath}`}
-        element={
-          <RouteContent
-            pageProps={routeData.pageProps}
-            currentPath={endPath}
-            language={language}
-          />
-        }
+        element={<RouteContent pageProps={routeData.pageProps} />}
       />
     );
 

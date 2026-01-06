@@ -36,101 +36,6 @@ export const editorials = {
         ]
       },
       {
-        "slug": "prototypes",
-        "pageProps": [
-          {
-            "type": "section",
-            "pageProp": {
-              "title": "Prototypes",
-              "number": "_03"
-            }
-          },
-          {
-            "type": "title",
-            "pageProp": "Design Engineering & Prototyping"
-          },
-          {
-            "type": "text",
-            "pageProp": "L’agence ne se limite pas à l’architecture d’intérieur, elle façonne également le mobilier qui l’habille. Tables, luminaires, bibliothèques, dressing… Chaque pièce peut être imaginée et conçue sur mesure, dessinée par AMD Interior Designer et réalisée par les meilleurs artisans.\nUne approche où le design devient une signature exclusive, entre élégance, innovation et singularité."
-          },
-          {
-            "type": "project-list",
-            "pageProp": [
-              {
-                "slug": "claustra-organique,-ibiza",
-                "pageProps": [
-                  {
-                    "type": "section",
-                    "pageProp": {
-                      "title": "Prototypes",
-                      "number": "_03"
-                    }
-                  },
-                  {
-                    "type": "title",
-                    "pageProp": "Claustra organique \"corail\", Ibiza"
-                  },
-                  {
-                    "type": "text",
-                    "pageProp": "Le projet consiste en la création d’un claustra sculptural destiné à séparer visuellement le salon et la salle à manger sans cloisonner l’espace. Inspiré par les formes naturelles du corail, il joue sur un équilibre entre pleins et vides pour filtrer la lumière et offrir une présence à la fois aérienne et structurante.\nÀ la croisée du design d’objet et de l’installation artistique, ce claustra devient un élément central du décor, à la fois fonctionnel et poétique."
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/4-image/prototype-final-laque-mousse-haute-densite-valide.webp",
-                      "alt": "Prototype final laqué mousse haute densité validé"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/5-image/fabrication-echelle-12-prototype-metaceylate-massif-enjeux-techniques-financiers.webp",
-                      "alt": "fabrication échelle 1/2 prototype metaceylate massif enjeux techniques financiers"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/6-image/prototype-final-led-vue-3d.webp",
-                      "alt": "Prototype final led vue 3D"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/7-image/fabrication-echelle-1:1-prototype-mousse-haute-densite.webp",
-                      "alt": "Fabrication échelle 1/1 prototype mousse haute densité"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/8-image/fabrication-echelle-1:2-prototype-aluminium-massif.webp",
-                      "alt": "Fabrication échelle 1/2 prototype aluminium massif"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/9-image/fabrication-echelle-1:1-prototype-mousse-haute-densite.webp",
-                      "alt": "fabrication échelle 1/1 prototype mousse haute densité"
-                    }
-                  },
-                  {
-                    "type": "button",
-                    "pageProp": "Tous les Prototypes"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "button",
-            "pageProp": "Home"
-          }
-        ]
-      },
-      {
         "slug": "all-projects",
         "pageProps": [
           {
@@ -363,8 +268,7 @@ export const editorials = {
                             "type": "image",
                             "pageProp": {
                               "path": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/5-project-list/2-chalet,-verbier/5-image/piscine-interieure-privee-spa-espace-bien-etre-verbier-suisse.webp",
-                              "alt": "piscine intérieure privée SPA espace Bien-être Verbier Suisse",
-                              "text": "Analyse immobilière, étude de faisabilité avant investissent, conseil d’architecture et design d’intérieur, conception."
+                              "alt": "piscine intérieure privée SPA espace Bien-être Verbier Suisse"
                             }
                           },
                           {
@@ -787,41 +691,6 @@ export const editorials = {
                   {
                     "type": "button",
                     "pageProp": "Tous les projets"
-                  },
-                  {
-                    "type": "project-card",
-                    "pageProp": [
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/1-dagaz-ibiza/villa-en-construction-cote-sauvage-ibiza.webp",
-                        "title": "Dagaz, Ibiza",
-                        "alt": "Villa en construction côte sauvage Ibiza",
-                        "slug": "dagaz ibiza"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/2-chalet-verbier/chalet-luxe-vue-exterieur-nuit-suisse.webp",
-                        "title": "Chalet, Verbier",
-                        "alt": "Chalet luxe vue extérieur nuit Suisse",
-                        "slug": "chalet verbier"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/3-cologny-geneve/maison-piscine-architecte-contemporaine-cologny-lac-leman.webp",
-                        "title": "Cologny, Genève",
-                        "alt": "maison piscine architecte contemporaine Cologny lac léman",
-                        "slug": "cologny geneve"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/4-ranch-st-tropez/bastide-provencale-rehabilitee-st-tropez.webp",
-                        "title": "Ranch, St Tropez",
-                        "alt": "Bastide provençale réhabilitée St-Tropez",
-                        "slug": "ranch st tropez"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/5-central-park-kiev/sculpture-contemporaine-tapis-luxe-appartement-prestige-a-kiev.webp",
-                        "title": "Central Park, Kiev",
-                        "alt": "Sculpture contemporaine tapis luxe appartement prestige à Kiev",
-                        "slug": "central park kiev"
-                      }
-                    ]
                   }
                 ]
               },
@@ -931,17 +800,6 @@ export const editorials = {
                   {
                     "type": "button",
                     "pageProp": "Tous les projets"
-                  },
-                  {
-                    "type": "project-card",
-                    "pageProp": [
-                      {
-                        "image": "FR/all-projects/5-project-list/2-architecture-and-interior-architecture/7-project-card/1-gaming-house-geneve/accueil-gaming-house-amd-interior-designer.webp",
-                        "title": "Gaming House, Genève",
-                        "alt": "Accueil Gaming House AMD Interior Designer",
-                        "slug": "gaming house geneve"
-                      }
-                    ]
                   }
                 ]
               },
@@ -1221,29 +1079,6 @@ export const editorials = {
                   {
                     "type": "button",
                     "pageProp": "Tous les projets"
-                  },
-                  {
-                    "type": "project-card",
-                    "pageProp": [
-                      {
-                        "image": "FR/all-projects/5-project-list/3-hospitality-and-art-de-vivre/7-project-card/1-hugo-valentine-dijon/facade-entree-valentine-et-hugo-dijon.webp",
-                        "title": "Hugo et Valentine, Dijon",
-                        "alt": "Façade entrée Valentine et Hugo Dijon",
-                        "slug": "hugo valentine dijon"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/3-hospitality-and-art-de-vivre/7-project-card/2-loiseau-vignes-beaune/facade-restaurant-loiseau-des-vignes-a-beaune.webp",
-                        "title": "Loiseau des Vignes, Beaune",
-                        "alt": "Façade du restaurant Loiseau des Vignes à Beaune",
-                        "slug": "loiseau vignes beaune"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/3-hospitality-and-art-de-vivre/7-project-card/3-table-hote-rotisserie-chambertin/enseigne-table-d'hote-rustique-intimiste.webp",
-                        "title": "Table d'Hôte, Rotisserie du Chambertin",
-                        "alt": "Enseigne Table d’hôte rustique intimiste",
-                        "slug": "table hote rotisserie chambertin"
-                      }
-                    ]
                   }
                 ]
               },
@@ -1258,17 +1093,17 @@ export const editorials = {
                     }
                   },
                   {
-                    "type": "section",
-                    "pageProp": {
-                      "title": "Conception 3D",
-                      "number": "_01"
-                    }
-                  },
-                  {
                     "type": "video",
                     "pageProp": {
                       "path": "FR/all-projects/5-project-list/4-3d-conception/2-video/projet-3d.webm",
                       "alt": "onception 3D résidence haut de gamme visualisation architecture intérieure projet résidentiel sur-mesure garage vitré voitures de luxe salle de bain marbre design bureau avec vue panoramique salle de projection immersive AMD Interior Designer 3D"
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "pageProp": {
+                      "title": "Conception 3D",
+                      "number": "_01"
                     }
                   },
                   {
@@ -1722,47 +1557,101 @@ export const editorials = {
                   {
                     "type": "button",
                     "pageProp": "Tous les projets"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "button",
+            "pageProp": "Home"
+          }
+        ]
+      },
+      {
+        "slug": "prototypes",
+        "pageProps": [
+          {
+            "type": "section",
+            "pageProp": {
+              "title": "Prototypes",
+              "number": "_03"
+            }
+          },
+          {
+            "type": "title",
+            "pageProp": "Design Engineering & Prototyping"
+          },
+          {
+            "type": "text",
+            "pageProp": "L’agence ne se limite pas à l’architecture d’intérieur, elle façonne également le mobilier qui l’habille. Tables, luminaires, bibliothèques, dressing… Chaque pièce peut être imaginée et conçue sur mesure, dessinée par AMD Interior Designer et réalisée par les meilleurs artisans.\nUne approche où le design devient une signature exclusive, entre élégance, innovation et singularité."
+          },
+          {
+            "type": "project-list",
+            "pageProp": [
+              {
+                "slug": "claustra-organique,-ibiza",
+                "pageProps": [
+                  {
+                    "type": "section",
+                    "pageProp": {
+                      "title": "Prototypes",
+                      "number": "_03"
+                    }
                   },
                   {
-                    "type": "project-card",
-                    "pageProp": [
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/1-dagaz-ibiza/grand-espace-futuriste-plancher-en-verre-technologique-ibiza.webp",
-                        "title": "Visite virtuelle, Ibiza",
-                        "alt": "Grand espace futuriste plancher en verre technologique Ibiza",
-                        "slug": "dagaz ibiza"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/2-carlift-carport-geneve/voiture-luxe-garage-vitre-amd-interior-designer.webp",
-                        "title": "Carlift & Carport, Genève",
-                        "alt": "Voiture luxe garage vitré AMD Interior Designer",
-                        "slug": "carlift carport geneve"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/3-espace-master-geneve/suite-contemporaine-mobilier-integre-malles-vintage.webp",
-                        "title": "Espace Master, Genève",
-                        "alt": "Suite contemporaine mobilier intégré malles vintage",
-                        "slug": "espace master geneve"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/5-chateau-de-chenas-chenas/espace-bien-etre-bassin-interieur-mur-pierre-brute-chenas.webp",
-                        "title": "Château de Chénas, Chénas",
-                        "alt": "Espace bien-être bassin intérieur mur pierre brute Chénas",
-                        "slug": "chateau de chenas chenas"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/6-palais-valetta-malte/salon-cheminee-pierre-et-fauteuils-vintage.webp",
-                        "title": "Palais Valette, Malte",
-                        "alt": "Salon chaleureux avec cheminée en pierre et fauteuils vintage",
-                        "slug": "palais valetta malte"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/7-guest-house-geneve/espace-detente-bois-naturel-meridienne-cloison-texturee.webp",
-                        "title": "Guest House, Genève",
-                        "alt": "Espace détente en bois naturel avec méridienne et cloison texturée",
-                        "slug": "guest house geneve"
-                      }
-                    ]
+                    "type": "title",
+                    "pageProp": "Claustra organique \"corail\", Ibiza"
+                  },
+                  {
+                    "type": "text",
+                    "pageProp": "Le projet consiste en la création d’un claustra sculptural destiné à séparer visuellement le salon et la salle à manger sans cloisonner l’espace. Inspiré par les formes naturelles du corail, il joue sur un équilibre entre pleins et vides pour filtrer la lumière et offrir une présence à la fois aérienne et structurante.\nÀ la croisée du design d’objet et de l’installation artistique, ce claustra devient un élément central du décor, à la fois fonctionnel et poétique."
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/4-image/prototype-final-laque-mousse-haute-densite-valide.webp",
+                      "alt": "Prototype final laqué mousse haute densité validé"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/5-image/fabrication-echelle-1:2-prototype-metaceylate-massif-enjeux-techniques-financiers.webp",
+                      "alt": "fabrication échelle 1/2 prototype metaceylate massif enjeux techniques financiers"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/6-image/prototype-final-led-vue-3d.webp",
+                      "alt": "Prototype final led vue 3D"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/7-image/fabrication-echelle-1:1-prototype-mousse-haute-densite.webp",
+                      "alt": "Fabrication échelle 1/1 prototype mousse haute densité"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/8-image/fabrication-echelle-12-prototype-aluminium-massif.webp",
+                      "alt": "Fabrication échelle 1/2 prototype aluminium massif"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "FR/prototypes/4-project-list/1-claustra-organique,-ibiza/9-image/fabrication-echelle-1:1-prototype-mousse-haute-densite.webp",
+                      "alt": "fabrication échelle 1/1 prototype mousse haute densité"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "pageProp": "Tous les Prototypes"
                   }
                 ]
               }
@@ -1802,97 +1691,6 @@ export const editorials = {
               "path": "EN/office/4-image/francois-damidot-reunion-de-chantier-equipes.webp",
               "alt": "Francois Damidot site meeting teams"
             }
-          },
-          {
-            "type": "button",
-            "pageProp": "Home"
-          }
-        ]
-      },
-      {
-        "slug": "prototypes",
-        "pageProps": [
-          {
-            "type": "section",
-            "pageProp": {
-              "title": "Prototypes",
-              "number": "_03"
-            }
-          },
-          {
-            "type": "title",
-            "pageProp": "Design Engineering & Prototyping"
-          },
-          {
-            "type": "text",
-            "pageProp": "The agency extends its expertise beyond interior architecture, shaping the very furniture that enhances each space. Tables, lighting, bookshelves, wardrobes… every piece can be custom-designed by AMD Interior Designer and crafted by the finest artisans. An approach where design becomes an exclusive signature—merging elegance, innovation, and singular character."
-          },
-          {
-            "type": "project-list",
-            "pageProp": [
-              {
-                "slug": "claustra-organique,-ibiza",
-                "pageProps": [
-                  {
-                    "type": "section",
-                    "pageProp": {
-                      "title": "Prototypes",
-                      "number": "_03"
-                    }
-                  },
-                  {
-                    "type": "title",
-                    "pageProp": "Organic ‘coral’ screen, Ibiza"
-                  },
-                  {
-                    "type": "text",
-                    "pageProp": "The project consists of creating a sculptural screen designed to visually separate the living room and dining room without partitioning the space. Inspired by the natural shapes of coral, it plays on a balance between solids and voids to filter light and offer a presence that is both airy and structuring.\nAt the crossroads of object design and artistic installation, this screen becomes a central element of the décor, both functional and poetic."
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/4-image/final)-prototype-high-density-foam -acquer-approved.webp",
-                      "alt": "Final prototype with high-density foam coating approved"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/5-image/fabrication-echelle-1:2-prototype-metaceylate-massif-enjeux-techniques-financiers.webp",
-                      "alt": "1/2 scale manufacturing of solid metacrylate prototype technical and financial challenges"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/6-image/final-prototype-led-3d-view.webp",
-                      "alt": "Final LED prototype 3D view"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/7-image/manufacture-scale-1:1-prototype-high-density-foam.webp",
-                      "alt": "Manufacture of 1/1 scale high-density foam prototype"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/8-image/manufacture-scale-1:2-prototype-solid-aluminium.webp",
-                      "alt": "Manufacture of 1/2 scale solid aluminium prototype"
-                    }
-                  },
-                  {
-                    "type": "image",
-                    "pageProp": {
-                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/9-image/manufacture-scale-1:1-prototype-high-density-foam.webp",
-                      "alt": "1/1 scale manufacturing, high-density foam prototype"
-                    }
-                  }
-                ]
-              }
-            ]
           },
           {
             "type": "button",
@@ -3415,6 +3213,101 @@ export const editorials = {
                   {
                     "type": "button",
                     "pageProp": "All Projects"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "button",
+            "pageProp": "Home"
+          }
+        ]
+      },
+      {
+        "slug": "prototypes",
+        "pageProps": [
+          {
+            "type": "section",
+            "pageProp": {
+              "title": "Prototypes",
+              "number": "_03"
+            }
+          },
+          {
+            "type": "title",
+            "pageProp": "Design Engineering & Prototyping"
+          },
+          {
+            "type": "text",
+            "pageProp": "The agency extends its expertise beyond interior architecture, shaping the very furniture that enhances each space. Tables, lighting, bookshelves, wardrobes… every piece can be custom-designed by AMD Interior Designer and crafted by the finest artisans. An approach where design becomes an exclusive signature—merging elegance, innovation, and singular character."
+          },
+          {
+            "type": "project-list",
+            "pageProp": [
+              {
+                "slug": "claustra-organique,-ibiza",
+                "pageProps": [
+                  {
+                    "type": "section",
+                    "pageProp": {
+                      "title": "Prototypes",
+                      "number": "_03"
+                    }
+                  },
+                  {
+                    "type": "title",
+                    "pageProp": "Organic ‘coral’ screen, Ibiza"
+                  },
+                  {
+                    "type": "text",
+                    "pageProp": "The project consists of creating a sculptural screen designed to visually separate the living room and dining room without partitioning the space. Inspired by the natural shapes of coral, it plays on a balance between solids and voids to filter light and offer a presence that is both airy and structuring.\nAt the crossroads of object design and artistic installation, this screen becomes a central element of the décor, both functional and poetic."
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/4-image/final)-prototype-high-density-foam -acquer-approved.webp",
+                      "alt": "Final prototype with high-density foam coating approved"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/5-image/fabrication-echelle-1:2-prototype-metaceylate-massif-enjeux-techniques-financiers.webp",
+                      "alt": "1/2 scale manufacturing of solid metacrylate prototype technical and financial challenges"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/6-image/final-prototype-led-3d-view.webp",
+                      "alt": "Final LED prototype 3D view"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/7-image/manufacture-scale-1:1-prototype-high-density-foam.webp",
+                      "alt": "Manufacture of 1/1 scale high-density foam prototype"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/8-image/manufacture-scale-1:2-prototype-solid-aluminium.webp",
+                      "alt": "Manufacture of 1/2 scale solid aluminium prototype"
+                    }
+                  },
+                  {
+                    "type": "image",
+                    "pageProp": {
+                      "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/9-image/manufacture-scale-1:1-prototype-high-density-foam.webp",
+                      "alt": "1/1 scale manufacturing, high-density foam prototype"
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "pageProp": ""
                   }
                 ]
               }
