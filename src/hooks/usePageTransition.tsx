@@ -16,10 +16,7 @@ const usePageTransition = () => {
     }, 500);
   };
 
-  const goToProject = (slug: string) =>
-    navigate(window.location.pathname.replace(/\/[^\/]+$/, `/${slug}`));
-
-  return { transitionTo, goToProject };
+  return { transitionTo };
 };
 
 export default usePageTransition;

@@ -1,5 +1,4 @@
 import { Stack } from "@packages/ui";
-import useMobile from "@packages/ui/hooks/use-mobile";
 import {
   Navigate,
   Route,
@@ -9,8 +8,6 @@ import {
 } from "react-router-dom";
 import { Button } from "../components/button";
 import ListElement from "../components/list-element";
-import { ProjectCard } from "../components/project-card";
-import { ProjectCardCarrousel } from "../components/project-card-carrousel";
 import Section from "../components/section";
 import { useLang } from "../contexts/language-context.tsx";
 import { editorials } from "../editorials";
@@ -24,14 +21,6 @@ type LangKey = keyof typeof editorials;
 type EditorialLang = (typeof editorials)[LangKey];
 type EditorialRoute = EditorialLang["routes"][number];
 type RealPageProp = EditorialRoute["pageProps"][number];
-
-type ImagePageProp = Extract<RealPageProp, { type: "image" }> & {
-  pageProp: {
-    path: string;
-    alt: string;
-    text?: string;
-  };
-};
 
 const kebabToCustomCase = (kebabStr: string): string => {
   return kebabStr
@@ -59,7 +48,6 @@ export const RouteContent = ({ pageProps }: IRenderedRoutes) => {
 
   const { transitionTo } = usePageTransition();
   const location = useLocation();
-  const isMobile = useMobile();
 
   const goBackLink = () => {
     const currentPath = location.pathname;
@@ -99,29 +87,27 @@ export const RouteContent = ({ pageProps }: IRenderedRoutes) => {
           </Stack>
         );
         break;
-      case "image": {
+      case "image":
         sectionContent.push(
-          <Stack direction="row">
+          <Stack>
             <img
               alt={pageProp.pageProp.alt}
               src={`/src/editorial-contents/${pageProp.pageProp.path}`}
               className={styles.fluxImg}
             />
-            {pageProp.pageProp.text && !isMobile && (
-              <p>{pageProp.pageProp.text}</p>
-            )}
           </Stack>
         );
         break;
-      }
-      case "project-card":
+      case "project-list":
         sectionContent.push(
           <Stack>
-            {isMobile ? (
-              <ProjectCardCarrousel>{pageProp.pageProp}</ProjectCardCarrousel>
-            ) : (
-              <ProjectCard>{pageProp.pageProp}</ProjectCard>
-            )}
+            {pageProp.pageProp.map((a, i) => (
+              <ListElement
+                label={kebabToCustomCase(a.slug)}
+                onClick={() => transitionTo(a.slug)}
+                key={`${a.slug}-${i}`}
+              />
+            ))}
           </Stack>
         );
         break;
