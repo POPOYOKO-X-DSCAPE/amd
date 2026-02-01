@@ -20,4 +20,9 @@ export const styles = {
 			maxWidth: "30%",
 		},
 	}),
+	fluxImgText: css({
+		gap: "s.xl",
+		color: "s.fg.gentle.initial",
+		textStyle: "body.s",
+	}),
 };
