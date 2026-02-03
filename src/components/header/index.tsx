@@ -12,8 +12,7 @@ import { Stack } from "@packages/ui";
 import useMobile from "@packages/ui/hooks/use-mobile";
 import { css } from "@styles";
 import { useEffect } from "react";
-import LogoPart1 from "../../assets/svgs/AMD-logo-part1.svg?react";
-import LogoPart2 from "../../assets/svgs/AMD-logo-part2.svg?react";
+import Logo from "../../assets/svgs/Architecture Interior Designer.svg?react";
 import Burger from "../../assets/svgs/Burger.svg?react";
 import Close from "../../assets/svgs/Close.svg?react";
 import Dark from "../../assets/svgs/Dark.svg?react";
@@ -39,13 +38,9 @@ const styles = {
     color: "s.fg.default.initial",
   }),
   logo: css({
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "flex-start",
     maxWidth: "242px",
     _desktop: {
       maxWidth: "424px",
-      maxHeight: "24px",
     },
   }),
   languageSelector: css({
@@ -185,8 +180,7 @@ export const AMDHeader = () => {
               className={styles.logo}
               onClick={() => transitionTo(`${language}/`)}
             >
-              <LogoPart1 />
-              <LogoPart2 />
+              <Logo />
             </AriaButton>
           </Stack>
           {isMobile && (
