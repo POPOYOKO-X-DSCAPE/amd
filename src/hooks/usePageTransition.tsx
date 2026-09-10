@@ -1,10 +1,9 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAnimation } from "../contexts/animation-context";
 
 const usePageTransition = () => {
   const { startAnimation, endAnimation } = useAnimation();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const transitionTo = (path: string, callback?: () => void) => {
     startAnimation();
@@ -17,10 +16,7 @@ const usePageTransition = () => {
     }, 500);
   };
 
-  const goToProject = (slug: string) =>
-    navigate(location.pathname.replace(/\/[^\/]+$/, `/${slug}`));
-
-  return { transitionTo, goToProject };
+  return { transitionTo };
 };
 
 export default usePageTransition;

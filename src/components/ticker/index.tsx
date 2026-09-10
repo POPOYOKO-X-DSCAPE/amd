@@ -1,8 +1,6 @@
 import { Stack } from "@packages/ui";
 import { css } from "@styles";
 
-const LinotypeDidotProItalic = "LinotypeDidotProItalic, serif";
-
 const styles = {
   container: css({
     minHeight: "80px",
@@ -32,16 +30,14 @@ const styles = {
     },
   }),
   interior: css({
-    fontFamily: LinotypeDidotProItalic,
+    fontFamily: "Didot LT Pro, serif",
     fontWeight: 400,
     fontStyle: "italic",
     fontSize: "53px",
-    marginTop: "7px",
     lineHeight: "100%",
     letterSpacing: "0%",
     _desktop: {
       fontSize: "124px",
-      marginTop: "12px",
     },
   }),
   designer: css({

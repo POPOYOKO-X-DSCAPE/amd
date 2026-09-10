@@ -1,7 +1,7 @@
 // ⚙️ Fichier généré automatiquement – ne pas modifier
 import type { JSONEditorials } from "./create-editorial-object";
 
-export const editorials: JSONEditorials = {
+export const editorials = {
   "FR": {
     "routes": [
       {
@@ -268,8 +268,7 @@ export const editorials: JSONEditorials = {
                             "type": "image",
                             "pageProp": {
                               "path": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/5-project-list/2-chalet,-verbier/5-image/piscine-interieure-privee-spa-espace-bien-etre-verbier-suisse.webp",
-                              "alt": "piscine intérieure privée SPA espace Bien-être Verbier Suisse",
-                              "text": "Analyse immobilière, étude de faisabilité avant investissent, conseil d’architecture et design d’intérieur, conception."
+                              "alt": "piscine intérieure privée SPA espace Bien-être Verbier Suisse"
                             }
                           },
                           {
@@ -692,41 +691,6 @@ export const editorials: JSONEditorials = {
                   {
                     "type": "button",
                     "pageProp": "Tous les projets"
-                  },
-                  {
-                    "type": "project-card",
-                    "pageProp": [
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/1-dagaz-ibiza/villa-en-construction-cote-sauvage-ibiza.webp",
-                        "title": "Dagaz, Ibiza",
-                        "alt": "Villa en construction côte sauvage Ibiza",
-                        "slug": "dagaz ibiza"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/2-chalet-verbier/chalet-luxe-vue-exterieur-nuit-suisse.webp",
-                        "title": "Chalet, Verbier",
-                        "alt": "Chalet luxe vue extérieur nuit Suisse",
-                        "slug": "chalet verbier"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/3-cologny-geneve/maison-piscine-architecte-contemporaine-cologny-lac-leman.webp",
-                        "title": "Cologny, Genève",
-                        "alt": "maison piscine architecte contemporaine Cologny lac léman",
-                        "slug": "cologny geneve"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/4-ranch-st-tropez/bastide-provencale-rehabilitee-st-tropez.webp",
-                        "title": "Ranch, St Tropez",
-                        "alt": "Bastide provençale réhabilitée St-Tropez",
-                        "slug": "ranch st tropez"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/1-exceptional-and-Luxury/7-project-card/5-central-park-kiev/sculpture-contemporaine-tapis-luxe-appartement-prestige-a-kiev.webp",
-                        "title": "Central Park, Kiev",
-                        "alt": "Sculpture contemporaine tapis luxe appartement prestige à Kiev",
-                        "slug": "central park kiev"
-                      }
-                    ]
                   }
                 ]
               },
@@ -836,17 +800,6 @@ export const editorials: JSONEditorials = {
                   {
                     "type": "button",
                     "pageProp": "Tous les projets"
-                  },
-                  {
-                    "type": "project-card",
-                    "pageProp": [
-                      {
-                        "image": "FR/all-projects/5-project-list/2-architecture-and-interior-architecture/7-project-card/1-gaming-house-geneve/accueil-gaming-house-amd-interior-designer.webp",
-                        "title": "Gaming House, Genève",
-                        "alt": "Accueil Gaming House AMD Interior Designer",
-                        "slug": "gaming house geneve"
-                      }
-                    ]
                   }
                 ]
               },
@@ -1126,29 +1079,6 @@ export const editorials: JSONEditorials = {
                   {
                     "type": "button",
                     "pageProp": "Tous les projets"
-                  },
-                  {
-                    "type": "project-card",
-                    "pageProp": [
-                      {
-                        "image": "FR/all-projects/5-project-list/3-hospitality-and-art-de-vivre/7-project-card/1-hugo-valentine-dijon/facade-entree-valentine-et-hugo-dijon.webp",
-                        "title": "Hugo et Valentine, Dijon",
-                        "alt": "Façade entrée Valentine et Hugo Dijon",
-                        "slug": "hugo valentine dijon"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/3-hospitality-and-art-de-vivre/7-project-card/2-loiseau-vignes-beaune/facade-restaurant-loiseau-des-vignes-a-beaune.webp",
-                        "title": "Loiseau des Vignes, Beaune",
-                        "alt": "Façade du restaurant Loiseau des Vignes à Beaune",
-                        "slug": "loiseau vignes beaune"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/3-hospitality-and-art-de-vivre/7-project-card/3-table-hote-rotisserie-chambertin/enseigne-table-d'hote-rustique-intimiste.webp",
-                        "title": "Table d'Hôte, Rotisserie du Chambertin",
-                        "alt": "Enseigne Table d’hôte rustique intimiste",
-                        "slug": "table hote rotisserie chambertin"
-                      }
-                    ]
                   }
                 ]
               },
@@ -1627,47 +1557,6 @@ export const editorials: JSONEditorials = {
                   {
                     "type": "button",
                     "pageProp": "Tous les projets"
-                  },
-                  {
-                    "type": "project-card",
-                    "pageProp": [
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/1-dagaz-ibiza/grand-espace-futuriste-plancher-en-verre-technologique-ibiza.webp",
-                        "title": "Visite virtuelle, Ibiza",
-                        "alt": "Grand espace futuriste plancher en verre technologique Ibiza",
-                        "slug": "dagaz ibiza"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/2-carlift-carport-geneve/voiture-luxe-garage-vitre-amd-interior-designer.webp",
-                        "title": "Carlift & Carport, Genève",
-                        "alt": "Voiture luxe garage vitré AMD Interior Designer",
-                        "slug": "carlift carport geneve"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/3-espace-master-geneve/suite-contemporaine-mobilier-integre-malles-vintage.webp",
-                        "title": "Espace Master, Genève",
-                        "alt": "Suite contemporaine mobilier intégré malles vintage",
-                        "slug": "espace master geneve"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/5-chateau-de-chenas-chenas/espace-bien-etre-bassin-interieur-mur-pierre-brute-chenas.webp",
-                        "title": "Château de Chénas, Chénas",
-                        "alt": "Espace bien-être bassin intérieur mur pierre brute Chénas",
-                        "slug": "chateau de chenas chenas"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/6-palais-valetta-malte/salon-cheminee-pierre-et-fauteuils-vintage.webp",
-                        "title": "Palais Valette, Malte",
-                        "alt": "Salon chaleureux avec cheminée en pierre et fauteuils vintage",
-                        "slug": "palais valetta malte"
-                      },
-                      {
-                        "image": "FR/all-projects/5-project-list/4-3d-conception/7-project-card/7-guest-house-geneve/espace-detente-bois-naturel-meridienne-cloison-texturee.webp",
-                        "title": "Guest House, Genève",
-                        "alt": "Espace détente en bois naturel avec méridienne et cloison texturée",
-                        "slug": "guest house geneve"
-                      }
-                    ]
                   }
                 ]
               }
@@ -3415,6 +3304,10 @@ export const editorials: JSONEditorials = {
                       "path": "EN/prototypes/4-project-list/1-claustra-organique,-ibiza/9-image/manufacture-scale-1:1-prototype-high-density-foam.webp",
                       "alt": "1/1 scale manufacturing, high-density foam prototype"
                     }
+                  },
+                  {
+                    "type": "button",
+                    "pageProp": ""
                   }
                 ]
               }
@@ -3428,4 +3321,4 @@ export const editorials: JSONEditorials = {
       }
     ]
   }
-};
+} as const satisfies JSONEditorials;

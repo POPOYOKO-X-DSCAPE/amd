@@ -12,34 +12,23 @@ export type PagePropType =
 	| "slideshow"
 	| "video"
 	| "button"
-	| "project-list"
-	| "project-card";
-
-export type ProjectCardItem = {
-	image: string;
-	title: string;
-	alt?: string;
-	slug: string;
-};
+	| "project-list";
 
 export type PagePropMap = {
 	section: { title: string; number: string };
 	title: string;
 	text: string;
-	image: { path: string; alt: string; text?: string };
+	image: { path: string; alt: string };
 	slideshow: PagePropMap["image"][];
 	video: { path: string; alt: string };
 	button: string;
 	"project-list": EditorialRoute[];
-	"project-card": ProjectCardItem[];
 };
 
-export type PageProp<T extends PagePropType = PagePropType> = T extends PagePropType
-	? {
-			type: T;
-			pageProp: PagePropMap[T];
-		}
-	: never;
+export type PageProp<T extends PagePropType = PagePropType> = {
+	type: T;
+	pageProp: PagePropMap[T];
+};
 
 export type EditorialRoute = {
 	slug: string;
@@ -55,7 +44,7 @@ export type JSONEditorials = {
 // ----------------------
 // Utils
 // ----------------------
-const BASE_DIR = path.resolve("src/editorial-contents");
+const BASE_DIR = path.resolve("editorial-contents");
 
 const readTextFile = (filePath: string): string =>
 	fs.existsSync(filePath)
@@ -105,7 +94,6 @@ const getOrderedDirsByIndex = (src: string) =>
 // ----------------------
 const buildImageProp = (dirPath: string): PagePropMap["image"] => {
 	const alt = readTextFile(path.join(dirPath, "alt.txt"));
-	const text = readTextFile(path.join(dirPath, "text.txt"));
 	const files = fs
 		.readdirSync(dirPath)
 		.filter(
@@ -120,42 +108,7 @@ const buildImageProp = (dirPath: string): PagePropMap["image"] => {
 		path.join(dirPath, imgFile),
 	);
 
-	return {
-		path: relativePath.replace(/\\/g, "/"),
-		alt,
-		...(text && { text }),
-	};
-};
-
-const buildProjectCardItems = (dirPath: string): ProjectCardItem[] => {
-	const projectDirs = getOrderedDirsByIndex(dirPath);
-
-	return projectDirs.map((projectDir) => {
-		const title = readTextFile(
-			path.join(projectDir.dirPath, "title.txt"),
-		);
-		const alt = readTextFile(path.join(projectDir.dirPath, "alt.txt"));
-		const files = fs
-			.readdirSync(projectDir.dirPath)
-			.filter(
-				(f) =>
-					!f.endsWith(".txt") &&
-					!fs.statSync(path.join(projectDir.dirPath, f)).isDirectory(),
-			);
-
-		const imgFile = files[0] ?? "";
-		const relativePath = path.relative(
-			BASE_DIR,
-			path.join(projectDir.dirPath, imgFile),
-		);
-
-		return {
-			image: relativePath.replace(/\\/g, "/"),
-			title,
-			alt: alt || undefined,
-			slug: projectDir.name.replace(/-/g, " ").toLowerCase(),
-		};
-	});
+	return { path: relativePath.replace(/\\/g, "/"), alt };
 };
 
 const buildVideoProp = (dirPath: string): PagePropMap["video"] => {
@@ -245,13 +198,6 @@ const buildPageProp = (
 			return { type, pageProp: routes };
 		}
 
-		case "project-card": {
-			return {
-				type,
-				pageProp: buildProjectCardItems(dirPath),
-			};
-		}
-
 		default:
 			throw new Error(`Type inconnu: ${type}`);
 	}
@@ -310,9 +256,9 @@ if (require.main === module) {
 	const json = buildEditorialsJSON();
 
 	// 💡 On génère maintenant un fichier TypeScript au lieu d’un JSON
-	const outPath = path.resolve("src/editorials.ts");
+	const outPath = path.resolve("editorials.ts");
 
-	const fileContent = `// ⚙️ Fichier généré automatiquement – ne pas modifier\nimport type { JSONEditorials } from "./create-editorial-object";\n\nexport const editorials: JSONEditorials = ${JSON.stringify(json, null, 2)};\n`;
+	const fileContent = `// ⚙️ Fichier généré automatiquement – ne pas modifier\nimport type { JSONEditorials } from "./create-editorial-object";\n\nexport const editorials = ${JSON.stringify(json, null, 2)} as const satisfies JSONEditorials;\n`;
 
 	fs.writeFileSync(outPath, fileContent, "utf8");
 	console.log(`✅ editorials.ts généré dans ${outPath}`);
