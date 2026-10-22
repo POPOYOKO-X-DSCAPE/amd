@@ -13,6 +13,14 @@ export interface AbstractProps {
 	role?: string;
 	ariaLabel?: string;
 	ariaLive?: "polite" | "assertive";
+	/**
+	 * Inline styles, merged AFTER the class-based ones (inline wins the
+	 * cascade). Needed where the generated stylesheet order cannot be
+	 * relied on — e.g. the scrollable Stack's inner box, which must stay
+	 * `position: absolute` even though the default position class
+	 * (`.pos_relative`) sorts after `.pos_absolute` in the Panda output.
+	 */
+	style?: React.CSSProperties;
 	position?:
 		| { type: "relative" }
 		| { type: "relativeToApp"; position: PositionCombo }
@@ -29,6 +37,7 @@ export const Abstract = forwardRef<HTMLDivElement, AbstractProps>(
 			role,
 			ariaLabel,
 			ariaLive,
+			style,
 			position = { type: "relative" },
 		},
 		ref,
@@ -135,7 +144,11 @@ export const Abstract = forwardRef<HTMLDivElement, AbstractProps>(
 			<div
 				ref={ref}
 				className={classNames(className, positionClass())}
-				style={{ flexGrow: styleGrow }}
+				style={
+					style || styleGrow
+						? { flexGrow: styleGrow, ...style }
+						: undefined
+				}
 				id={id}
 				role={role}
 				aria-label={ariaLabel}

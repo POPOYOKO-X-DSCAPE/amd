@@ -30,13 +30,16 @@ export const Stack = forwardRef<HTMLDivElement, StackProps>(
 		},
 		ref,
 	) => {
+		// "stretch" is not a valid justify-content value; omitting the
+		// declaration lets the container default (normal) apply instead.
 		const panda = css({
 			display: "flex",
 			flexDirection: direction,
 			maxHeight: "100%",
 			maxWidth: "100%",
 			alignItems: alignItems,
-			justifyContent: justifyContent,
+			justifyContent:
+				justifyContent === "stretch" ? undefined : justifyContent,
 		});
 		const pandaParentScroll = css({
 			position: "relative",
@@ -48,8 +51,11 @@ export const Stack = forwardRef<HTMLDivElement, StackProps>(
 				!grow && direction === "column" ? "min-content" : "initial",
 		});
 
+		// The scroll content is absolute so its intrinsic height never
+		// propagates through the scroller: the scroller takes its height
+		// from the flex layout and scrolls the content instead.
 		const pandaScroll = css({
-			// position: "absolute",
+			position: "absolute",
 			display: "flex",
 			width: direction === "column" ? "100%" : "auto",
 			flexDirection: direction,
@@ -57,21 +63,22 @@ export const Stack = forwardRef<HTMLDivElement, StackProps>(
 
 		const scrollRef = useRef<HTMLDivElement>(null);
 
-		const parent = scrollRef.current?.parentElement;
-		if (scrollRef.current) {
-			scrollRef.current.style.position = "absolute";
-		}
 		useEffect(() => {
-			if (scrollRef.current && parent) {
-				const gap = window.getComputedStyle(parent).gap;
-				scrollRef.current.style.gap = gap;
-				const lastChild = scrollRef.current
-					.lastElementChild as HTMLElement;
-				if (lastChild) {
-					lastChild.style.marginBottom = gap;
-				}
+			const inner = scrollRef.current;
+			const parent = inner?.parentElement;
+			if (!inner || !parent) {
+				return;
 			}
-		}, [parent]);
+
+			// The absolute child escapes the parent's gap, so mirror it onto
+			// the child and pad the trailing item to keep the rhythm.
+			const gap = window.getComputedStyle(parent).gap;
+			inner.style.gap = gap;
+			const lastChild = inner.lastElementChild as HTMLElement;
+			if (lastChild) {
+				lastChild.style.marginBottom = gap;
+			}
+		}, []);
 
 		if (scrollable) {
 			return (
@@ -81,14 +88,21 @@ export const Stack = forwardRef<HTMLDivElement, StackProps>(
 					grow={grow}
 					position={position}
 				>
-					<Abstract
-						ref={ref}
-						className={classNames(pandaScroll)}
-						grow
-						role={role}
-						ariaLabel={ariaLabel}
-						ariaLive={ariaLive}
-					>
+				<Abstract
+					ref={scrollRef}
+					className={classNames(pandaScroll)}
+					// Inline so it always beats the default position class:
+					// in the generated Panda output `.pos_relative` sorts
+					// after `.pos_absolute`, which would otherwise put this
+					// box in-flow and let its intrinsic height propagate
+					// through the scroller (breaking the "absolute scroll
+					// content" contract below).
+					style={{ position: "absolute" }}
+					grow
+					role={role}
+					ariaLabel={ariaLabel}
+					ariaLive={ariaLive}
+				>
 						{children}
 					</Abstract>
 				</Abstract>

@@ -18,9 +18,11 @@ const panda = css({
 	maxWidth: "100vw",
 	maxHeight: "100vh",
 	"& button": {
+		// Flex only: a forced align-items here (0-1-1) would outrank any
+		// align-items atomic a button sets on itself (0-1-0) — e.g. a
+		// centered row button would silently stretch its children. The
+		// kit Button owns its own alignment (alignItems + alignSelf).
 		display: "flex",
-		alignItems: "stretch",
-		justifyContent: "stretch",
 	},
 });
 

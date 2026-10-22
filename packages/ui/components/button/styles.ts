@@ -2,6 +2,10 @@ import { css } from "@styles";
 
 const common = css({
 	alignItems: "center",
+	// A button is content-sized: never stretch to the parent row's height
+	// (a flex parent's default align-items: stretch used to turn buttons
+	// into full-height blocks, e.g. in the ermewa app header).
+	alignSelf: "center",
 	cursor: "pointer",
 	_focusVisible: {
 		outlineWidth: "2px",
@@ -50,6 +54,19 @@ const ghost = css({
 	},
 });
 
+const danger = css({
+	gap: "c.buttonDanger.gap",
+	padding: "c.buttonDanger.padding",
+	rounded: "c.buttonDanger.radius",
+	bg: "c.buttonDanger.bg.initial",
+	color: "c.buttonDanger.fg.initial",
+	textStyle: "actionL",
+	_hover: {
+		bg: "c.buttonDanger.bg.hover",
+		color: "c.buttonDanger.fg.hover",
+	},
+});
+
 const disabled = css({
 	opacity: 0.2,
 });
@@ -67,6 +84,7 @@ const menu = css({
 
 const menuItem = css({
 	display: "flex",
+	alignItems: "center",
 	gap: "c.buttonSecondary.gap",
 	padding: "c.buttonMenuItem.padding",
 	rounded: "c.buttonMenuItem.radius",
@@ -83,6 +101,7 @@ export const Styles = {
 	primary,
 	secondary,
 	ghost,
+	danger,
 	menu,
 	menuItem,
 	disabled,

@@ -6,40 +6,37 @@ import {
 import { Menu, MenuItem } from "@ariakit/react";
 
 import classNames from "classnames";
-import type { ReactNode } from "react";
+import type { ButtonHTMLAttributes, ReactNode } from "react";
 import type { Action } from "../../types";
 import { Styles } from "./styles";
 
-export type ButtonLevel = "primary" | "secondary" | "ghost";
+export type ButtonLevel = "primary" | "secondary" | "ghost" | "danger";
 
-interface IButtonProps {
-	children: ReactNode;
-	type?: "button" | "reset" | "submit";
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	level?: ButtonLevel;
-	onClick?: () => void;
-	disabled?: boolean;
-	className?: string;
-	"aria-label"?: string;
 }
 
 export const Button = ({
 	children,
-	type = "button",
 	level = "primary",
+	type = "button",
 	onClick,
 	disabled,
 	className,
-	...aria
+	...rest
 }: IButtonProps) => {
 	const levelStyle =
 		level === "secondary"
 			? Styles.secondary
 			: level === "ghost"
 				? Styles.ghost
-				: Styles.primary;
+				: level === "danger"
+					? Styles.danger
+					: Styles.primary;
 
 	return (
 		<AriaButton
+			type={type}
 			onClick={onClick}
 			className={classNames(
 				Styles.common,
@@ -47,34 +44,48 @@ export const Button = ({
 				disabled && Styles.disabled,
 				className,
 			)}
-			type={type}
 			disabled={disabled}
-			{...aria}
+			{...rest}
 		>
 			{children}
 		</AriaButton>
 	);
 };
 
+interface IButtonMenuProps {
+	children: ReactNode;
+	level?: ButtonLevel;
+	items: Action[];
+	placement?: "bottom-end" | "bottom-start" | "top-end" | "top-start";
+	className?: string;
+	"aria-label"?: string;
+	title?: string;
+}
+
 Button.Menu = ({
 	children,
 	level = "secondary",
 	items,
 	placement = "bottom-start",
-}: {
-	children: ReactNode;
-	level?: ButtonLevel;
-	items: Action[];
-	placement?: "bottom-end" | "bottom-start" | "top-end" | "top-start";
-}) => {
+	className,
+	"aria-label": ariaLabel,
+	title,
+}: IButtonMenuProps) => {
+	const levelStyle =
+		level === "primary"
+			? Styles.primary
+			: level === "ghost"
+				? Styles.ghost
+				: level === "danger"
+					? Styles.danger
+					: Styles.secondary;
+
 	return (
 		<MenuProvider placement={placement}>
 			<MenuButton
-				className={classNames(
-					(level === "secondary" && Styles.secondary) ||
-						Styles.secondary,
-					Styles.common,
-				)}
+				className={classNames(Styles.common, levelStyle, className)}
+				aria-label={ariaLabel}
+				title={title}
 			>
 				{children}
 			</MenuButton>
