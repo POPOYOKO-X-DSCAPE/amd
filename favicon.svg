@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="222" height="74"><svg width="222" height="74" viewBox="0 0 222 74" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M48.2 58.3H21.1L16 73.4H0L26.2 0H43.5L69.5 73.4H52.9L48.2 58.3ZM43.9 45.7L34.7 16.8L25.2 45.7H43.9Z" fill="#E8E5E1"></path>
-<path d="M90.8 73.4H76.5V0H98.8L112.2 57.8L125.4 0H147.5V73.4H133.2V23.8C133.2 22.4 133.2 20.4 133.2 17.8C133.2 15.2 133.2 13.2 133.2 11.8L119.3 73.4H104.4L90.7 11.8C90.7 13.2 90.7 15.2 90.7 17.8C90.7 20.4 90.7 22.4 90.7 23.8V73.4H90.8Z" fill="#E8E5E1"></path>
-<path d="M191.2 73.4H159.6V0H191.2C195.8 0.1 199.5 0.6 202.6 1.6C207.7 3.3 211.9 6.4 215.1 10.9C217.7 14.6 219.4 18.5 220.3 22.8C221.2 27.1 221.7 31.1 221.7 35C221.7 44.8 219.7 53 215.8 59.8C210.5 68.9 202.3 73.4 191.2 73.4ZM202.6 18.7C200.2 14.7 195.6 12.7 188.6 12.7H174.4V60.6H188.6C195.8 60.6 200.9 57 203.7 49.9C205.3 46 206 41.3 206 35.9C206.1 28.5 205 22.8 202.6 18.7Z" fill="#E8E5E1"></path>
-</svg><style>@media (prefers-color-scheme: light) { :root { filter: contrast(1) brightness(0.1); } }
-@media (prefers-color-scheme: dark) { :root { filter: contrast(0.3846153846153846) brightness(4.5); } }
-</style></svg>
